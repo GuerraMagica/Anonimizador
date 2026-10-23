@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+.venv/
+graphify-out/.graphify_*
+graphify-out/.needs_update
+graphify-out/cache/
