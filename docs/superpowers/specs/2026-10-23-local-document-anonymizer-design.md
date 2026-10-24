@@ -1,6 +1,6 @@
 # Local Document Anonymizer — especificación del primer MVP
 
-Fecha inicial: 23 de octubre de 2026. Última revisión: 24 de octubre de 2026. Estado: **propuesta para revisión; implementación no autorizada**.
+Fecha inicial: 23 de octubre de 2026. Última revisión: 24 de octubre de 2026. Estado: **especificación aprobada expresamente por el usuario el 24/10/2026; plan preaprobado; instalaciones y descargas sujetas a autorización separada**.
 
 ## 1. Objetivo y decisiones
 
@@ -13,7 +13,7 @@ Decisiones expresas del usuario:
 - **Opción A elegida de momento:** interfaz y motor en el mismo proceso, con módulos separados.
 - Trabajar por etapas: aprobar especificación y preparar plan antes de implementar. La autorización posterior del usuario preaprueba el plan que se considere adecuado; no se repetirá esa aprobación si el plan respeta el alcance aprobado.
 
-El alcance reducido, los límites, las métricas y los detalles siguientes son propuestas del autor de esta especificación. La elección de A no se interpreta como aprobación de todos ellos.
+El alcance reducido, los límites, las métricas y los detalles siguientes fueron propuestos por el autor de esta especificación y quedaron incluidos en su aprobación expresa del 24/10/2026. Esa aprobación no acredita implementación ni validación de las herramientas.
 
 La [investigación previa](../../investigacion-2026-10-23.md) recoge fuentes, alternativas, licencias y límites documentados. No se han instalado ni probado las herramientas. Las versiones y dependencias definitivas deberán verificarse y fijarse antes de su instalación autorizada.
 
@@ -205,7 +205,9 @@ Evolución prevista, con especificaciones propias: DOCX a TXT con inventario OOX
 
 ## 11. Estado de revisión
 
-Esta especificación necesita aprobación expresa, conforme a la fase 3 solicitada por el usuario. Después se redactará un plan de tareas y pruebas; el usuario ha aprobado anticipadamente el plan que se considere adecuado, por lo que no se repetirá su aprobación si se ajusta a la especificación aceptada. Las instalaciones y descargas seguirán detallando artefactos, tamaños y accesos externos antes de solicitar la autorización correspondiente. La preaprobación del plan no se interpreta como aprobación de esta especificación ni como autorización para escribir producto durante la fase de diseño.
+El usuario aprobó expresamente esta especificación el 24/10/2026. Se redactará el plan de tareas y pruebas antes de implementar; el plan ya cuenta con aprobación anticipada mientras respete esta especificación. Las instalaciones y descargas seguirán detallando artefactos, tamaños y accesos externos antes de solicitar la autorización correspondiente. Se pueden ejecutar las unidades independientes que no requieran esas instalaciones, sin interpretar recursos simulados como validación de detectores reales.
+
+El [plan de implementación](../plans/2026-10-24-local-document-anonymizer.md) concreta las unidades y sus comprobaciones. El código se desarrollará en `codex/text-mvp`, conservando el estado documental de `main` hasta revisar su integración.
 
 Se dejan al implementador nombres de clases/archivos, disposición concreta de widgets, primitivas de Qt, estrategia exacta de publicación exclusiva, herramientas de test y versiones compatibles del entorno, siempre que respeten estos contratos. Cambios de alcance, nuevos modelos, persistencia sensible, procesos adicionales o relajación de bloqueos requieren revisión con el usuario.
 
@@ -223,4 +225,4 @@ La consulta de revisión conecta controles ya definidos en esta especificación:
 - **Archivo exportado:** comprobar ausencia de sobrescritura, igualdad de bytes y digest del destino final.
 - **Privacidad:** comprobar procesamiento sin red y ausencia de contenido sensible en diagnósticos e informe, conservando la revisión del riesgo contextual.
 
-No surge de esta revisión una necesidad demostrada de cambiar la opción A, añadir procesos, modelos o formatos. Se mantiene la propuesta TXT/Markdown → TXT y la evolución DOCX → PDF → OCR como ampliaciones separadas. Siguen pendientes la aprobación del diseño, la instalación autorizada, la evaluación real de detectores y rendimiento y las pruebas en macOS. No se han escrito ni probado funcionalidades de producto durante esta fase.
+No surge de esta revisión una necesidad demostrada de cambiar la opción A, añadir procesos, modelos o formatos. Se mantiene TXT/Markdown → TXT y la evolución DOCX → PDF → OCR como ampliaciones separadas. El diseño recibió aprobación posteriormente el 24/10/2026; siguen pendientes la instalación autorizada, la evaluación real de detectores y rendimiento y las pruebas en macOS. No se escribieron ni probaron funcionalidades de producto durante esta fase de diseño.
