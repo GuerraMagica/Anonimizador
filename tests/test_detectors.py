@@ -56,4 +56,16 @@ class DetectorTests(unittest.TestCase):
         f=self.detector.analyze('DNI: 12345678A; NIE X1234567A; +1 202-555-0123','test')
         self.assertFalse(any(x.category in (Category.DOCUMENTO,Category.TELEFONO) for x in f))
 
+    def test_real_model_accepts_label_expansion_beyond_input_limit(self):
+        # Valid admitted input may expand to >100k during interval replacement.
+        from helpers import reviewed, finding
+        from local_anonymizer.transform import build_preview
+        from local_anonymizer.verification import verify_preview
+        source='Ana ' * 10000
+        r=reviewed(source,tuple(finding(str(i),4*i,4*i+3) for i in range(10000)))
+        preview=build_preview(r)
+        self.assertEqual(len(preview.text),120000)
+        result=verify_preview(r,preview,self.detector)
+        self.assertNotIn('ANALYSIS_FAILED',result.issues)
+
 if __name__=='__main__':unittest.main()

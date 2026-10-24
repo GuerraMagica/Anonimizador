@@ -12,6 +12,12 @@ import re
 from uuid import uuid4
 
 from .domain import AnonymizerError, Category, Confidentiality, Document, Finding
+from .ingest import MAX_CHARACTERS
+
+# At most one replacement per source character; counters cannot exceed the
+# input character count plus labels already reserved in that same source.
+MAX_LABEL_CHARACTERS = max(len(c.value) for c in Category) + 1 + max(3, len(str(2 * MAX_CHARACTERS)))
+MAX_ANALYSIS_CHARACTERS = MAX_CHARACTERS * max(MAX_LABEL_CHARACTERS, len("[ELIMINADO]"))
 
 
 NER_CATEGORIES = {'PER': Category.PERSONA, 'ORG': Category.ORGANIZACION,
@@ -98,14 +104,15 @@ class LocalDetector:
             if (self._nlp.meta.get('lang') != 'es' or self._nlp.meta.get('version') != '3.8.0'
                     or not set(NER_CATEGORIES) <= set(self._nlp.get_pipe('ner').labels)):
                 raise ValueError('model')
+            self._nlp.max_length = MAX_ANALYSIS_CHARACTERS
             versions = {p: metadata.version(p) for p in ('spacy','presidio-analyzer','phonenumbers','tldextract')}
-            digest = sha256(json.dumps(versions, sort_keys=True).encode())
+            digest = sha256(json.dumps({'versions':versions, 'analysis_limit':MAX_ANALYSIS_CHARACTERS, 'adapter':'v2'}, sort_keys=True).encode())
             for path in sorted(model_path.rglob('*')):
                 if path.is_file() and '__pycache__' not in path.parts:
                     digest.update(path.relative_to(model_path).as_posix().encode())
                     with path.open('rb') as f:
                         for block in iter(lambda: f.read(65536), b''):digest.update(block)
-            self._fingerprint = 'local-es:v1:' + digest.hexdigest()
+            self._fingerprint = 'local-es:v2:' + digest.hexdigest()
         except Exception:
             raise AnonymizerError('MODEL_UNAVAILABLE') from None
 
@@ -114,7 +121,7 @@ class LocalDetector:
         return self._fingerprint
 
     def analyze(self, text: str, session_id: str) -> tuple[Finding, ...]:
-        if not isinstance(text, str) or len(text) > 100000:
+        if not isinstance(text, str) or len(text) > MAX_ANALYSIS_CHARACTERS:
             raise AnonymizerError('ANALYSIS_LIMIT')
         logger = logging.getLogger('presidio-analyzer')
         privacy_filter = _PrivateRecognizerLogs()

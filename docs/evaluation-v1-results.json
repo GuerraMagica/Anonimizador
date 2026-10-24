@@ -1,6 +1,6 @@
 {
   "corpus_sha256": "0a8db269991c4e7fa93f63eed17182ecc936ed0115c4a2ef55608443ba60e54f",
-  "detector_fingerprint": "local-es:v1:bccefcaac209f0027fc82f0606796b07f4d34c9cb84b1d9fb61fd5fddc170d2f",
+  "detector_fingerprint": "local-es:v2:42ba1461eb3ddf2300151867714cf9fa87d1087e8872b111c0dbc2ddf7085593",
   "metrics": {
     "email": {
       "tp": 50,

@@ -56,3 +56,25 @@ Para completar esa comprobación manual: abrir la aplicación, cargar un TXT sin
 Código en la rama `codex/text-mvp`; no integrado en `main`. Sin instalador, firma, notarización ni modelos empaquetados. Las dependencias se instalaron solo en la `.venv` autorizada. Pesos GPL-3.0; revisar condiciones antes de redistribuir. El original se conserva; la salida es texto y la segunda pasada puede repetir omisiones del mismo modelo.
 
 Permanecen dos puertas abiertas: calidad NER y smoke visual manual. La revisión final de código se registra junto a los cambios correspondientes; ni una regresión verde ni un informe técnico de exportación certifican anonimato o aceptación del producto.
+
+## Revisión final y correcciones
+
+La revisión independiente de toda la rama identificó dos hallazgos Important, ninguno Critical y ningún Minor; no apartó comportamientos del juicio por estar fuera de la especificación. Ambos se reprodujeron antes de corregir y la regresión final pasó **102 pruebas**:
+
+1. Un `stat` seguido de `unlink` no impide que otro proceso sustituya un temporal justo antes del borrado. La exportación ahora crea directamente el nombre final con `O_CREAT|O_EXCL|O_NOFOLLOW`, permisos 0600, descriptor del directorio fijado y dos reaperturas de comprobación. **No borra automáticamente ninguna ruta.** El nombre es visible durante la escritura y un fallo puede dejar una copia parcial sin verificar. Se comunica la ubicación elegida para inspección, advirtiendo que el archivo/directorio pueden haber cambiado. Los tests reproducen colisión, sustitución, disco lleno, fallo de lectura y cambio del directorio; comprueban que nunca se llama a unlink.
+2. El límite de 100 000 caracteres era de entrada y no debía rechazar una salida que creciese con etiquetas. La capacidad de análisis ahora se deriva del máximo de expansión de las etiquetas sobre esa entrada y se aplica también a `spaCy.max_length`. La prueba real transforma 40 000 caracteres en 120 000 y ejecuta la verificación completa sin fallo de análisis. No se trunca ni fragmenta. Este límite derivado no constituye una promesa de rendimiento para salidas extremas.
+
+Se repitió el evaluador tras las correcciones técnicas: mismas métricas y puertas NER fallidas, nuevo fingerprint de configuración. No se cambiaron patrones, modelo ni anotaciones para mejorar la puntuación. Los tiempos del benchmark de prosa corresponden al adaptador anterior a estos fixes, con las mismas operaciones para entradas hasta 100 000 caracteres; no se midió el rendimiento máximo de salidas expandidas.
+
+Además se midió una [tabla densa](runtime-dense-table.json): 3 000 candidatos sobre 12 000 caracteres, **5,537 s** para poblar y procesar eventos, **438 009 856 bytes** de pico RSS, **0,063 s** al cerrar el documento. Es una única prueba offscreen con detector doble, sin NLP: evidencia una ralentización relevante que no cubría la prosa sin entidades. Se recomienda paginar o usar un modelo de tabla antes de ampliar la aceptación a documentos densos; no hay promesa de respuesta inmediata.
+
+## Decisiones de implementación y costes
+
+- Se reutilizó el checkout limpio en una rama de desarrollo: conserva `main`, pero los archivos de trabajo muestran la rama activa.
+- Inicialmente se conservaron destinos publicados ante fallo y se intentó limpiar staging por identidad. La revisión mostró que la limpieza seguía expuesta a una carrera; quedó sustituida por la política de cero borrados automáticos descrita arriba. Un fallo puede requerir inspección manual de una copia parcial.
+- Los recognizers de Presidio se invocan por separado y PER/ORG/LOC se mapean directamente desde spaCy para conservar conflictos. El coste es mantener esa configuración explícita al actualizar dependencias; el correo usa el snapshot local de dominios y los avisos/timeouts bloquean cobertura.
+- Las posiciones Qt cuentan cada CRLF como una unidad UTF-16 y traducen emoji correctamente. Las posiciones imposibles dentro de un par CRLF o surrogate se rechazan; la fuente exacta se conserva.
+- La creación exclusiva directa sustituye `staging → hardlink → unlink`: evita la carrera de borrado, a cambio de que el nombre final aparezca durante la escritura y pueda quedar parcial si falla.
+- La capacidad de análisis del resultado se dimensiona según la expansión máxima de etiquetas. Mantiene los límites de entrada, a cambio de mayor consumo posible al verificar resultados largos.
+
+No se han diferido hallazgos Minor de esta revisión. Quedan pendientes las puertas de aceptación descritas, además de la limitación de tabla densa medida.

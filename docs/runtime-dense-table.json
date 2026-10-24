@@ -1,0 +1,11 @@
+{
+  "cases": 1,
+  "characters": 12000,
+  "candidates": 3000,
+  "render_seconds": 5.537167791975662,
+  "clear_seconds": 0.06253274995833635,
+  "peak_rss_bytes": 438009856,
+  "backend": "offscreen",
+  "detector": "deterministic_test_double",
+  "limits": "GUI table workload only, not NLP efficacy or manual usability."
+}

@@ -114,15 +114,15 @@ def test_selected_value_elsewhere_blocks_export(self):
 
 ```python
 def test_concurrent_destination_is_never_overwritten(self):
-    # Introducir el competidor justo antes de os.link sobre archivos reales.
+    # Introducir el competidor justo antes de O_EXCL sobre archivos reales.
     self.assertRaises(AnonymizerError, publish)
     self.assertEqual(destination.read_bytes(), b'competidor')
     self.assertEqual(source.read_bytes(), original_bytes)
 ```
 
 - [x] Ejecutar tests del módulo y observar FAIL.
-- [x] Implementar directorio fijado con descriptor, temporal aleatorio exclusivo 0600, escritura/fsync y lectura de comprobación. Publicar con `os.link` sin reemplazo; un fallo de soporte no permite fallback a rename/copia sobrescribible. Reabrir destino con no-follow, comprobar identidad/bytes/digest y limpiar únicamente inodos propios. Usar `dir_fd` para no depender de cambios de symlinks en directorios.
-- [x] Ejecutar tests en el sistema de archivos local y regresión; comprobar que no quedan temporales en éxito y que limpieza fallida se comunica sin traceback sensible. Informe independiente: su fallo no borra el TXT correcto. Se exige PASS.
+- [x] Implementar directorio fijado con descriptor, creación final exclusiva `O_CREAT|O_EXCL|O_NOFOLLOW` 0600, escritura/fsync y dos reaperturas de comprobación. No hay fallback sobrescribible ni eliminación automática de rutas: un fallo posterior a la creación comunica la ubicación elegida para inspeccionar la copia parcial. El nombre aparece durante la escritura; el éxito lógico exige identidad/bytes/digest. **Revisión final:** este diseño sustituye el staging con `os.link`, cuya limpieza por nombre mantenía una carrera de borrado. Usar `dir_fd` para no depender de cambios de symlinks en directorios.
+- [x] Ejecutar tests en el sistema de archivos local y regresión; comprobar que no quedan temporales en éxito y que los fallos posteriores a crear se comunican con ubicación de inspección, sin traceback sensible ni borrado. Informe independiente: su fallo no borra el TXT correcto. Se exige PASS.
 - [x] Commit `feat: publish verified copies without replacing files`; push y verificar SHA.
 
 ## Task 5: Estado de sesión y cancelación
@@ -176,7 +176,7 @@ def test_late_result_cannot_reenable_export(self):
 - [x] Ejecutar evaluación real; exigir los umbrales de la sección 9 de la especificación. Publicar falsos negativos; si se ajusta contra el corpus, reclasificarlo como desarrollo y crear evaluación independiente. No bajar umbrales ni sustituir datos ausentes por estimaciones.
 - [x] Ejecutar regresión de núcleo, adaptadores y GUI; pruebas de centinelas en diagnósticos/informe/temporales. Comprobar ejecución sin red con mecanismos de prueba del proceso, sin cambiar la seguridad del equipo; señalar los límites de esa evidencia.
 - [ ] Medir arranque frío/caliente, análisis 20 000/100 000 caracteres, memoria y cancelación; smoke de apertura/revisión/exportación real en macOS. Ningún original puede cambiar.
-- [ ] Solicitar revisión final de código y resolver hallazgos antes de declarar aceptación. Documentar diferencias entre núcleo probado, integración real, GUI y métricas. Commit `test: document acceptance evidence and operating limits`; push y verificar SHA.
+- [x] Solicitar revisión final de código y resolver hallazgos antes de declarar aceptación. Documentar diferencias entre núcleo probado, integración real, GUI y métricas. Commit `test: document acceptance evidence and operating limits`; push y verificar SHA.
 
 ## Autorrevisión del plan
 
@@ -189,3 +189,5 @@ def test_late_result_cannot_reenable_export(self):
 ## Evidencia actual — 24/10/2026
 
 Tareas 1–6 implementadas y verificadas; tarea 7 implementada con tests Qt y arranque Cocoa, pendiente de smoke visual manual. La tarea 8 ha producido corpus, métricas y pruebas de privacidad/rendimiento: **las puertas NER fallan, así que la aceptación global permanece pendiente**. Véase [evidencia](../../validacion-2026-10-24.md). No se afinó el detector contra el corpus ni se cambió de modelo.
+
+Revisión final: 2 Important corregidos mediante RED→GREEN y regresión 102/102. La política de exportación excluye todo borrado automático; la capacidad de análisis cubre expansión de etiquetas. Revisión técnica realizada; aceptación NER y smoke visual manual siguen abiertos. La tabla densa tiene una ralentización medida y documentada.

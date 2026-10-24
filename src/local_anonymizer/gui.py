@@ -155,7 +155,7 @@ class MainWindow(QMainWindow):
         self.status.setText(messages.get(error.code,'Operación no completada.')+' Código: '+error.code)
         if error.cleanup_paths:
             box=QMessageBox(self);box.setTextFormat(Qt.PlainText);box.setWindowTitle('Archivo pendiente de inspección')
-            box.setText('La operación falló. Inspecciona estas ubicaciones; no se ha eliminado un archivo que pudiera haber sido sustituido:\n'+'\n'.join(map(str,error.cleanup_paths)))
+            box.setText('La operación falló y puede quedar una copia parcial sin verificar. Inspecciona la ubicación elegida; el archivo o su directorio podrían haber sido sustituidos o movidos. No se ha borrado nada automáticamente:\n'+'\n'.join(map(str,error.cleanup_paths)))
             box.exec()
         self.update_controls()
 

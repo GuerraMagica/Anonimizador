@@ -36,7 +36,7 @@ PYTHONPATH=src .venv/bin/python -m local_anonymizer
 5. Revisa los residuales. Localízalos en el original para corregirlo o rechaza explícitamente falsos positivos de esa salida. Un valor seleccionado que persista siempre bloquea la exportación.
 6. Guarda un TXT nuevo. El destino no puede existir: también se bloquean enlaces y colisiones concurrentes. Después puedes guardar un informe JSON independiente y opcional.
 
-Cancelar descarta resultados pero espera a que termine la llamada del motor; no mata hilos. El cierre también espera al trabajo activo. Si la publicación falla después de crear una copia, se comunica el archivo pendiente para inspección; nunca se borra a ciegas un destino que otro proceso pudiera haber sustituido. La aplicación no garantiza borrado físico en SSD, memoria, snapshots o copias sincronizadas.
+Cancelar descarta resultados pero espera a que termine la llamada del motor; no mata hilos. El cierre también espera al trabajo activo. El nombre del destino aparece al comenzar la escritura. Solo se anuncia éxito tras reabrir y comprobar la copia. Si la operación falla, puede quedar un archivo parcial sin verificar: se comunica la ubicación elegida y no se borra nada automáticamente, porque otro proceso podría haber sustituido el archivo o su directorio. La aplicación no garantiza borrado físico en SSD, memoria, snapshots o copias sincronizadas.
 
 ## Pruebas
 
@@ -44,7 +44,7 @@ Cancelar descarta resultados pero espera a que termine la llamada del motor; no 
 QT_QPA_PLATFORM=offscreen PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 ```
 
-Se usan archivos y textos sintéticos. Las pruebas del núcleo validan transformación, estado, procedencia y publicación exclusiva; no demuestran eficacia del modelo. La [evaluación y evidencia](docs/validacion-2026-10-24.md) separa métricas reales, pruebas Qt y smoke Cocoa. Los cinco identificadores exigidos pasan el corpus sintético; NER no alcanza los umbrales de persona/organización/ubicación. La comprobación visual manual sigue pendiente. El comando `PYTHONPATH=src .venv/bin/python tests/evaluate_detection.py` devuelve 2 por esas puertas fallidas; una regresión unitaria verde no las sustituye. No se ha afinado el detector contra ese corpus.
+Se usan archivos y textos sintéticos. Las pruebas del núcleo validan transformación, estado, procedencia y publicación exclusiva; no demuestran eficacia del modelo. La [evaluación y evidencia](docs/validacion-2026-10-24.md) separa métricas reales, pruebas Qt y smoke Cocoa. Los cinco identificadores exigidos pasan el corpus sintético; NER no alcanza los umbrales de persona/organización/ubicación. La comprobación visual manual sigue pendiente. El comando `PYTHONPATH=src .venv/bin/python tests/evaluate_detection.py` devuelve 2 por esas puertas fallidas; una regresión unitaria verde no las sustituye. No se ha afinado el detector contra ese corpus. Una prueba densa de 3 000 candidatos tardó 5,5 s en poblar la tabla; conviene validar usabilidad con el volumen previsto.
 
 ## Licencias y distribución
 

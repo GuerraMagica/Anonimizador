@@ -73,71 +73,62 @@ class ExportTests(unittest.TestCase):
                 if mode == 'broken': self.assertTrue(self.destination.is_symlink())
 
     def test_concurrent_destination_is_never_overwritten(self):
-        real_link = os.link
+        real_open=os.open
+        def race(name,flags,*args,**kwargs):
+            if name==self.destination.name and flags & os.O_CREAT:
+                self.destination.write_bytes(b'competidor')
+            return real_open(name,flags,*args,**kwargs)
+        with patch('local_anonymizer.export.os.open',side_effect=race):
+            with self.assertRaises(AnonymizerError):self.publish()
+        self.assertEqual(self.destination.read_bytes(),b'competidor')
+        self.assertEqual(self.source.read_bytes(),self.original)
 
-        def race(source, destination, **kwargs):
-            self.destination.write_bytes(b'competidor')
-            return real_link(source, destination, **kwargs)
+    def test_disk_full_reports_partial_destination_without_deleting_it(self):
+        with patch('local_anonymizer.export.os.write',side_effect=OSError(errno.ENOSPC,'SENTINEL')):
+            with self.assertRaises(AnonymizerError) as caught:self.publish()
+        self.assertEqual(caught.exception.cleanup_paths,(self.destination,))
+        self.assertTrue(self.destination.exists())
+        self.assertEqual(self.source.read_bytes(),self.original)
+        self.assertNotIn('SENTINEL',str(caught.exception))
 
-        with patch('local_anonymizer.export.os.link', side_effect=race):
-            with self.assertRaises(AnonymizerError): self.publish()
-        self.assertEqual(self.destination.read_bytes(), b'competidor')
-        self.assertEqual(self.source.read_bytes(), self.original)
-        self.assertEqual(len(list(self.root.iterdir())), 2)
-
-    def test_disk_full_before_publication_leaves_no_output_or_temporary(self):
-        with patch('local_anonymizer.export.os.write', side_effect=OSError(errno.ENOSPC, 'full')):
-            with self.assertRaises(AnonymizerError): self.publish()
-        self.assertEqual([p.name for p in self.root.iterdir()], ['original.txt'])
-        self.assertEqual(self.source.read_bytes(), self.original)
-
-    def test_unsupported_link_operation_has_no_overwriting_fallback(self):
-        with patch('local_anonymizer.export.os.link', side_effect=OSError(errno.ENOTSUP, 'unsupported')):
-            with self.assertRaises(AnonymizerError) as caught: self.publish()
-        self.assertEqual(caught.exception.code, 'EXPORT_UNSUPPORTED')
+    def test_unsupported_exclusive_creation_has_no_overwriting_fallback(self):
+        real_open=os.open
+        def unsupported(name,flags,*args,**kwargs):
+            if flags & os.O_CREAT:raise OSError(errno.ENOTSUP,'unsupported')
+            return real_open(name,flags,*args,**kwargs)
+        with patch('local_anonymizer.export.os.open',side_effect=unsupported):
+            with self.assertRaises(AnonymizerError) as caught:self.publish()
+        self.assertEqual(caught.exception.code,'EXPORT_UNSUPPORTED')
         self.assertFalse(self.destination.exists())
-        self.assertEqual([p.name for p in self.root.iterdir()], ['original.txt'])
 
-    def test_destination_replaced_after_publication_is_not_deleted(self):
-        real_link = os.link
-
-        def replace_after_link(source, destination, **kwargs):
-            real_link(source, destination, **kwargs)
-            self.destination.unlink()
+    def test_destination_replaced_during_write_is_not_deleted_or_modified(self):
+        real_write=os.write
+        def replace_after_write(fd,data):
+            written=real_write(fd,data)
+            if self.destination.exists():self.destination.rename(self.root/'own-copy.txt')
             self.destination.write_bytes(b'archivo ajeno')
+            return written
+        with patch('local_anonymizer.export.os.write',side_effect=replace_after_write):
+            with self.assertRaises(AnonymizerError) as caught:self.publish()
+        self.assertEqual(self.destination.read_bytes(),b'archivo ajeno')
+        self.assertEqual(caught.exception.cleanup_paths,(self.destination,))
+        self.assertEqual(self.source.read_bytes(),self.original)
 
-        with patch('local_anonymizer.export.os.link', side_effect=replace_after_link):
-            with self.assertRaises(AnonymizerError): self.publish()
-        self.assertEqual(self.destination.read_bytes(), b'archivo ajeno')
-        self.assertEqual(self.source.read_bytes(), self.original)
+    def test_read_error_reports_existing_candidate_without_success(self):
+        with patch('local_anonymizer.export.os.read',side_effect=OSError('SENTINEL')):
+            with self.assertRaises(AnonymizerError) as caught:self.publish()
+        self.assertTrue(self.destination.exists())
+        self.assertEqual(caught.exception.cleanup_paths,(self.destination,))
+        self.assertNotIn('SENTINEL',str(caught.exception))
+        self.assertNotIn(self.tmp.name,repr(caught.exception))
 
-    def test_post_publication_read_error_is_not_reported_as_success(self):
-        real_link = os.link
-        linked = False
-        real_read = os.read
-
-        def record_link(*args, **kwargs):
-            nonlocal linked
-            real_link(*args, **kwargs)
-            linked = True
-
-        def fail_final_read(*args):
-            if linked: raise OSError('SENTINEL read failure')
-            return real_read(*args)
-
-        with patch('local_anonymizer.export.os.link', side_effect=record_link), \
-                patch('local_anonymizer.export.os.read', side_effect=fail_final_read):
-            with self.assertRaises(AnonymizerError) as caught: self.publish()
-        self.assertNotIn('SENTINEL', str(caught.exception))
-        self.assertEqual(self.source.read_bytes(), self.original)
-
-    def test_cleanup_failure_is_explicit_and_does_not_leak_path_in_error(self):
-        with patch('local_anonymizer.export.os.unlink', side_effect=PermissionError('SENTINEL')):
-            with self.assertRaises(AnonymizerError) as caught: self.publish()
-        self.assertEqual(caught.exception.code, 'EXPORT_CLEANUP_PENDING')
-        self.assertTrue(caught.exception.cleanup_paths)
-        self.assertNotIn(self.tmp.name, str(caught.exception))
-        self.assertNotIn(self.tmp.name, repr(caught.exception))
+    def test_publication_never_unlinks_any_path_on_success_or_failure(self):
+        with patch('local_anonymizer.export.os.unlink',side_effect=AssertionError('unsafe unlink')) as unlink:
+            self.publish();unlink.assert_not_called()
+            self.destination=self.root/'failed.txt'
+            with patch('local_anonymizer.export.os.write',side_effect=OSError(errno.ENOSPC,'full')):
+                with self.assertRaises(AnonymizerError):self.publish()
+            unlink.assert_not_called()
 
     def test_tampered_or_stale_verification_and_missing_confirmation_are_rejected(self):
         for verification in (replace(self.verification, ok=False),
@@ -152,24 +143,15 @@ class ExportTests(unittest.TestCase):
             publish_text(replace(self.review, confirmed=False), self.preview,
                          self.verification, self.destination)
 
-    def test_parent_path_changed_during_publication_cannot_return_wrong_receipt(self):
-        parent = self.root / 'chosen'
-        parent.mkdir()
-        moved = self.root / 'moved'
-        other = self.root / 'other'
-        other.mkdir()
-        self.destination = parent / 'out.txt'
-        real_link = os.link
-
-        def redirect_parent(*args, **kwargs):
-            parent.rename(moved)
-            parent.symlink_to(other, target_is_directory=True)
-            real_link(*args, **kwargs)
-
-        with patch('local_anonymizer.export.os.link', side_effect=redirect_parent):
-            with self.assertRaises(AnonymizerError): self.publish()
-        self.assertFalse((other / 'out.txt').exists())
-        self.assertEqual(self.source.read_bytes(), self.original)
+    def test_parent_path_changed_during_write_cannot_return_wrong_receipt(self):
+        parent=self.root/'chosen';parent.mkdir();moved=self.root/'moved';other=self.root/'other';other.mkdir()
+        self.destination=parent/'out.txt';real_write=os.write
+        def redirect_parent(fd,data):
+            count=real_write(fd,data);parent.rename(moved);parent.symlink_to(other,target_is_directory=True);return count
+        with patch('local_anonymizer.export.os.write',side_effect=redirect_parent):
+            with self.assertRaises(AnonymizerError):self.publish()
+        self.assertFalse((other/'out.txt').exists());self.assertTrue((moved/'out.txt').exists())
+        self.assertEqual(self.source.read_bytes(),self.original)
 
 
 if __name__ == '__main__': unittest.main()
