@@ -150,12 +150,12 @@ def test_late_result_cannot_reenable_export(self):
 
 **Interfaces:** `LocalDetector(model_path: Path)` implementa `Detector`; carga solo un modelo ya presente, recognizers explícitos para español/España y categorías declaradas. `literal_findings(document: Document, terms: tuple[tuple[str, Category], ...]) -> tuple[Finding, ...]` no admite regex arbitrarias.
 
-- [ ] Consultar metadatos oficiales para identificar versiones compatibles con Python 3.12, wheels arm64, licencias, tamaño de descargas y modelo concreto. Registrar lista y procedencia; no resolver instalando sin permiso.
-- [ ] Presentar la instalación local y descarga del modelo como solicitud concreta. **Esperar autorización para esos pasos**, continuando únicamente trabajo independiente. No incorporar LLM, GPU, extras cloud o nuevos modelos.
-- [ ] Tras autorización, preparar entorno aislado, lock con hashes y registro de modelo/revisión/checksum/licencia. No modificar entornos existentes ni almacenar rutas personales en Git.
-- [ ] Escribir pruebas: recurso ausente bloquea sin red; excepciones sanitizadas; ORG expuesta; recognizers ES habilitados; vocabulario literal exacto, mayúsculas, límites y solapamientos.
-- [ ] Observar FAIL, implementar adaptador y ejecutar pruebas reales con el modelo local, más regresión. Si falta una categoría declarada, informar antes de sustituirla por detector propio.
-- [ ] Commit `feat: integrate explicitly configured offline Spanish detection`; push y verificar SHA.
+- [x] Consultar metadatos oficiales para identificar versiones compatibles con Python 3.12, wheels arm64, licencias, tamaño de descargas y modelo concreto. Registrar lista y procedencia; no resolver instalando sin permiso.
+- [x] Presentar la instalación local y descarga del modelo como solicitud concreta. **Esperar autorización para esos pasos**, continuando únicamente trabajo independiente. No incorporar LLM, GPU, extras cloud o nuevos modelos.
+- [x] Tras autorización, preparar entorno aislado, lock con hashes y registro de modelo/revisión/checksum/licencia. No modificar entornos existentes ni almacenar rutas personales en Git.
+- [x] Escribir pruebas: recurso ausente bloquea sin red; excepciones sanitizadas; ORG expuesta; recognizers ES habilitados; vocabulario literal exacto, mayúsculas, límites y solapamientos.
+- [x] Observar FAIL, implementar adaptador y ejecutar pruebas reales con el modelo local, más regresión. Si falta una categoría declarada, informar antes de sustituirla por detector propio.
+- [x] Commit `feat: integrate explicitly configured offline Spanish detection`; push y verificar SHA.
 
 ## Task 7: GUI y worker
 

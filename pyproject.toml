@@ -9,5 +9,11 @@ description = "Local document review and non-destructive text sanitization"
 requires-python = ">=3.12,<3.13"
 dependencies = []
 
+[project.optional-dependencies]
+desktop = ["PySide6-Essentials==6.12.0", "presidio-analyzer==2.2.364", "spacy==3.8.16"]
+
+[project.scripts]
+local-anonymizer = "local_anonymizer.__main__:main"
+
 [tool.setuptools.packages.find]
 where = ["src"]

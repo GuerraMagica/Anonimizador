@@ -1,0 +1,4 @@
+# Explicitly authorized desktop/NLP dependencies; CPU-only, no cloud extras.
+PySide6-Essentials==6.12.0
+presidio-analyzer==2.2.364
+spacy==3.8.16
