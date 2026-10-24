@@ -209,4 +209,6 @@ El usuario autorizó expresamente descargar `es_core_news_md` 3.8.0 (42 284 033 
 - [x] TDD de métricas exactas y validación del corpus por hash.
 - [x] Congelar un segundo corpus NER antes de que cualquiera de los dos modelos lo analice (100 entidades por categoría, escenarios sintéticos, 50 organizaciones públicas y 50 inventadas).
 - [x] Comparar sm/md en CPU y offline con v1 como referencia y v2 separado; publicar denominadores, errores y gates sin afinar contra los resultados.
-- [ ] Revisión del incremento y regresión completa, commit y push verificados. Mantener aceptación global abierta si falla NER o smoke visual.
+- [x] Revisión del incremento y regresión completa, commit y push verificados. Mantener aceptación global abierta si falla NER o smoke visual.
+
+Revisión del incremento: sin Critical/Important; Minor metodológico de v2 documentado y diferido sin alterar el corpus congelado. Smoke visual parcial ampliado; aceptación global continúa abierta por NER y recorrido visual incompleto. Se propone estudiar un detector por etiquetas mediante autorización separada, sin nuevas descargas.

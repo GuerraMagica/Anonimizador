@@ -69,6 +69,15 @@ class GuiTests(BaseGuiCase):
             def analyze(self,text,session_id):raise RuntimeError('SECRET_GUI')
         self.w._detector=Bad();self.loaded('SECRET_GUI')
         self.assertNotIn('SECRET_GUI',self.w.status.text());self.assertFalse(self.w.session.can_export)
+    def test_candidate_decision_accepts_mouse_and_keyboard_events(self):
+        self.loaded();self.w.session.set_findings((finding('a',0,3),));self.w.render_review()
+        combo=self.w.table.cellWidget(0,4)
+        self.assertTrue(combo.isEnabled())
+        QTest.mouseClick(combo,Qt.LeftButton)
+        QTest.keyClick(combo,Qt.Key_Down);QTest.keyClick(combo,Qt.Key_Return)
+        self.app.processEvents()
+        self.assertEqual(self.w.session.review.decisions[0].disposition,Disposition.ACCEPT)
+
     def test_terms_participate_in_residual_detection_and_fingerprint(self):
         a=ConfiguredDetector(EmptyDetector(),(('Filme',Category.PROYECTO),))
         b=ConfiguredDetector(EmptyDetector(),())
