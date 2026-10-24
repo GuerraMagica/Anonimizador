@@ -12,7 +12,7 @@ class EmptyDetector:
     fingerprint='test:1'
     def analyze(self,text,session_id):return ()
 
-class GuiTests(unittest.TestCase):
+class BaseGuiCase(unittest.TestCase):
     @classmethod
     def setUpClass(cls):cls.app=QApplication.instance() or QApplication([])
     def setUp(self):self.w=MainWindow(detector=EmptyDetector());self.w.show();self.app.processEvents()
@@ -28,6 +28,8 @@ class GuiTests(unittest.TestCase):
         self.fail('worker did not finish')
     def loaded(self,text='Ana'):
         self.w.set_document(document(text));self.w.start_analysis();self.wait_idle()
+
+class GuiTests(BaseGuiCase):
     def test_plain_text_never_html(self):
         self.loaded('<b>literal</b> 😀\r\nfinal')
         self.assertIn('<b>literal</b>',self.w.source.toPlainText())
@@ -107,5 +109,73 @@ class GuiTests(unittest.TestCase):
             self.assertEqual(dest.read_text(),'Texto');self.assertEqual(receipt.destination,dest)
             self.assertIn('TXT verificado; informe no',self.w.status.text())
             self.assertNotIn('SECRET',self.w.status.text());self.assertFalse(self.w.report_button.isEnabled())
+
+class PaginationTests(BaseGuiCase):
+    def dense(self,count=250,*,decided=False):
+        text=''.join(f'item{i:05d} ' for i in range(count))
+        self.w.set_document(document(text))
+        fs=tuple(finding(str(i),10*i,10*i+9) for i in range(count))
+        self.w.session.set_findings(fs)
+        if decided:self.w.session.set_decisions(tuple(Decision(f.id,Disposition.REJECT) for f in fs))
+        self.w.render_review()
+
+    def test_many_findings_keep_only_one_page_of_widgets(self):
+        self.dense(3000)
+        self.assertLessEqual(self.w.table.rowCount(),100)
+        self.assertEqual(len(self.w.session.review.findings),3000)
+        self.assertIn('3000',self.w.page_label.text())
+        self.assertTrue(self.w.next_button.isEnabled());self.assertFalse(self.w.previous_button.isEnabled())
+
+    def test_offpage_edit_preserves_other_decisions_and_correct_index(self):
+        self.dense();self.w.table.cellWidget(0,4).setCurrentIndex(2)
+        self.w.change_page(1);self.w.table.cellWidget(0,4).setCurrentIndex(1)
+        ds=self.w.session.review.decisions
+        self.assertEqual(ds[0].disposition,Disposition.REJECT)
+        self.assertEqual(ds[100].disposition,Disposition.ACCEPT)
+        self.assertEqual(ds[101].disposition,Disposition.PENDING)
+        self.w.change_page(-1);self.assertEqual(self.w.table.cellWidget(0,4).currentIndex(),2)
+        self.w.change_page(1);self.assertEqual(self.w.table.cellWidget(0,4).currentIndex(),1)
+
+    def test_editing_later_page_matches_decisions_by_id_not_tuple_order(self):
+        self.dense(decided=True)
+        r=self.w.session.review;self.w.session.set_decisions(tuple(reversed(r.decisions)))
+        self.w.render_review();self.w.change_page(1)
+        self.w.table.cellWidget(0,4).setCurrentIndex(1)
+        ds={d.finding_id:d.disposition for d in self.w.session.review.decisions}
+        self.assertEqual(ds['100'],Disposition.ACCEPT)
+        self.assertTrue(all(v==Disposition.REJECT for k,v in ds.items() if k!='100'))
+
+    def test_pending_candidates_on_other_pages_block_preview(self):
+        from local_anonymizer.domain import AnonymizerError
+        self.dense(101,decided=True)
+        r=self.w.session.review;ds=list(r.decisions);ds[-1]=Decision(ds[-1].finding_id,Disposition.PENDING)
+        self.w.session.set_decisions(tuple(ds));self.w.render_review()
+        with self.assertRaises(AnonymizerError):self.w.session.preview()
+        self.assertFalse(self.w.session.can_export)
+
+    def test_navigation_keeps_confirmation_editing_on_later_page_revokes(self):
+        self.dense(decided=True);self.w.make_preview();self.w.attestation.setChecked(True)
+        self.w.confirm_review();self.wait_idle();self.assertTrue(self.w.session.can_export)
+        before=self.w.session.review;preview=self.w.output.toPlainText()
+        self.w.change_page(1)
+        self.assertEqual(self.w.session.review,before)
+        self.assertTrue(self.w.session.can_export);self.assertTrue(self.w.attestation.isChecked())
+        self.assertEqual(self.w.output.toPlainText(),preview)
+        self.w.table.cellWidget(0,4).setCurrentIndex(1)
+        self.assertFalse(self.w.session.can_export);self.assertFalse(self.w.attestation.isChecked())
+
+    def test_locate_and_correct_on_second_page_use_original_coordinates(self):
+        self.dense();self.w.change_page(1);self.w.table.selectRow(0)
+        self.app.processEvents()
+        self.assertEqual(self.w.source.textCursor().selectedText(),'item00100')
+        self.w.select_original(1010,1019);self.w.correct_selection()
+        self.assertEqual(self.w.session.review.findings[100].start,1010)
+        self.assertEqual(self.w.session.review.findings[0].start,0)
+
+    def test_last_partial_page_and_new_document_reset(self):
+        self.dense(201);self.w.change_page(1);self.w.change_page(1)
+        self.assertEqual(self.w.table.rowCount(),1);self.assertFalse(self.w.next_button.isEnabled())
+        self.w.set_document(document('nuevo'));self.w.start_analysis();self.wait_idle()
+        self.assertFalse(self.w.previous_button.isEnabled());self.assertEqual(self.w.table.rowCount(),0)
 
 if __name__=='__main__':unittest.main()

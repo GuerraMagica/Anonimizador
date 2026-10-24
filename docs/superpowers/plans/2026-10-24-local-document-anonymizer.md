@@ -191,3 +191,12 @@ def test_late_result_cannot_reenable_export(self):
 Tareas 1–6 implementadas y verificadas; tarea 7 implementada con tests Qt y arranque Cocoa, pendiente de smoke visual manual. La tarea 8 ha producido corpus, métricas y pruebas de privacidad/rendimiento: **las puertas NER fallan, así que la aceptación global permanece pendiente**. Véase [evidencia](../../validacion-2026-10-24.md). No se afinó el detector contra el corpus ni se cambió de modelo.
 
 Revisión final: 2 Important corregidos mediante RED→GREEN y regresión 102/102. La política de exportación excluye todo borrado automático; la capacidad de análisis cubre expansión de etiquetas. Revisión técnica realizada; aceptación NER y smoke visual manual siguen abiertos. La tabla densa tiene una ralentización medida y documentada.
+
+## Continuación de tarea 7 — tabla densa
+
+Dentro del plan preaprobado, limitar los widgets visibles a 100 candidatos por página, con navegación anterior/siguiente y contador global de pendientes. Mantener todos los hallazgos/decisiones en Session: navegar no cambia la revisión ni revoca confirmación; editar, corregir o añadir sí. Traducir cada fila visible a su índice global para no modificar otro candidato. El coste UX es navegar entre páginas en lugar de una tabla completa. No introducir dependencias ni alterar detección.
+
+- [x] TDD de páginas, conservación de decisiones fuera de página, coordenadas/correcciones globales y exportación bloqueada por pendientes no visibles.
+- [x] Implementar el conjunto visible acotado y navegación sin mutación de revisión.
+- [x] Regresión Qt completa y benchmark reproducible con los mismos 3 000 candidatos; documentar tiempo/memoria observados, sin prometer latencia universal.
+- [x] Commit y push verificados. El experimento de otro modelo requiere autorización específica de descarga; no sustituir el modelo activo automáticamente.

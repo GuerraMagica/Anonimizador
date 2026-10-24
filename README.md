@@ -30,7 +30,7 @@ PYTHONPATH=src .venv/bin/python -m local_anonymizer
 ```
 
 1. Abre un TXT/Markdown. El análisis se ejecuta en un único worker y el original permanece intacto.
-2. Revisa toda la fuente, decide cada candidato (`Sustituir` o `Conservar`) y resuelve solapamientos. Puedes corregir categoría o fragmento, seleccionar omisiones y añadir vocabulario literal. Reanalizar reinicia las decisiones.
+2. Revisa toda la fuente y todas las páginas de candidatos (100 por página), decide cada uno (`Sustituir` o `Conservar`) y resuelve solapamientos. El contador muestra pendientes de toda la sesión; cambiar de página conserva decisiones y confirmación. Puedes corregir categoría o fragmento, seleccionar omisiones y añadir vocabulario literal. Reanalizar reinicia las decisiones.
 3. Elige etiqueta o redacción. El grupo opcional permite compartir una etiqueta entre alias de la misma categoría; por defecto se agrupan valores idénticos. No uses el mismo grupo para personas distintas.
 4. Construye la vista previa, comprueba todo el resultado, marca la revisión humana y confirma. Cualquier cambio obliga a reconstruir y confirmar.
 5. Revisa los residuales. Localízalos en el original para corregirlo o rechaza explícitamente falsos positivos de esa salida. Un valor seleccionado que persista siempre bloquea la exportación.
@@ -44,7 +44,7 @@ Cancelar descarta resultados pero espera a que termine la llamada del motor; no 
 QT_QPA_PLATFORM=offscreen PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 ```
 
-Se usan archivos y textos sintéticos. Las pruebas del núcleo validan transformación, estado, procedencia y publicación exclusiva; no demuestran eficacia del modelo. La [evaluación y evidencia](docs/validacion-2026-10-24.md) separa métricas reales, pruebas Qt y smoke Cocoa. Los cinco identificadores exigidos pasan el corpus sintético; NER no alcanza los umbrales de persona/organización/ubicación. La comprobación visual manual sigue pendiente. El comando `PYTHONPATH=src .venv/bin/python tests/evaluate_detection.py` devuelve 2 por esas puertas fallidas; una regresión unitaria verde no las sustituye. No se ha afinado el detector contra ese corpus. Una prueba densa de 3 000 candidatos tardó 5,5 s en poblar la tabla; conviene validar usabilidad con el volumen previsto.
+Se usan archivos y textos sintéticos. Las pruebas del núcleo validan transformación, estado, procedencia y publicación exclusiva; no demuestran eficacia del modelo. La [evaluación y evidencia](docs/validacion-2026-10-24.md) separa métricas reales, pruebas Qt y smoke Cocoa. Los cinco identificadores exigidos pasan el corpus sintético; NER no alcanza los umbrales de persona/organización/ubicación. La comprobación visual manual sigue pendiente. El comando `PYTHONPATH=src .venv/bin/python tests/evaluate_detection.py` devuelve 2 por esas puertas fallidas; una regresión unitaria verde no las sustituye. No se ha afinado el detector contra ese corpus. La tabla mantiene solo 100 filas visibles: en el ensayo de 3 000 candidatos, la primera página tardó 0,045 s frente a los 5,54 s de la tabla completa anterior. Es una medición offscreen, no una garantía de respuesta ni validación visual manual.
 
 ## Licencias y distribución
 

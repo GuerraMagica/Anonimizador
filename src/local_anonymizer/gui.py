@@ -88,13 +88,15 @@ def plain_label(text):
 
 
 class MainWindow(QMainWindow):
+    PAGE_SIZE = 100
+
     def __init__(self, *, detector=None):
         super().__init__()
         self.setWindowTitle('Anonimizador local — versión de desarrollo')
         self.resize(1260,900)
         self.session=Session();self._detector=detector;self._terms=()
         self._thread=None;self._worker=None;self._token=None;self._kind=None
-        self._rendering=False;self._closing=False;self._saved_report=None
+        self._rendering=False;self._closing=False;self._saved_report=None;self._page=0
         root=QWidget();self.setCentralWidget(root);layout=QVBoxLayout(root)
         layout.addWidget(plain_label('Revisa toda la fuente y el riesgo contextual. La detección puede omitir información; ninguna comprobación certifica anonimato.'))
         controls=QHBoxLayout();layout.addLayout(controls)
@@ -124,6 +126,10 @@ class MainWindow(QMainWindow):
         self.table.horizontalHeader().setStretchLastSection(True)
         self.table.itemChanged.connect(self.rows_changed);self.table.itemSelectionChanged.connect(self.locate_finding)
         layout.addWidget(self.table,2)
+        pages=QHBoxLayout();layout.addLayout(pages)
+        self.previous_button=self.button('Página anterior',lambda:self.change_page(-1),pages)
+        self.page_label=plain_label('Sin candidatos');pages.addWidget(self.page_label,1)
+        self.next_button=self.button('Página siguiente',lambda:self.change_page(1),pages)
         actions=QHBoxLayout();layout.addLayout(actions)
         self.preview_button=self.button('Construir vista previa',self.make_preview,actions)
         self.attestation=QCheckBox('He revisado todo el texto, las sustituciones y el riesgo contextual.');actions.addWidget(self.attestation)
@@ -175,6 +181,14 @@ class MainWindow(QMainWindow):
         self.reject_button.setEnabled(residual);self.locate_button.setEnabled(residual)
         self.export_button.setEnabled(self.session.can_export and not busy)
         self.report_button.setEnabled(self._saved_report is not None and not busy)
+        total=len(self.session.review.findings) if loaded else 0
+        pending=sum(d.disposition==Disposition.PENDING for d in self.session.review.decisions) if loaded else 0
+        self.previous_button.setEnabled(not busy and self._page>0 and bool(total))
+        self.next_button.setEnabled(not busy and (self._page+1)*self.PAGE_SIZE<total)
+        start=self._page*self.PAGE_SIZE
+        self.page_label.setText(
+            f'Candidatos {start+1}–{min(start+self.PAGE_SIZE,total)} de {total} · Pendientes en total: {pending}'
+            if total else 'Sin candidatos')
 
     def invalidate_display(self):
         self.output.clear();self.attestation.setChecked(False);self.residual_table.setRowCount(0)
@@ -196,14 +210,14 @@ class MainWindow(QMainWindow):
         self.session.load(document);self._new_document()
 
     def _new_document(self):
-        self._terms=();self.terms.clear();self.term.clear()
+        self._terms=();self.terms.clear();self.term.clear();self._page=0
         self.source.setPlainText(self.session.review.document.text)
         self.render_review();self.status.setText('Fuente textual cargada. Pendiente de análisis y revisión.')
 
     @guarded
     def clear_document(self):
         self.session.close();self._terms=();self.terms.clear();self.term.clear()
-        self.source.clear();self.table.setRowCount(0);self.invalidate_display()
+        self.source.clear();self._page=0;self.render_review()
         self.status.setText('Documento cerrado; estado de sesión descartado. No se garantiza borrado físico de memoria.')
 
     def _configured_detector(self,terms):
@@ -239,7 +253,7 @@ class MainWindow(QMainWindow):
             else:self.status.setText('Trabajo cancelado; resultados descartados.')
         elif self._kind=='analysis':
             if self.session.accept_result(self._token,worker.result):
-                self.render_review();self.status.setText('Análisis completo. Revisa toda la fuente y decide cada candidato; añade los datos omitidos.')
+                self._page=0;self.render_review();self.status.setText('Análisis completo. Revisa toda la fuente y decide cada candidato; añade los datos omitidos.')
             else:self.status.setText('Trabajo cancelado; resultados descartados.')
         else:
             if self.session.accept_verification(self._token,worker.result):self.render_verification()
@@ -253,13 +267,35 @@ class MainWindow(QMainWindow):
         self.status.setText('Cancelación pendiente: esperando a que termine la llamada local. No se aplicarán sus resultados.')
         self.update_controls()
 
-    def render_review(self):
+    @guarded
+    def change_page(self, delta):
+        if self._thread is not None:raise AnonymizerError('JOB_ACTIVE')
+        total=len(self.session.review.findings) if self.session.review else 0
+        last=max(0,(total-1)//self.PAGE_SIZE)
+        page=max(0,min(self._page+delta,last))
+        if page!=self._page:
+            self._page=page
+            self.render_review(invalidate=False)
+
+    def _finding_index(self, row):
+        index=self._page*self.PAGE_SIZE+row
+        if (self.session.review is None or not 0<=row<self.table.rowCount()
+                or index>=len(self.session.review.findings)):
+            raise AnonymizerError('SELECT_FINDING')
+        return index
+
+    def render_review(self, *, invalidate=True):
         self._rendering=True
         try:
-            r=self.session.review;self.table.setRowCount(len(r.findings) if r else 0)
+            r=self.session.review
+            total=len(r.findings) if r else 0
+            self._page=min(self._page,max(0,(total-1)//self.PAGE_SIZE))
+            start=self._page*self.PAGE_SIZE
+            visible=r.findings[start:start+self.PAGE_SIZE] if r else ()
+            self.table.clearContents();self.table.setRowCount(len(visible))
             if r:
                 decisions={d.finding_id:d for d in r.decisions}
-                for row,f in enumerate(r.findings):
+                for row,f in enumerate(visible):
                     for col,text in ((0,r.document.text[f.start:f.end]),(2,', '.join(f.provenance)),(3,'' if f.score is None else f'{f.score:.2f}')):
                         item=QTableWidgetItem(text);item.setFlags(item.flags() & ~Qt.ItemIsEditable);self.table.setItem(row,col,item)
                     for col,values,current in (
@@ -270,21 +306,24 @@ class MainWindow(QMainWindow):
                         combo.currentIndexChanged.connect(self.rows_changed);self.table.setCellWidget(row,col,combo)
                     self.table.setItem(row,6,QTableWidgetItem(decisions[f.id].group_id or f.group_id or ''))
         finally:self._rendering=False
-        self.invalidate_display()
+        if invalidate:self.invalidate_display()
+        else:self.update_controls()
 
     @guarded
     def rows_changed(self,*_):
         if self._rendering or self.session.review is None:return
-        findings=[];decisions=[]
-        for row,f in enumerate(self.session.review.findings):
+        findings=list(self.session.review.findings)
+        decisions={d.finding_id:d for d in self.session.review.decisions}
+        for row in range(self.table.rowCount()):
+            index=self._finding_index(row);f=findings[index]
             category=Category(self.table.cellWidget(row,1).currentText())
             group=self.table.item(row,6).text().strip() or None
-            findings.append(replace(f,category=category))
-            decisions.append(Decision(f.id,list(Disposition)[self.table.cellWidget(row,4).currentIndex()],
-                                      [Action.LABEL,Action.REDACT][self.table.cellWidget(row,5).currentIndex()],group))
+            findings[index]=replace(f,category=category)
+            decisions[f.id]=Decision(f.id,list(Disposition)[self.table.cellWidget(row,4).currentIndex()],
+                                      [Action.LABEL,Action.REDACT][self.table.cellWidget(row,5).currentIndex()],group)
         complete=self.session.review.coverage_complete
         self.session.set_findings(tuple(findings),coverage_complete=complete)
-        self.session.set_decisions(tuple(decisions));self.invalidate_display()
+        self.session.set_decisions(tuple(decisions[f.id] for f in findings));self.invalidate_display()
         self.status.setText('Revisión modificada. Reconstruye la vista previa y confirma de nuevo.')
 
     def _source_span(self):
@@ -301,12 +340,12 @@ class MainWindow(QMainWindow):
                   Confidentiality.CUSTOM,('manual:v1',))
         self.session.set_findings(r.findings+(f,),coverage_complete=r.coverage_complete)
         self.session.set_decisions(r.decisions+(Decision(f.id,Disposition.PENDING),))
+        self._page=len(r.findings)//self.PAGE_SIZE
         self.render_review()
 
     @guarded
     def correct_selection(self):
-        row=self.table.currentRow()
-        if row<0:raise AnonymizerError('SELECT_FINDING')
+        row=self._finding_index(self.table.currentRow())
         start,end=self._source_span();r=self.session.review
         findings=list(r.findings);findings[row]=replace(findings[row],start=start,end=end,provenance=('manual:corrected:v1',))
         self.session.set_findings(tuple(findings),coverage_complete=r.coverage_complete)
@@ -317,7 +356,7 @@ class MainWindow(QMainWindow):
         if self._rendering or self.session.review is None:return
         row=self.table.currentRow()
         if row>=0:
-            f=self.session.review.findings[row];self.select_original(f.start,f.end)
+            f=self.session.review.findings[self._finding_index(row)];self.select_original(f.start,f.end)
 
     def select_original(self,start,end):
         text=self.session.review.document.text;cursor=self.source.textCursor()

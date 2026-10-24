@@ -78,3 +78,17 @@ Además se midió una [tabla densa](runtime-dense-table.json): 3 000 candidatos 
 - La capacidad de análisis del resultado se dimensiona según la expansión máxima de etiquetas. Mantiene los límites de entrada, a cambio de mayor consumo posible al verificar resultados largos.
 
 No se han diferido hallazgos Minor de esta revisión. Quedan pendientes las puertas de aceptación descritas, además de la limitación de tabla densa medida.
+
+## Continuación: revisión paginada
+
+Se sustituyó la tabla completa por páginas de **100 candidatos** manteniendo todos los hallazgos y decisiones en Session. El contador de pendientes es global; los pendientes de otras páginas impiden previsualizar/exportar. Navegar no modifica la revisión ni revoca su confirmación; editar o corregir un candidato de cualquier página sí lo hace. Los tests cubren correspondencia de filas con coordenadas originales, decisiones presentadas en orden distinto, página final parcial y cambio de documento.
+
+[Benchmark paginado](runtime-dense-table-paged.json), mismo tamaño sintético (12 000 caracteres y 3 000 candidatos), proceso nuevo, sin NLP:
+
+| Medida | Tabla completa anterior | Tabla paginada |
+| --- | ---: | ---: |
+| Poblar/procesar eventos | 5,537 s | 0,0455 s |
+| Pico RSS | 438 009 856 bytes | 123 256 832 bytes |
+| Cerrar documento | 0,0625 s | 0,00385 s |
+
+La navegación a la página siguiente tardó 0,0392 s. Son ensayos puntuales, no una promesa de latencia ni sustituto del smoke visual manual. Reproducir la nueva medición con `QT_QPA_PLATFORM=offscreen PYTHONPATH=src .venv/bin/python tests/benchmark_dense_table.py`. El coste de esta decisión es pasar de una lista continua a navegación por páginas; no se ocultan candidatos ni se cambian las puertas de revisión.

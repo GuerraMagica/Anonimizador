@@ -7,3 +7,5 @@ Versión experimental de TXT/Markdown UTF-8 a TXT nuevo, con entrada acotada, ca
 Dependencias fijadas con hashes y modelo español local autorizado; sin descargas en tiempo de análisis. Pruebas sintéticas de integridad, privacidad, estados y GUI. [Evaluación y límites](docs/validacion-2026-10-24.md): identificadores superan el corpus; NER no alcanza los objetivos. Aceptación global y smoke visual manual pendientes. No incluye PDF, DOCX, OCR, instalador ni garantía de anonimato.
 
 Correcciones de revisión: publicación mediante creación final exclusiva sin ningún borrado automático (los fallos pueden dejar copias parciales informadas); capacidad de verificación derivada para salidas que crecen con etiquetas. Regresión final: 102 pruebas.
+
+Continuación: revisión paginada de 100 filas visibles, contador global de pendientes y preservación de confirmación al navegar; edición y corrección usan el ID y las coordenadas globales. Benchmark denso reproducible publicado.

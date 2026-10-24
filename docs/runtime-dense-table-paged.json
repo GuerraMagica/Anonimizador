@@ -1,0 +1,15 @@
+{
+  "cases": 1,
+  "characters": 12000,
+  "candidates": 3000,
+  "visible_rows": 100,
+  "render_seconds": 0.04548324993811548,
+  "next_page_seconds": 0.03916216595098376,
+  "clear_seconds": 0.0038460829528048635,
+  "peak_rss_bytes": 123256832,
+  "backend": "offscreen",
+  "macos": "26.5.2",
+  "python": "3.12.14",
+  "detector": "deterministic_test_double",
+  "limits": "Single fresh-process GUI workload; no NLP efficacy, worst-case guarantee or manual visual validation."
+}
