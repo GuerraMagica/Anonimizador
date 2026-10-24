@@ -71,7 +71,7 @@ def test_preserves_crlf_and_non_bmp(self):
 
 **Interfaces:** consume `Review`; produce `build_preview(review: Review) -> Preview` y `map_output_span(preview: Preview, start: int, end: int) -> tuple[Segment, ...]`. Construcción sin exigir `confirmed` (la confirmación ocurre después); exigir cobertura y decisiones completas. Etiquetas reservadas ya presentes en la fuente se saltan.
 
-- [ ] Escribir tests de pendientes, duplicados agrupables, conflictos, sesión incorrecta, grupos separados, alias explícitos, redacción vacía, etiquetas reservadas y coincidencias repetidas.
+- [x] Escribir tests de pendientes, duplicados agrupables, conflictos, sesión incorrecta, grupos separados, alias explícitos, redacción vacía, etiquetas reservadas y coincidencias repetidas.
 
 ```python
 def test_same_group_has_same_label(self):
@@ -79,10 +79,10 @@ def test_same_group_has_same_label(self):
     self.assertEqual(review.document.text, 'Ana y Ana')
 ```
 
-- [ ] Ejecutar `... -m unittest discover -s tests -p 'test_transform.py' -v` y observar FAIL antes de implementar.
-- [ ] Implementar reconstrucción por intervalos no solapados y orden de primera aparición. Preservar todos los segmentos y usar valores originales seleccionados solo en RAM.
-- [ ] Ejecutar el fichero de tests y regresión de tarea 1. Probar que segmentos conservados concatenados coinciden exactamente con sus intervalos originales, incluidos CRLF y emoji. Se exige PASS.
-- [ ] Commit `feat: add reviewed transformations and provenance`; push y verificar SHA.
+- [x] Ejecutar `... -m unittest discover -s tests -p 'test_transform.py' -v` y observar FAIL antes de implementar.
+- [x] Implementar reconstrucción por intervalos no solapados y orden de primera aparición. Preservar todos los segmentos y usar valores originales seleccionados solo en RAM.
+- [x] Ejecutar el fichero de tests y regresión de tarea 1. Probar que segmentos conservados concatenados coinciden exactamente con sus intervalos originales, incluidos CRLF y emoji. Se exige PASS.
+- [x] Commit `feat: add reviewed transformations and provenance`; push y verificar SHA.
 
 ## Task 3: Verificación residual vinculada a revisión
 
