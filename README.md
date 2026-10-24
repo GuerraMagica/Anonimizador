@@ -1,6 +1,6 @@
 # Local Document Anonymizer
 
-Aplicación local para revisar información sensible en español y exportar una copia TXT. **Versión de desarrollo; pendiente de aceptación completa.** No certifica anonimato: la revisión humana y el riesgo contextual siguen siendo necesarios.
+Aplicación local para revisar información sensible en español y exportar una copia TXT. **Versión experimental: las puertas de calidad NER no se superan; pendiente de aceptación completa.** No certifica anonimato: la revisión humana y el riesgo contextual siguen siendo necesarios.
 
 Admite un TXT/Markdown UTF-8 por sesión, hasta 1 MiB y 100 000 caracteres. Conserva el original y los saltos de línea; no renderiza Markdown ni abre recursos enlazados. PDF, DOCX, OCR, lotes y exportación con maquetación quedan fuera de esta versión.
 
@@ -44,7 +44,7 @@ Cancelar descarta resultados pero espera a que termine la llamada del motor; no 
 QT_QPA_PLATFORM=offscreen PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 ```
 
-Se usan archivos y textos sintéticos. Las pruebas del núcleo validan transformación, estado, procedencia y publicación exclusiva; no demuestran eficacia del modelo. La evaluación independiente de detección y la comprobación de GUI se documentarán por separado antes de declarar aceptación.
+Se usan archivos y textos sintéticos. Las pruebas del núcleo validan transformación, estado, procedencia y publicación exclusiva; no demuestran eficacia del modelo. La [evaluación y evidencia](docs/validacion-2026-10-24.md) separa métricas reales, pruebas Qt y smoke Cocoa. Los cinco identificadores exigidos pasan el corpus sintético; NER no alcanza los umbrales de persona/organización/ubicación. La comprobación visual manual sigue pendiente. El comando `PYTHONPATH=src .venv/bin/python tests/evaluate_detection.py` devuelve 2 por esas puertas fallidas; una regresión unitaria verde no las sustituye. No se ha afinado el detector contra ese corpus.
 
 ## Licencias y distribución
 

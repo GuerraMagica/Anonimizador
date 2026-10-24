@@ -1,0 +1,2202 @@
+{
+  "corpus_sha256": "0a8db269991c4e7fa93f63eed17182ecc936ed0115c4a2ef55608443ba60e54f",
+  "detector_fingerprint": "local-es:v1:bccefcaac209f0027fc82f0606796b07f4d34c9cb84b1d9fb61fd5fddc170d2f",
+  "metrics": {
+    "email": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "cases": 100,
+      "positives": 50,
+      "negatives": 50,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "phone": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "cases": 100,
+      "positives": 50,
+      "negatives": 50,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "nif": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "cases": 100,
+      "positives": 50,
+      "negatives": 50,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "nie": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "cases": 100,
+      "positives": 50,
+      "negatives": 50,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "iban": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "cases": 100,
+      "positives": 50,
+      "negatives": 50,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "passport": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "cases": 100,
+      "positives": 50,
+      "negatives": 50,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "date": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "cases": 100,
+      "positives": 50,
+      "negatives": 50,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "PERSONA": {
+      "tp": 76,
+      "fp": 50,
+      "fn": 24,
+      "cases": 100,
+      "positives": 100,
+      "negatives": 0,
+      "precision": 0.6031746031746031,
+      "recall": 0.76
+    },
+    "ORGANIZACION": {
+      "tp": 21,
+      "fp": 1,
+      "fn": 79,
+      "cases": 100,
+      "positives": 100,
+      "negatives": 0,
+      "precision": 0.9545454545454546,
+      "recall": 0.21
+    },
+    "UBICACION": {
+      "tp": 97,
+      "fp": 47,
+      "fn": 3,
+      "cases": 100,
+      "positives": 100,
+      "negatives": 0,
+      "precision": 0.6736111111111112,
+      "recall": 0.97
+    },
+    "literal": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "cases": 50,
+      "positives": 50,
+      "negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  },
+  "gates": {
+    "email": true,
+    "phone": true,
+    "nif": true,
+    "nie": true,
+    "iban": true,
+    "PERSONA": false,
+    "ORGANIZACION": false,
+    "UBICACION": false,
+    "literal": true
+  },
+  "detection_gates_passed": false,
+  "errors": [
+    {
+      "case": "ner-000",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          27,
+          42
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-001",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          62,
+          75
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-001",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          62,
+          75
+        ]
+      ]
+    },
+    {
+      "case": "ner-002",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          0,
+          13
+        ]
+      ]
+    },
+    {
+      "case": "ner-002",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          0,
+          13
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-003",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          52,
+          65
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-003",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          52,
+          65
+        ]
+      ]
+    },
+    {
+      "case": "ner-004",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          30,
+          43
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-004",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          30,
+          43
+        ]
+      ]
+    },
+    {
+      "case": "ner-005",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          5,
+          18
+        ]
+      ],
+      "false_positives": [
+        [
+          0,
+          18
+        ]
+      ]
+    },
+    {
+      "case": "ner-006",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          13,
+          32
+        ]
+      ],
+      "false_positives": [
+        [
+          13,
+          38
+        ]
+      ]
+    },
+    {
+      "case": "ner-007",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          53,
+          71
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-007",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          53,
+          71
+        ]
+      ]
+    },
+    {
+      "case": "ner-008",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          14,
+          22
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-008",
+      "metric": "UBICACION",
+      "false_negatives": [
+        [
+          26,
+          33
+        ]
+      ],
+      "false_positives": [
+        [
+          14,
+          22
+        ]
+      ]
+    },
+    {
+      "case": "ner-009",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          38,
+          60
+        ]
+      ]
+    },
+    {
+      "case": "ner-009",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          38,
+          60
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-011",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          61,
+          74
+        ]
+      ]
+    },
+    {
+      "case": "ner-011",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          61,
+          74
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-012",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          26,
+          35
+        ]
+      ],
+      "false_positives": [
+        [
+          0,
+          15
+        ]
+      ]
+    },
+    {
+      "case": "ner-012",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          0,
+          15
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-012",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          26,
+          35
+        ]
+      ]
+    },
+    {
+      "case": "ner-013",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          15,
+          27
+        ]
+      ],
+      "false_positives": [
+        [
+          49,
+          67
+        ]
+      ]
+    },
+    {
+      "case": "ner-013",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          49,
+          67
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-014",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          34,
+          56
+        ]
+      ]
+    },
+    {
+      "case": "ner-014",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          34,
+          56
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-015",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          5,
+          16
+        ]
+      ],
+      "false_positives": [
+        [
+          0,
+          16
+        ],
+        [
+          52,
+          70
+        ]
+      ]
+    },
+    {
+      "case": "ner-015",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          52,
+          70
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-016",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          13,
+          32
+        ]
+      ]
+    },
+    {
+      "case": "ner-016",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          13,
+          32
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-017",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          51,
+          65
+        ]
+      ]
+    },
+    {
+      "case": "ner-017",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          51,
+          65
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-019",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          0,
+          13
+        ]
+      ],
+      "false_positives": [
+        [
+          7,
+          13
+        ]
+      ]
+    },
+    {
+      "case": "ner-019",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          38,
+          59
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-019",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          38,
+          59
+        ]
+      ]
+    },
+    {
+      "case": "ner-020",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          26,
+          44
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-020",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          26,
+          44
+        ]
+      ]
+    },
+    {
+      "case": "ner-021",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          57,
+          65
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-021",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          57,
+          65
+        ]
+      ]
+    },
+    {
+      "case": "ner-022",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          0,
+          22
+        ]
+      ]
+    },
+    {
+      "case": "ner-022",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          0,
+          22
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-024",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          18,
+          31
+        ]
+      ],
+      "false_positives": [
+        [
+          34,
+          47
+        ]
+      ]
+    },
+    {
+      "case": "ner-024",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          34,
+          47
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-025",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          5,
+          18
+        ]
+      ],
+      "false_positives": [
+        [
+          0,
+          18
+        ],
+        [
+          55,
+          70
+        ]
+      ]
+    },
+    {
+      "case": "ner-025",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          55,
+          70
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-027",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          51,
+          73
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-027",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          51,
+          73
+        ]
+      ]
+    },
+    {
+      "case": "ner-028",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          14,
+          32
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-028",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          14,
+          32
+        ]
+      ]
+    },
+    {
+      "case": "ner-029",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          35,
+          54
+        ]
+      ]
+    },
+    {
+      "case": "ner-029",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          35,
+          54
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-030",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          26,
+          40
+        ]
+      ]
+    },
+    {
+      "case": "ner-030",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          26,
+          40
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-031",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          60,
+          76
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-031",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          60,
+          76
+        ]
+      ]
+    },
+    {
+      "case": "ner-032",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          32,
+          43
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-032",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          0,
+          21
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-032",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          0,
+          21
+        ],
+        [
+          32,
+          43
+        ]
+      ]
+    },
+    {
+      "case": "ner-033",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          47,
+          62
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-034",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          18,
+          29
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-034",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          32,
+          45
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-034",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          18,
+          29
+        ],
+        [
+          32,
+          45
+        ]
+      ]
+    },
+    {
+      "case": "ner-035",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          5,
+          16
+        ]
+      ],
+      "false_positives": [
+        [
+          0,
+          16
+        ],
+        [
+          54,
+          67
+        ]
+      ]
+    },
+    {
+      "case": "ner-035",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          54,
+          67
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-036",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          46,
+          59
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-036",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          13,
+          26
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-036",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          13,
+          26
+        ],
+        [
+          46,
+          59
+        ]
+      ]
+    },
+    {
+      "case": "ner-037",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          53,
+          66
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-037",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          53,
+          66
+        ]
+      ]
+    },
+    {
+      "case": "ner-039",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          0,
+          12
+        ]
+      ],
+      "false_positives": [
+        [
+          7,
+          12
+        ]
+      ]
+    },
+    {
+      "case": "ner-040",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          27,
+          49
+        ]
+      ]
+    },
+    {
+      "case": "ner-040",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          27,
+          49
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-041",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          62,
+          80
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-041",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          62,
+          80
+        ]
+      ]
+    },
+    {
+      "case": "ner-042",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          0,
+          19
+        ]
+      ]
+    },
+    {
+      "case": "ner-042",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          0,
+          19
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-043",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          52,
+          66
+        ]
+      ]
+    },
+    {
+      "case": "ner-043",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          52,
+          66
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-045",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          5,
+          19
+        ]
+      ],
+      "false_positives": [
+        [
+          0,
+          19
+        ]
+      ]
+    },
+    {
+      "case": "ner-045",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          55,
+          76
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-045",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          55,
+          76
+        ]
+      ]
+    },
+    {
+      "case": "ner-046",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          37,
+          44
+        ]
+      ]
+    },
+    {
+      "case": "ner-046",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          13,
+          28
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-046",
+      "metric": "UBICACION",
+      "false_negatives": [
+        [
+          37,
+          44
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-047",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          52,
+          65
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-047",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          52,
+          65
+        ]
+      ]
+    },
+    {
+      "case": "ner-048",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          14,
+          27
+        ]
+      ]
+    },
+    {
+      "case": "ner-048",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          14,
+          27
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-049",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          37,
+          50
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-049",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          37,
+          50
+        ]
+      ]
+    },
+    {
+      "case": "ner-050",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          25,
+          38
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-050",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          25,
+          38
+        ]
+      ]
+    },
+    {
+      "case": "ner-052",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          30,
+          41
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-052",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          30,
+          41
+        ]
+      ]
+    },
+    {
+      "case": "ner-053",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          48,
+          66
+        ]
+      ]
+    },
+    {
+      "case": "ner-053",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          48,
+          66
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-054",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          18,
+          31
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-054",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          34,
+          42
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-054",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          18,
+          31
+        ],
+        [
+          34,
+          42
+        ]
+      ]
+    },
+    {
+      "case": "ner-055",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          5,
+          16
+        ]
+      ],
+      "false_positives": [
+        [
+          0,
+          16
+        ],
+        [
+          53,
+          75
+        ]
+      ]
+    },
+    {
+      "case": "ner-055",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          53,
+          75
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-057",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          52,
+          65
+        ]
+      ]
+    },
+    {
+      "case": "ner-057",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          52,
+          65
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-058",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          14,
+          29
+        ]
+      ]
+    },
+    {
+      "case": "ner-058",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          14,
+          29
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-059",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          38,
+          56
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-059",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          38,
+          56
+        ]
+      ]
+    },
+    {
+      "case": "ner-060",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          27,
+          40
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-060",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          27,
+          40
+        ]
+      ]
+    },
+    {
+      "case": "ner-061",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          57,
+          70
+        ]
+      ]
+    },
+    {
+      "case": "ner-061",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          57,
+          70
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-062",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          0,
+          13
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-062",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          0,
+          13
+        ]
+      ]
+    },
+    {
+      "case": "ner-064",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          18,
+          30
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-064",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          18,
+          30
+        ]
+      ]
+    },
+    {
+      "case": "ner-065",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          5,
+          19
+        ]
+      ],
+      "false_positives": [
+        [
+          0,
+          19
+        ]
+      ]
+    },
+    {
+      "case": "ner-066",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          40,
+          46
+        ]
+      ]
+    },
+    {
+      "case": "ner-066",
+      "metric": "UBICACION",
+      "false_negatives": [
+        [
+          40,
+          46
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-067",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          51,
+          59
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-067",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          51,
+          59
+        ]
+      ]
+    },
+    {
+      "case": "ner-068",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          14,
+          36
+        ]
+      ]
+    },
+    {
+      "case": "ner-068",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          14,
+          36
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-070",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          26,
+          39
+        ]
+      ]
+    },
+    {
+      "case": "ner-070",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          26,
+          39
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-071",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          58,
+          73
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-071",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          58,
+          73
+        ]
+      ]
+    },
+    {
+      "case": "ner-072",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          29,
+          40
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-072",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          0,
+          18
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-072",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          12,
+          18
+        ],
+        [
+          29,
+          40
+        ]
+      ]
+    },
+    {
+      "case": "ner-073",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          49,
+          71
+        ]
+      ]
+    },
+    {
+      "case": "ner-073",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          49,
+          71
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-074",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          33,
+          51
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-074",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          33,
+          51
+        ]
+      ]
+    },
+    {
+      "case": "ner-075",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          5,
+          13
+        ]
+      ],
+      "false_positives": [
+        [
+          0,
+          13
+        ],
+        [
+          50,
+          69
+        ]
+      ]
+    },
+    {
+      "case": "ner-075",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          50,
+          69
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-076",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          13,
+          27
+        ]
+      ]
+    },
+    {
+      "case": "ner-076",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          13,
+          27
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-078",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          14,
+          35
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-078",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          14,
+          35
+        ]
+      ]
+    },
+    {
+      "case": "ner-079",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          38,
+          53
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-080",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          24,
+          32
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-080",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          24,
+          32
+        ]
+      ]
+    },
+    {
+      "case": "ner-081",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          60,
+          82
+        ]
+      ]
+    },
+    {
+      "case": "ner-081",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          60,
+          82
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-083",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          49,
+          62
+        ]
+      ]
+    },
+    {
+      "case": "ner-083",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          49,
+          62
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-084",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          32,
+          47
+        ]
+      ]
+    },
+    {
+      "case": "ner-084",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          32,
+          47
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-085",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          5,
+          17
+        ]
+      ],
+      "false_positives": [
+        [
+          0,
+          17
+        ],
+        [
+          54,
+          72
+        ]
+      ]
+    },
+    {
+      "case": "ner-085",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          54,
+          72
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-086",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          13,
+          35
+        ]
+      ]
+    },
+    {
+      "case": "ner-086",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          13,
+          35
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-087",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          52,
+          70
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-087",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          52,
+          70
+        ]
+      ]
+    },
+    {
+      "case": "ner-088",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          14,
+          33
+        ]
+      ]
+    },
+    {
+      "case": "ner-088",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          14,
+          33
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-089",
+      "metric": "PERSONA",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          37,
+          51
+        ]
+      ]
+    },
+    {
+      "case": "ner-089",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          37,
+          51
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-091",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          57,
+          78
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-091",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          57,
+          78
+        ]
+      ]
+    },
+    {
+      "case": "ner-092",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          26,
+          34
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-092",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          0,
+          15
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-092",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          26,
+          34
+        ]
+      ]
+    },
+    {
+      "case": "ner-093",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          49,
+          62
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-093",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          49,
+          62
+        ]
+      ]
+    },
+    {
+      "case": "ner-094",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          18,
+          31
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-094",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          34,
+          47
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-094",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          18,
+          31
+        ],
+        [
+          34,
+          47
+        ]
+      ]
+    },
+    {
+      "case": "ner-095",
+      "metric": "PERSONA",
+      "false_negatives": [
+        [
+          5,
+          17
+        ]
+      ],
+      "false_positives": [
+        [
+          0,
+          17
+        ]
+      ]
+    },
+    {
+      "case": "ner-095",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          53,
+          66
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-095",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          53,
+          66
+        ]
+      ]
+    },
+    {
+      "case": "ner-096",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          13,
+          26
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-096",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          13,
+          26
+        ]
+      ]
+    },
+    {
+      "case": "ner-099",
+      "metric": "ORGANIZACION",
+      "false_negatives": [
+        [
+          39,
+          57
+        ]
+      ],
+      "false_positives": []
+    },
+    {
+      "case": "ner-099",
+      "metric": "UBICACION",
+      "false_negatives": [],
+      "false_positives": [
+        [
+          39,
+          57
+        ]
+      ]
+    }
+  ],
+  "unknown_productions": [
+    {
+      "id": "unknown_production-000",
+      "automatic_candidates": [
+        [
+          67,
+          73,
+          "PERSONA"
+        ]
+      ],
+      "supported_automatic_project_or_character_detection": false
+    }
+  ],
+  "limits": "Synthetic fixtures only; no guarantee for production documents. Identifier suites score their named recognizer; cross-category collisions remain for human review."
+}

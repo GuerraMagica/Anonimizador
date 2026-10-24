@@ -172,9 +172,9 @@ def test_late_result_cannot_reenable_export(self):
 
 **Files:** crear `tests/fixtures/`, `tests/test_acceptance.py`, `tests/test_privacy.py`, `tests/evaluate_detection.py`, `CHANGELOG.md`; ampliar README con instalación, mantenimiento, límites y validación.
 
-- [ ] Construir y congelar corpus sintético separado de desarrollo: 50 positivos/50 negativos por identificador exigido; 100 entidades por PERSONA/ORGANIZACION/UBICACION; fecha/pasaporte con métricas publicadas; términos conocidos y producciones desconocidas separados. Guardar anotaciones, hash y denominadores, sin materiales reales.
-- [ ] Ejecutar evaluación real; exigir los umbrales de la sección 9 de la especificación. Publicar falsos negativos; si se ajusta contra el corpus, reclasificarlo como desarrollo y crear evaluación independiente. No bajar umbrales ni sustituir datos ausentes por estimaciones.
-- [ ] Ejecutar regresión de núcleo, adaptadores y GUI; pruebas de centinelas en diagnósticos/informe/temporales. Comprobar ejecución sin red con mecanismos de prueba del proceso, sin cambiar la seguridad del equipo; señalar los límites de esa evidencia.
+- [x] Construir y congelar corpus sintético separado de desarrollo: 50 positivos/50 negativos por identificador exigido; 100 entidades por PERSONA/ORGANIZACION/UBICACION; fecha/pasaporte con métricas publicadas; términos conocidos y producciones desconocidas separados. Guardar anotaciones, hash y denominadores, sin materiales reales.
+- [x] Ejecutar evaluación real; exigir los umbrales de la sección 9 de la especificación. Publicar falsos negativos; si se ajusta contra el corpus, reclasificarlo como desarrollo y crear evaluación independiente. No bajar umbrales ni sustituir datos ausentes por estimaciones.
+- [x] Ejecutar regresión de núcleo, adaptadores y GUI; pruebas de centinelas en diagnósticos/informe/temporales. Comprobar ejecución sin red con mecanismos de prueba del proceso, sin cambiar la seguridad del equipo; señalar los límites de esa evidencia.
 - [ ] Medir arranque frío/caliente, análisis 20 000/100 000 caracteres, memoria y cancelación; smoke de apertura/revisión/exportación real en macOS. Ningún original puede cambiar.
 - [ ] Solicitar revisión final de código y resolver hallazgos antes de declarar aceptación. Documentar diferencias entre núcleo probado, integración real, GUI y métricas. Commit `test: document acceptance evidence and operating limits`; push y verificar SHA.
 
@@ -185,3 +185,7 @@ def test_late_result_cannot_reenable_export(self):
 - Review Focus: los cinco casos tienen pruebas asignadas, incluidos colisiones reales, Unicode, uniones de texto, resultados tardíos y limpieza condicionada a identidad.
 - Método: TDD por unidad, pruebas de biblioteca estándar para el núcleo; no confundir dobles, pruebas de integración y métricas del modelo. No se instalan dependencias para adelantar artificialmente el estado de aceptación.
 - Estado inicial: plan guardado antes de escribir producto; las casillas solo se marcarán con evidencia de ejecución. El plan ya está preaprobado por el usuario.
+
+## Evidencia actual — 24/10/2026
+
+Tareas 1–6 implementadas y verificadas; tarea 7 implementada con tests Qt y arranque Cocoa, pendiente de smoke visual manual. La tarea 8 ha producido corpus, métricas y pruebas de privacidad/rendimiento: **las puertas NER fallan, así que la aceptación global permanece pendiente**. Véase [evidencia](../../validacion-2026-10-24.md). No se afinó el detector contra el corpus ni se cambió de modelo.

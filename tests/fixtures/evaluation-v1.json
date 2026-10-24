@@ -1,0 +1,9112 @@
+{
+  "schema_version": 1,
+  "purpose": "Synthetic holdout v1; not detector training data",
+  "cases": [
+    {
+      "id": "email-000",
+      "suite": "email",
+      "text": "Contacto de prueba: evaluacion.0@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-000",
+      "suite": "phone",
+      "text": "Llama al 600100000 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 18,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-000",
+      "suite": "nif",
+      "text": "Identificación: 45000000-V.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-000",
+      "suite": "nie",
+      "text": "Documento de prueba: X1000000Y.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-000",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES9121000418450200051332.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-000",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QAA230000.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-000",
+      "suite": "date",
+      "text": "La fecha prevista es 01/01/2030.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-050",
+      "suite": "email",
+      "text": "Dato incompleto: ev0example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-050",
+      "suite": "phone",
+      "text": "Referencia incompleta: 120000",
+      "expected": []
+    },
+    {
+      "id": "nif-050",
+      "suite": "nif",
+      "text": "NIF erróneo: 45000000H",
+      "expected": []
+    },
+    {
+      "id": "nie-050",
+      "suite": "nie",
+      "text": "NIE erróneo: X1000000F",
+      "expected": []
+    },
+    {
+      "id": "iban-050",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES9221000418450200051332",
+      "expected": []
+    },
+    {
+      "id": "passport-050",
+      "suite": "passport",
+      "text": "Referencia: QA123456",
+      "expected": []
+    },
+    {
+      "id": "date-050",
+      "suite": "date",
+      "text": "Fecha inválida: 44/13/2032",
+      "expected": []
+    },
+    {
+      "id": "email-001",
+      "suite": "email",
+      "text": "Contacto de prueba: ev+1@example.org.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 36,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-001",
+      "suite": "phone",
+      "text": "Llama al +34 600100037 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 22,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-001",
+      "suite": "nif",
+      "text": "Identificación: 45007919R.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-001",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1003719J.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-001",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES71 2100 0418 4102 0005 1403.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-001",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QBH230137.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-001",
+      "suite": "date",
+      "text": "La fecha prevista es 2031-02-02.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-051",
+      "suite": "email",
+      "text": "Dato incompleto: ev1@localhost",
+      "expected": []
+    },
+    {
+      "id": "phone-051",
+      "suite": "phone",
+      "text": "Referencia incompleta: 12345678901",
+      "expected": []
+    },
+    {
+      "id": "nif-051",
+      "suite": "nif",
+      "text": "NIF erróneo: 45007919W",
+      "expected": []
+    },
+    {
+      "id": "nie-051",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1003719Z",
+      "expected": []
+    },
+    {
+      "id": "iban-051",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES7221000418410200051403",
+      "expected": []
+    },
+    {
+      "id": "passport-051",
+      "suite": "passport",
+      "text": "Referencia: QABC123456",
+      "expected": []
+    },
+    {
+      "id": "date-051",
+      "suite": "date",
+      "text": "Fecha inválida: 2032-13-44",
+      "expected": []
+    },
+    {
+      "id": "email-002",
+      "suite": "email",
+      "text": "Contacto de prueba: ev_2@example.net.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 36,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-002",
+      "suite": "phone",
+      "text": "Llama al 0034 600100074 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 23,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-002",
+      "suite": "nif",
+      "text": "Identificación: 45015838-P.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-002",
+      "suite": "nie",
+      "text": "Documento de prueba: Z1007438C.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-002",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES13-2100-0418-4702-0005-1474.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-002",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QCO230274.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-002",
+      "suite": "date",
+      "text": "La fecha prevista es 03.03.2032.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-052",
+      "suite": "email",
+      "text": "Dato incompleto: ev2@",
+      "expected": []
+    },
+    {
+      "id": "phone-052",
+      "suite": "phone",
+      "text": "Referencia incompleta: +1 202-555-0102",
+      "expected": []
+    },
+    {
+      "id": "nif-052",
+      "suite": "nif",
+      "text": "NIF erróneo: 45015838D",
+      "expected": []
+    },
+    {
+      "id": "nie-052",
+      "suite": "nie",
+      "text": "NIE erróneo: Z1007438K",
+      "expected": []
+    },
+    {
+      "id": "iban-052",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES1421000418470200051474",
+      "expected": []
+    },
+    {
+      "id": "passport-052",
+      "suite": "passport",
+      "text": "Referencia: QAB12345",
+      "expected": []
+    },
+    {
+      "id": "date-052",
+      "suite": "date",
+      "text": "Fecha inválida: 00/10/2035",
+      "expected": []
+    },
+    {
+      "id": "email-003",
+      "suite": "email",
+      "text": "Contacto de prueba: ev-3@sub.example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 40,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-003",
+      "suite": "phone",
+      "text": "Llama al 600 100 111 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 20,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-003",
+      "suite": "nif",
+      "text": "Identificación: 45023757S.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-003",
+      "suite": "nie",
+      "text": "Documento de prueba: X1011157P.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-003",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: es9021000418430200051545.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-003",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QDV230411.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-003",
+      "suite": "date",
+      "text": "La fecha prevista es 4 de octubre de 2033.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 41,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-053",
+      "suite": "email",
+      "text": "Dato incompleto: @example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-053",
+      "suite": "phone",
+      "text": "Referencia incompleta: 190000003",
+      "expected": []
+    },
+    {
+      "id": "nif-053",
+      "suite": "nif",
+      "text": "NIF erróneo: 45023757Q",
+      "expected": []
+    },
+    {
+      "id": "nie-053",
+      "suite": "nie",
+      "text": "NIE erróneo: X1011157D",
+      "expected": []
+    },
+    {
+      "id": "iban-053",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES9121000418430200051545",
+      "expected": []
+    },
+    {
+      "id": "passport-053",
+      "suite": "passport",
+      "text": "Referencia: QAB1234567",
+      "expected": []
+    },
+    {
+      "id": "date-053",
+      "suite": "date",
+      "text": "Fecha inválida: 32.12.2035",
+      "expected": []
+    },
+    {
+      "id": "email-004",
+      "suite": "email",
+      "text": "Contacto de prueba: ev4.o'hara@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 42,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-004",
+      "suite": "phone",
+      "text": "Llama al +34 600-100-148 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 24,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-004",
+      "suite": "nif",
+      "text": "Identificación: 45031676-E.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-004",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1014876S.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-004",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES4321000418410200051616.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-004",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QEC230548.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-004",
+      "suite": "date",
+      "text": "La fecha prevista es 05-05-2034.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-054",
+      "suite": "email",
+      "text": "Dato incompleto: ev4 at example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-054",
+      "suite": "phone",
+      "text": "Referencia incompleta: 600ABC004",
+      "expected": []
+    },
+    {
+      "id": "nif-054",
+      "suite": "nif",
+      "text": "NIF erróneo: 45031676T",
+      "expected": []
+    },
+    {
+      "id": "nie-054",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1014876Q",
+      "expected": []
+    },
+    {
+      "id": "iban-054",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES4421000418410200051616",
+      "expected": []
+    },
+    {
+      "id": "passport-054",
+      "suite": "passport",
+      "text": "Referencia: 123QAB456",
+      "expected": []
+    },
+    {
+      "id": "date-054",
+      "suite": "date",
+      "text": "Fecha inválida: 10 de mesinventado de 2035",
+      "expected": []
+    },
+    {
+      "id": "email-005",
+      "suite": "email",
+      "text": "Contacto de prueba: evaluacion.5@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-005",
+      "suite": "phone",
+      "text": "Llama al 600100185 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 18,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-005",
+      "suite": "nif",
+      "text": "Identificación: 45039595Y.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-005",
+      "suite": "nie",
+      "text": "Documento de prueba: Z1018595E.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-005",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES12 2100 0418 4502 0005 1687.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-005",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QFJ230685.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-005",
+      "suite": "date",
+      "text": "La fecha prevista es 06/06/2035.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-055",
+      "suite": "email",
+      "text": "Dato incompleto: ev5example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-055",
+      "suite": "phone",
+      "text": "Referencia incompleta: 120005",
+      "expected": []
+    },
+    {
+      "id": "nif-055",
+      "suite": "nif",
+      "text": "NIF erróneo: 45039595F",
+      "expected": []
+    },
+    {
+      "id": "nie-055",
+      "suite": "nie",
+      "text": "NIE erróneo: Z1018595T",
+      "expected": []
+    },
+    {
+      "id": "iban-055",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES1321000418450200051687",
+      "expected": []
+    },
+    {
+      "id": "passport-055",
+      "suite": "passport",
+      "text": "Referencia: QA123456",
+      "expected": []
+    },
+    {
+      "id": "date-055",
+      "suite": "date",
+      "text": "Fecha inválida: 44/13/2032",
+      "expected": []
+    },
+    {
+      "id": "email-006",
+      "suite": "email",
+      "text": "Contacto de prueba: ev+6@example.org.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 36,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-006",
+      "suite": "phone",
+      "text": "Llama al +34 600100222 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 22,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-006",
+      "suite": "nif",
+      "text": "Identificación: 45047514-J.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-006",
+      "suite": "nie",
+      "text": "Documento de prueba: X1022314X.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-006",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES89-2100-0418-4102-0005-1758.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-006",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QGQ230822.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-006",
+      "suite": "date",
+      "text": "La fecha prevista es 2036-07-07.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-056",
+      "suite": "email",
+      "text": "Dato incompleto: ev6@localhost",
+      "expected": []
+    },
+    {
+      "id": "phone-056",
+      "suite": "phone",
+      "text": "Referencia incompleta: 12345678906",
+      "expected": []
+    },
+    {
+      "id": "nif-056",
+      "suite": "nif",
+      "text": "NIF erróneo: 45047514Z",
+      "expected": []
+    },
+    {
+      "id": "nie-056",
+      "suite": "nie",
+      "text": "NIE erróneo: X1022314B",
+      "expected": []
+    },
+    {
+      "id": "iban-056",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES9021000418410200051758",
+      "expected": []
+    },
+    {
+      "id": "passport-056",
+      "suite": "passport",
+      "text": "Referencia: QABC123456",
+      "expected": []
+    },
+    {
+      "id": "date-056",
+      "suite": "date",
+      "text": "Fecha inválida: 2032-13-44",
+      "expected": []
+    },
+    {
+      "id": "email-007",
+      "suite": "email",
+      "text": "Contacto de prueba: ev_7@example.net.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 36,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-007",
+      "suite": "phone",
+      "text": "Llama al 0034 600100259 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 23,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-007",
+      "suite": "nif",
+      "text": "Identificación: 45055433C.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-007",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1026033V.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-007",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: es6621000418480200051829.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-007",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QHX230959.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-007",
+      "suite": "date",
+      "text": "La fecha prevista es 08.08.2030.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-057",
+      "suite": "email",
+      "text": "Dato incompleto: ev7@",
+      "expected": []
+    },
+    {
+      "id": "phone-057",
+      "suite": "phone",
+      "text": "Referencia incompleta: +1 202-555-0107",
+      "expected": []
+    },
+    {
+      "id": "nif-057",
+      "suite": "nif",
+      "text": "NIF erróneo: 45055433K",
+      "expected": []
+    },
+    {
+      "id": "nie-057",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1026033H",
+      "expected": []
+    },
+    {
+      "id": "iban-057",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES6721000418480200051829",
+      "expected": []
+    },
+    {
+      "id": "passport-057",
+      "suite": "passport",
+      "text": "Referencia: QAB12345",
+      "expected": []
+    },
+    {
+      "id": "date-057",
+      "suite": "date",
+      "text": "Fecha inválida: 00/10/2035",
+      "expected": []
+    },
+    {
+      "id": "email-008",
+      "suite": "email",
+      "text": "Contacto de prueba: ev-8@sub.example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 40,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-008",
+      "suite": "phone",
+      "text": "Llama al 600 100 296 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 20,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-008",
+      "suite": "nif",
+      "text": "Identificación: 45063352-G.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-008",
+      "suite": "nie",
+      "text": "Documento de prueba: Z1029752R.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-008",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES1921000418460200051900.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-008",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QIE231096.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-008",
+      "suite": "date",
+      "text": "La fecha prevista es 9 de octubre de 2031.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 41,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-058",
+      "suite": "email",
+      "text": "Dato incompleto: @example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-058",
+      "suite": "phone",
+      "text": "Referencia incompleta: 190000008",
+      "expected": []
+    },
+    {
+      "id": "nif-058",
+      "suite": "nif",
+      "text": "NIF erróneo: 45063352M",
+      "expected": []
+    },
+    {
+      "id": "nie-058",
+      "suite": "nie",
+      "text": "NIE erróneo: Z1029752W",
+      "expected": []
+    },
+    {
+      "id": "iban-058",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES2021000418460200051900",
+      "expected": []
+    },
+    {
+      "id": "passport-058",
+      "suite": "passport",
+      "text": "Referencia: QAB1234567",
+      "expected": []
+    },
+    {
+      "id": "date-058",
+      "suite": "date",
+      "text": "Fecha inválida: 32.12.2035",
+      "expected": []
+    },
+    {
+      "id": "email-009",
+      "suite": "email",
+      "text": "Contacto de prueba: ev9.o'hara@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 42,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-009",
+      "suite": "phone",
+      "text": "Llama al +34 600-100-333 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 24,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-009",
+      "suite": "nif",
+      "text": "Identificación: 45071271B.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-009",
+      "suite": "nie",
+      "text": "Documento de prueba: X1033471N.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-009",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES61 2100 0418 4102 0005 1971.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-009",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QJL231233.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-009",
+      "suite": "date",
+      "text": "La fecha prevista es 10-10-2032.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-059",
+      "suite": "email",
+      "text": "Dato incompleto: ev9 at example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-059",
+      "suite": "phone",
+      "text": "Referencia incompleta: 600ABC009",
+      "expected": []
+    },
+    {
+      "id": "nif-059",
+      "suite": "nif",
+      "text": "NIF erróneo: 45071271N",
+      "expected": []
+    },
+    {
+      "id": "nie-059",
+      "suite": "nie",
+      "text": "NIE erróneo: X1033471J",
+      "expected": []
+    },
+    {
+      "id": "iban-059",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES6221000418410200051971",
+      "expected": []
+    },
+    {
+      "id": "passport-059",
+      "suite": "passport",
+      "text": "Referencia: 123QAB456",
+      "expected": []
+    },
+    {
+      "id": "date-059",
+      "suite": "date",
+      "text": "Fecha inválida: 10 de mesinventado de 2035",
+      "expected": []
+    },
+    {
+      "id": "email-010",
+      "suite": "email",
+      "text": "Contacto de prueba: evaluacion.10@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 45,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-010",
+      "suite": "phone",
+      "text": "Llama al 600100370 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 18,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-010",
+      "suite": "nif",
+      "text": "Identificación: 45079190-H.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-010",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1037190L.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-010",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES57-2100-0418-4302-0005-2042.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-010",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QKS231370.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-010",
+      "suite": "date",
+      "text": "La fecha prevista es 11/11/2033.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-060",
+      "suite": "email",
+      "text": "Dato incompleto: ev10example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-060",
+      "suite": "phone",
+      "text": "Referencia incompleta: 120010",
+      "expected": []
+    },
+    {
+      "id": "nif-060",
+      "suite": "nif",
+      "text": "NIF erróneo: 45079190L",
+      "expected": []
+    },
+    {
+      "id": "nie-060",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1037190C",
+      "expected": []
+    },
+    {
+      "id": "iban-060",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES5821000418430200052042",
+      "expected": []
+    },
+    {
+      "id": "passport-060",
+      "suite": "passport",
+      "text": "Referencia: QA123456",
+      "expected": []
+    },
+    {
+      "id": "date-060",
+      "suite": "date",
+      "text": "Fecha inválida: 44/13/2032",
+      "expected": []
+    },
+    {
+      "id": "email-011",
+      "suite": "email",
+      "text": "Contacto de prueba: ev+11@example.org.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-011",
+      "suite": "phone",
+      "text": "Llama al +34 600100407 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 22,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-011",
+      "suite": "nif",
+      "text": "Identificación: 45087109W.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-011",
+      "suite": "nie",
+      "text": "Documento de prueba: Z1040909A.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-011",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: es1021000418410200052113.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-011",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QLZ231507.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-011",
+      "suite": "date",
+      "text": "La fecha prevista es 2034-12-12.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-061",
+      "suite": "email",
+      "text": "Dato incompleto: ev11@localhost",
+      "expected": []
+    },
+    {
+      "id": "phone-061",
+      "suite": "phone",
+      "text": "Referencia incompleta: 12345678911",
+      "expected": []
+    },
+    {
+      "id": "nif-061",
+      "suite": "nif",
+      "text": "NIF erróneo: 45087109A",
+      "expected": []
+    },
+    {
+      "id": "nie-061",
+      "suite": "nie",
+      "text": "NIE erróneo: Z1040909G",
+      "expected": []
+    },
+    {
+      "id": "iban-061",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES1121000418410200052113",
+      "expected": []
+    },
+    {
+      "id": "passport-061",
+      "suite": "passport",
+      "text": "Referencia: QABC123456",
+      "expected": []
+    },
+    {
+      "id": "date-061",
+      "suite": "date",
+      "text": "Fecha inválida: 2032-13-44",
+      "expected": []
+    },
+    {
+      "id": "email-012",
+      "suite": "email",
+      "text": "Contacto de prueba: ev_12@example.net.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-012",
+      "suite": "phone",
+      "text": "Llama al 0034 600100444 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 23,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-012",
+      "suite": "nif",
+      "text": "Identificación: 45095028-D.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-012",
+      "suite": "nie",
+      "text": "Documento de prueba: X1044628Z.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-012",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES7621000418450200052184.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-012",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QMG231644.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-012",
+      "suite": "date",
+      "text": "La fecha prevista es 13.01.2035.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-062",
+      "suite": "email",
+      "text": "Dato incompleto: ev12@",
+      "expected": []
+    },
+    {
+      "id": "phone-062",
+      "suite": "phone",
+      "text": "Referencia incompleta: +1 202-555-0112",
+      "expected": []
+    },
+    {
+      "id": "nif-062",
+      "suite": "nif",
+      "text": "NIF erróneo: 45095028X",
+      "expected": []
+    },
+    {
+      "id": "nie-062",
+      "suite": "nie",
+      "text": "NIE erróneo: X1044628S",
+      "expected": []
+    },
+    {
+      "id": "iban-062",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES7721000418450200052184",
+      "expected": []
+    },
+    {
+      "id": "passport-062",
+      "suite": "passport",
+      "text": "Referencia: QAB12345",
+      "expected": []
+    },
+    {
+      "id": "date-062",
+      "suite": "date",
+      "text": "Fecha inválida: 00/10/2035",
+      "expected": []
+    },
+    {
+      "id": "email-013",
+      "suite": "email",
+      "text": "Contacto de prueba: ev-13@sub.example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 41,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-013",
+      "suite": "phone",
+      "text": "Llama al 600 100 481 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 20,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-013",
+      "suite": "nif",
+      "text": "Identificación: 45102947Q.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-013",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1048347K.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-013",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES56 2100 0418 4102 0005 2255.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-013",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QNN231781.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-013",
+      "suite": "date",
+      "text": "La fecha prevista es 14 de octubre de 2036.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 42,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-063",
+      "suite": "email",
+      "text": "Dato incompleto: @example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-063",
+      "suite": "phone",
+      "text": "Referencia incompleta: 190000013",
+      "expected": []
+    },
+    {
+      "id": "nif-063",
+      "suite": "nif",
+      "text": "NIF erróneo: 45102947V",
+      "expected": []
+    },
+    {
+      "id": "nie-063",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1048347E",
+      "expected": []
+    },
+    {
+      "id": "iban-063",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES5721000418410200052255",
+      "expected": []
+    },
+    {
+      "id": "passport-063",
+      "suite": "passport",
+      "text": "Referencia: QAB1234567",
+      "expected": []
+    },
+    {
+      "id": "date-063",
+      "suite": "date",
+      "text": "Fecha inválida: 32.12.2035",
+      "expected": []
+    },
+    {
+      "id": "email-014",
+      "suite": "email",
+      "text": "Contacto de prueba: ev14.o'hara@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 43,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-014",
+      "suite": "phone",
+      "text": "Llama al +34 600-100-518 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 24,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-014",
+      "suite": "nif",
+      "text": "Identificación: 45110866-T.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-014",
+      "suite": "nie",
+      "text": "Documento de prueba: Z1052066M.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-014",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES33-2100-0418-4802-0005-2326.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-014",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QOU231918.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-014",
+      "suite": "date",
+      "text": "La fecha prevista es 15-03-2030.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-064",
+      "suite": "email",
+      "text": "Dato incompleto: ev14 at example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-064",
+      "suite": "phone",
+      "text": "Referencia incompleta: 600ABC014",
+      "expected": []
+    },
+    {
+      "id": "nif-064",
+      "suite": "nif",
+      "text": "NIF erróneo: 45110866R",
+      "expected": []
+    },
+    {
+      "id": "nie-064",
+      "suite": "nie",
+      "text": "NIE erróneo: Z1052066Y",
+      "expected": []
+    },
+    {
+      "id": "iban-064",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES3421000418480200052326",
+      "expected": []
+    },
+    {
+      "id": "passport-064",
+      "suite": "passport",
+      "text": "Referencia: 123QAB456",
+      "expected": []
+    },
+    {
+      "id": "date-064",
+      "suite": "date",
+      "text": "Fecha inválida: 10 de mesinventado de 2035",
+      "expected": []
+    },
+    {
+      "id": "email-015",
+      "suite": "email",
+      "text": "Contacto de prueba: evaluacion.15@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 45,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-015",
+      "suite": "phone",
+      "text": "Llama al 600100555 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 18,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-015",
+      "suite": "nif",
+      "text": "Identificación: 45118785F.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-015",
+      "suite": "nie",
+      "text": "Documento de prueba: X1055785Q.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-015",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: es7521000418430200052397.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-015",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QPB232055.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-015",
+      "suite": "date",
+      "text": "La fecha prevista es 16/04/2031.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-065",
+      "suite": "email",
+      "text": "Dato incompleto: ev15example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-065",
+      "suite": "phone",
+      "text": "Referencia incompleta: 120015",
+      "expected": []
+    },
+    {
+      "id": "nif-065",
+      "suite": "nif",
+      "text": "NIF erróneo: 45118785P",
+      "expected": []
+    },
+    {
+      "id": "nie-065",
+      "suite": "nie",
+      "text": "NIE erróneo: X1055785V",
+      "expected": []
+    },
+    {
+      "id": "iban-065",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES7621000418430200052397",
+      "expected": []
+    },
+    {
+      "id": "passport-065",
+      "suite": "passport",
+      "text": "Referencia: QA123456",
+      "expected": []
+    },
+    {
+      "id": "date-065",
+      "suite": "date",
+      "text": "Fecha inválida: 44/13/2032",
+      "expected": []
+    },
+    {
+      "id": "email-016",
+      "suite": "email",
+      "text": "Contacto de prueba: ev+16@example.org.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-016",
+      "suite": "phone",
+      "text": "Llama al +34 600100592 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 22,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-016",
+      "suite": "nif",
+      "text": "Identificación: 45126704-Z.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-016",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1059504T.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-016",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES2821000418410200052468.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-016",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QQI232192.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-016",
+      "suite": "date",
+      "text": "La fecha prevista es 2032-05-17.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-066",
+      "suite": "email",
+      "text": "Dato incompleto: ev16@localhost",
+      "expected": []
+    },
+    {
+      "id": "phone-066",
+      "suite": "phone",
+      "text": "Referencia incompleta: 12345678916",
+      "expected": []
+    },
+    {
+      "id": "nif-066",
+      "suite": "nif",
+      "text": "NIF erróneo: 45126704S",
+      "expected": []
+    },
+    {
+      "id": "nie-066",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1059504R",
+      "expected": []
+    },
+    {
+      "id": "iban-066",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES2921000418410200052468",
+      "expected": []
+    },
+    {
+      "id": "passport-066",
+      "suite": "passport",
+      "text": "Referencia: QABC123456",
+      "expected": []
+    },
+    {
+      "id": "date-066",
+      "suite": "date",
+      "text": "Fecha inválida: 2032-13-44",
+      "expected": []
+    },
+    {
+      "id": "email-017",
+      "suite": "email",
+      "text": "Contacto de prueba: ev_17@example.net.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-017",
+      "suite": "phone",
+      "text": "Llama al 0034 600100629 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 23,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-017",
+      "suite": "nif",
+      "text": "Identificación: 45134623K.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-017",
+      "suite": "nie",
+      "text": "Documento de prueba: Z1063223F.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-017",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES32 2100 0418 4602 0005 2539.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-017",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QRP232329.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-017",
+      "suite": "date",
+      "text": "La fecha prevista es 18.06.2033.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-067",
+      "suite": "email",
+      "text": "Dato incompleto: ev17@",
+      "expected": []
+    },
+    {
+      "id": "phone-067",
+      "suite": "phone",
+      "text": "Referencia incompleta: +1 202-555-0117",
+      "expected": []
+    },
+    {
+      "id": "nif-067",
+      "suite": "nif",
+      "text": "NIF erróneo: 45134623E",
+      "expected": []
+    },
+    {
+      "id": "nie-067",
+      "suite": "nie",
+      "text": "NIE erróneo: Z1063223P",
+      "expected": []
+    },
+    {
+      "id": "iban-067",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES3321000418460200052539",
+      "expected": []
+    },
+    {
+      "id": "passport-067",
+      "suite": "passport",
+      "text": "Referencia: QAB12345",
+      "expected": []
+    },
+    {
+      "id": "date-067",
+      "suite": "date",
+      "text": "Fecha inválida: 00/10/2035",
+      "expected": []
+    },
+    {
+      "id": "email-018",
+      "suite": "email",
+      "text": "Contacto de prueba: ev-18@sub.example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 41,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-018",
+      "suite": "phone",
+      "text": "Llama al 600 100 666 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 20,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-018",
+      "suite": "nif",
+      "text": "Identificación: 45142542-M.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-018",
+      "suite": "nie",
+      "text": "Documento de prueba: X1066942H.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-018",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES82-2100-0418-4402-0005-2610.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-018",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QSW232466.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-018",
+      "suite": "date",
+      "text": "La fecha prevista es 19 de octubre de 2034.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 42,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-068",
+      "suite": "email",
+      "text": "Dato incompleto: @example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-068",
+      "suite": "phone",
+      "text": "Referencia incompleta: 190000018",
+      "expected": []
+    },
+    {
+      "id": "nif-068",
+      "suite": "nif",
+      "text": "NIF erróneo: 45142542Y",
+      "expected": []
+    },
+    {
+      "id": "nie-068",
+      "suite": "nie",
+      "text": "NIE erróneo: X1066942L",
+      "expected": []
+    },
+    {
+      "id": "iban-068",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES8321000418440200052610",
+      "expected": []
+    },
+    {
+      "id": "passport-068",
+      "suite": "passport",
+      "text": "Referencia: QAB1234567",
+      "expected": []
+    },
+    {
+      "id": "date-068",
+      "suite": "date",
+      "text": "Fecha inválida: 32.12.2035",
+      "expected": []
+    },
+    {
+      "id": "email-019",
+      "suite": "email",
+      "text": "Contacto de prueba: ev19.o'hara@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 43,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-019",
+      "suite": "phone",
+      "text": "Llama al +34 600-100-703 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 24,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-019",
+      "suite": "nif",
+      "text": "Identificación: 45150461N.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-019",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1070661W.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-019",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: es9721000418410200052681.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-019",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QTD232603.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-019",
+      "suite": "date",
+      "text": "La fecha prevista es 20-08-2035.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-069",
+      "suite": "email",
+      "text": "Dato incompleto: ev19 at example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-069",
+      "suite": "phone",
+      "text": "Referencia incompleta: 600ABC019",
+      "expected": []
+    },
+    {
+      "id": "nif-069",
+      "suite": "nif",
+      "text": "NIF erróneo: 45150461J",
+      "expected": []
+    },
+    {
+      "id": "nie-069",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1070661A",
+      "expected": []
+    },
+    {
+      "id": "iban-069",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES9821000418410200052681",
+      "expected": []
+    },
+    {
+      "id": "passport-069",
+      "suite": "passport",
+      "text": "Referencia: 123QAB456",
+      "expected": []
+    },
+    {
+      "id": "date-069",
+      "suite": "date",
+      "text": "Fecha inválida: 10 de mesinventado de 2035",
+      "expected": []
+    },
+    {
+      "id": "email-020",
+      "suite": "email",
+      "text": "Contacto de prueba: evaluacion.20@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 45,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-020",
+      "suite": "phone",
+      "text": "Llama al 600100740 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 18,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-020",
+      "suite": "nif",
+      "text": "Identificación: 45158380-L.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-020",
+      "suite": "nie",
+      "text": "Documento de prueba: Z1074380D.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-020",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES0421000418460200052752.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-020",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QUK232740.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-020",
+      "suite": "date",
+      "text": "La fecha prevista es 21/09/2036.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-070",
+      "suite": "email",
+      "text": "Dato incompleto: ev20example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-070",
+      "suite": "phone",
+      "text": "Referencia incompleta: 120020",
+      "expected": []
+    },
+    {
+      "id": "nif-070",
+      "suite": "nif",
+      "text": "NIF erróneo: 45158380C",
+      "expected": []
+    },
+    {
+      "id": "nie-070",
+      "suite": "nie",
+      "text": "NIE erróneo: Z1074380X",
+      "expected": []
+    },
+    {
+      "id": "iban-070",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES0521000418460200052752",
+      "expected": []
+    },
+    {
+      "id": "passport-070",
+      "suite": "passport",
+      "text": "Referencia: QA123456",
+      "expected": []
+    },
+    {
+      "id": "date-070",
+      "suite": "date",
+      "text": "Fecha inválida: 44/13/2032",
+      "expected": []
+    },
+    {
+      "id": "email-021",
+      "suite": "email",
+      "text": "Contacto de prueba: ev+21@example.org.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-021",
+      "suite": "phone",
+      "text": "Llama al +34 600100777 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 22,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-021",
+      "suite": "nif",
+      "text": "Identificación: 45166299A.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-021",
+      "suite": "nie",
+      "text": "Documento de prueba: X1078099C.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-021",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES81 2100 0418 4202 0005 2823.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-021",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QVR232877.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-021",
+      "suite": "date",
+      "text": "La fecha prevista es 2030-10-22.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-071",
+      "suite": "email",
+      "text": "Dato incompleto: ev21@localhost",
+      "expected": []
+    },
+    {
+      "id": "phone-071",
+      "suite": "phone",
+      "text": "Referencia incompleta: 12345678921",
+      "expected": []
+    },
+    {
+      "id": "nif-071",
+      "suite": "nif",
+      "text": "NIF erróneo: 45166299G",
+      "expected": []
+    },
+    {
+      "id": "nie-071",
+      "suite": "nie",
+      "text": "NIE erróneo: X1078099K",
+      "expected": []
+    },
+    {
+      "id": "iban-071",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES8221000418420200052823",
+      "expected": []
+    },
+    {
+      "id": "passport-071",
+      "suite": "passport",
+      "text": "Referencia: QABC123456",
+      "expected": []
+    },
+    {
+      "id": "date-071",
+      "suite": "date",
+      "text": "Fecha inválida: 2032-13-44",
+      "expected": []
+    },
+    {
+      "id": "email-022",
+      "suite": "email",
+      "text": "Contacto de prueba: ev_22@example.net.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-022",
+      "suite": "phone",
+      "text": "Llama al 0034 600100814 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 23,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-022",
+      "suite": "nif",
+      "text": "Identificación: 45174218-X.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-022",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1081818G.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-022",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES23-2100-0418-4802-0005-2894.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-022",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QWY233014.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-022",
+      "suite": "date",
+      "text": "La fecha prevista es 23.11.2031.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-072",
+      "suite": "email",
+      "text": "Dato incompleto: ev22@",
+      "expected": []
+    },
+    {
+      "id": "phone-072",
+      "suite": "phone",
+      "text": "Referencia incompleta: +1 202-555-0122",
+      "expected": []
+    },
+    {
+      "id": "nif-072",
+      "suite": "nif",
+      "text": "NIF erróneo: 45174218B",
+      "expected": []
+    },
+    {
+      "id": "nie-072",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1081818M",
+      "expected": []
+    },
+    {
+      "id": "iban-072",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES2421000418480200052894",
+      "expected": []
+    },
+    {
+      "id": "passport-072",
+      "suite": "passport",
+      "text": "Referencia: QAB12345",
+      "expected": []
+    },
+    {
+      "id": "date-072",
+      "suite": "date",
+      "text": "Fecha inválida: 00/10/2035",
+      "expected": []
+    },
+    {
+      "id": "email-023",
+      "suite": "email",
+      "text": "Contacto de prueba: ev-23@sub.example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 41,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-023",
+      "suite": "phone",
+      "text": "Llama al 600 100 851 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 20,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-023",
+      "suite": "nif",
+      "text": "Identificación: 45182137V.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-023",
+      "suite": "nie",
+      "text": "Documento de prueba: Z1085537B.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-023",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: es0321000418440200052965.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-023",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QXF233151.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-023",
+      "suite": "date",
+      "text": "La fecha prevista es 24 de octubre de 2032.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 42,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-073",
+      "suite": "email",
+      "text": "Dato incompleto: @example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-073",
+      "suite": "phone",
+      "text": "Referencia incompleta: 190000023",
+      "expected": []
+    },
+    {
+      "id": "nif-073",
+      "suite": "nif",
+      "text": "NIF erróneo: 45182137H",
+      "expected": []
+    },
+    {
+      "id": "nie-073",
+      "suite": "nie",
+      "text": "NIE erróneo: Z1085537N",
+      "expected": []
+    },
+    {
+      "id": "iban-073",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES0421000418440200052965",
+      "expected": []
+    },
+    {
+      "id": "passport-073",
+      "suite": "passport",
+      "text": "Referencia: QAB1234567",
+      "expected": []
+    },
+    {
+      "id": "date-073",
+      "suite": "date",
+      "text": "Fecha inválida: 32.12.2035",
+      "expected": []
+    },
+    {
+      "id": "email-024",
+      "suite": "email",
+      "text": "Contacto de prueba: ev24.o'hara@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 43,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-024",
+      "suite": "phone",
+      "text": "Llama al +34 600-100-888 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 24,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-024",
+      "suite": "nif",
+      "text": "Identificación: 45190056-R.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-024",
+      "suite": "nie",
+      "text": "Documento de prueba: X1089256E.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-024",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES9621000418460200053036.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-024",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QYM233288.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-024",
+      "suite": "date",
+      "text": "La fecha prevista es 25-01-2033.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-074",
+      "suite": "email",
+      "text": "Dato incompleto: ev24 at example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-074",
+      "suite": "phone",
+      "text": "Referencia incompleta: 600ABC024",
+      "expected": []
+    },
+    {
+      "id": "nif-074",
+      "suite": "nif",
+      "text": "NIF erróneo: 45190056W",
+      "expected": []
+    },
+    {
+      "id": "nie-074",
+      "suite": "nie",
+      "text": "NIE erróneo: X1089256T",
+      "expected": []
+    },
+    {
+      "id": "iban-074",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES9721000418460200053036",
+      "expected": []
+    },
+    {
+      "id": "passport-074",
+      "suite": "passport",
+      "text": "Referencia: 123QAB456",
+      "expected": []
+    },
+    {
+      "id": "date-074",
+      "suite": "date",
+      "text": "Fecha inválida: 10 de mesinventado de 2035",
+      "expected": []
+    },
+    {
+      "id": "email-025",
+      "suite": "email",
+      "text": "Contacto de prueba: evaluacion.25@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 45,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-025",
+      "suite": "phone",
+      "text": "Llama al 600100925 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 18,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-025",
+      "suite": "nif",
+      "text": "Identificación: 45197975P.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-025",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1092975Y.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-025",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES76 2100 0418 4202 0005 3107.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-025",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QZT233425.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-025",
+      "suite": "date",
+      "text": "La fecha prevista es 26/02/2034.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-075",
+      "suite": "email",
+      "text": "Dato incompleto: ev25example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-075",
+      "suite": "phone",
+      "text": "Referencia incompleta: 120025",
+      "expected": []
+    },
+    {
+      "id": "nif-075",
+      "suite": "nif",
+      "text": "NIF erróneo: 45197975D",
+      "expected": []
+    },
+    {
+      "id": "nie-075",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1092975F",
+      "expected": []
+    },
+    {
+      "id": "iban-075",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES7721000418420200053107",
+      "expected": []
+    },
+    {
+      "id": "passport-075",
+      "suite": "passport",
+      "text": "Referencia: QA123456",
+      "expected": []
+    },
+    {
+      "id": "date-075",
+      "suite": "date",
+      "text": "Fecha inválida: 44/13/2032",
+      "expected": []
+    },
+    {
+      "id": "email-026",
+      "suite": "email",
+      "text": "Contacto de prueba: ev+26@example.org.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-026",
+      "suite": "phone",
+      "text": "Llama al +34 600100962 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 22,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-026",
+      "suite": "nif",
+      "text": "Identificación: 45205894-S.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-026",
+      "suite": "nie",
+      "text": "Documento de prueba: Z1096694J.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-026",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES18-2100-0418-4802-0005-3178.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-026",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QAA233562.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-026",
+      "suite": "date",
+      "text": "La fecha prevista es 2035-03-27.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-076",
+      "suite": "email",
+      "text": "Dato incompleto: ev26@localhost",
+      "expected": []
+    },
+    {
+      "id": "phone-076",
+      "suite": "phone",
+      "text": "Referencia incompleta: 12345678926",
+      "expected": []
+    },
+    {
+      "id": "nif-076",
+      "suite": "nif",
+      "text": "NIF erróneo: 45205894Q",
+      "expected": []
+    },
+    {
+      "id": "nie-076",
+      "suite": "nie",
+      "text": "NIE erróneo: Z1096694Z",
+      "expected": []
+    },
+    {
+      "id": "iban-076",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES1921000418480200053178",
+      "expected": []
+    },
+    {
+      "id": "passport-076",
+      "suite": "passport",
+      "text": "Referencia: QABC123456",
+      "expected": []
+    },
+    {
+      "id": "date-076",
+      "suite": "date",
+      "text": "Fecha inválida: 2032-13-44",
+      "expected": []
+    },
+    {
+      "id": "email-027",
+      "suite": "email",
+      "text": "Contacto de prueba: ev_27@example.net.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-027",
+      "suite": "phone",
+      "text": "Llama al 0034 600100999 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 23,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-027",
+      "suite": "nif",
+      "text": "Identificación: 45213813E.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-027",
+      "suite": "nie",
+      "text": "Documento de prueba: X1100413R.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-027",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: es9521000418440200053249.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-027",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QBH233699.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-027",
+      "suite": "date",
+      "text": "La fecha prevista es 28.04.2036.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-077",
+      "suite": "email",
+      "text": "Dato incompleto: ev27@",
+      "expected": []
+    },
+    {
+      "id": "phone-077",
+      "suite": "phone",
+      "text": "Referencia incompleta: +1 202-555-0127",
+      "expected": []
+    },
+    {
+      "id": "nif-077",
+      "suite": "nif",
+      "text": "NIF erróneo: 45213813T",
+      "expected": []
+    },
+    {
+      "id": "nie-077",
+      "suite": "nie",
+      "text": "NIE erróneo: X1100413W",
+      "expected": []
+    },
+    {
+      "id": "iban-077",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES9621000418440200053249",
+      "expected": []
+    },
+    {
+      "id": "passport-077",
+      "suite": "passport",
+      "text": "Referencia: QAB12345",
+      "expected": []
+    },
+    {
+      "id": "date-077",
+      "suite": "date",
+      "text": "Fecha inválida: 00/10/2035",
+      "expected": []
+    },
+    {
+      "id": "email-028",
+      "suite": "email",
+      "text": "Contacto de prueba: ev-28@sub.example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 41,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-028",
+      "suite": "phone",
+      "text": "Llama al 600 101 036 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 20,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-028",
+      "suite": "nif",
+      "text": "Identificación: 45221732-Y.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-028",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1104132P.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-028",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES4821000418420200053320.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-028",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QCO233836.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-028",
+      "suite": "date",
+      "text": "La fecha prevista es 1 de octubre de 2030.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 41,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-078",
+      "suite": "email",
+      "text": "Dato incompleto: @example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-078",
+      "suite": "phone",
+      "text": "Referencia incompleta: 190000028",
+      "expected": []
+    },
+    {
+      "id": "nif-078",
+      "suite": "nif",
+      "text": "NIF erróneo: 45221732F",
+      "expected": []
+    },
+    {
+      "id": "nie-078",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1104132D",
+      "expected": []
+    },
+    {
+      "id": "iban-078",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES4921000418420200053320",
+      "expected": []
+    },
+    {
+      "id": "passport-078",
+      "suite": "passport",
+      "text": "Referencia: QAB1234567",
+      "expected": []
+    },
+    {
+      "id": "date-078",
+      "suite": "date",
+      "text": "Fecha inválida: 32.12.2035",
+      "expected": []
+    },
+    {
+      "id": "email-029",
+      "suite": "email",
+      "text": "Contacto de prueba: ev29.o'hara@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 43,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-029",
+      "suite": "phone",
+      "text": "Llama al +34 600-101-073 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 24,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-029",
+      "suite": "nif",
+      "text": "Identificación: 45229651J.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-029",
+      "suite": "nie",
+      "text": "Documento de prueba: Z1107851S.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-029",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES87 2100 0418 4802 0005 3391.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-029",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QDV233973.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-029",
+      "suite": "date",
+      "text": "La fecha prevista es 02-06-2031.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-079",
+      "suite": "email",
+      "text": "Dato incompleto: ev29 at example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-079",
+      "suite": "phone",
+      "text": "Referencia incompleta: 600ABC029",
+      "expected": []
+    },
+    {
+      "id": "nif-079",
+      "suite": "nif",
+      "text": "NIF erróneo: 45229651Z",
+      "expected": []
+    },
+    {
+      "id": "nie-079",
+      "suite": "nie",
+      "text": "NIE erróneo: Z1107851Q",
+      "expected": []
+    },
+    {
+      "id": "iban-079",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES8821000418480200053391",
+      "expected": []
+    },
+    {
+      "id": "passport-079",
+      "suite": "passport",
+      "text": "Referencia: 123QAB456",
+      "expected": []
+    },
+    {
+      "id": "date-079",
+      "suite": "date",
+      "text": "Fecha inválida: 10 de mesinventado de 2035",
+      "expected": []
+    },
+    {
+      "id": "email-030",
+      "suite": "email",
+      "text": "Contacto de prueba: evaluacion.30@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 45,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-030",
+      "suite": "phone",
+      "text": "Llama al 600101110 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 18,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-030",
+      "suite": "nif",
+      "text": "Identificación: 45237570-C.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-030",
+      "suite": "nie",
+      "text": "Documento de prueba: X1111570A.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-030",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES67-2100-0418-4402-0005-3462.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-030",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QEC234110.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-030",
+      "suite": "date",
+      "text": "La fecha prevista es 03/07/2032.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-080",
+      "suite": "email",
+      "text": "Dato incompleto: ev30example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-080",
+      "suite": "phone",
+      "text": "Referencia incompleta: 120030",
+      "expected": []
+    },
+    {
+      "id": "nif-080",
+      "suite": "nif",
+      "text": "NIF erróneo: 45237570K",
+      "expected": []
+    },
+    {
+      "id": "nie-080",
+      "suite": "nie",
+      "text": "NIE erróneo: X1111570G",
+      "expected": []
+    },
+    {
+      "id": "iban-080",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES6821000418440200053462",
+      "expected": []
+    },
+    {
+      "id": "passport-080",
+      "suite": "passport",
+      "text": "Referencia: QA123456",
+      "expected": []
+    },
+    {
+      "id": "date-080",
+      "suite": "date",
+      "text": "Fecha inválida: 44/13/2032",
+      "expected": []
+    },
+    {
+      "id": "email-031",
+      "suite": "email",
+      "text": "Contacto de prueba: ev+31@example.org.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-031",
+      "suite": "phone",
+      "text": "Llama al +34 600101147 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 22,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-031",
+      "suite": "nif",
+      "text": "Identificación: 45245489G.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-031",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1115289X.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-031",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: es4721000418400200053533.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-031",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QFJ234247.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-031",
+      "suite": "date",
+      "text": "La fecha prevista es 2033-08-04.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-081",
+      "suite": "email",
+      "text": "Dato incompleto: ev31@localhost",
+      "expected": []
+    },
+    {
+      "id": "phone-081",
+      "suite": "phone",
+      "text": "Referencia incompleta: 12345678931",
+      "expected": []
+    },
+    {
+      "id": "nif-081",
+      "suite": "nif",
+      "text": "NIF erróneo: 45245489M",
+      "expected": []
+    },
+    {
+      "id": "nie-081",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1115289B",
+      "expected": []
+    },
+    {
+      "id": "iban-081",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES4821000418400200053533",
+      "expected": []
+    },
+    {
+      "id": "passport-081",
+      "suite": "passport",
+      "text": "Referencia: QABC123456",
+      "expected": []
+    },
+    {
+      "id": "date-081",
+      "suite": "date",
+      "text": "Fecha inválida: 2032-13-44",
+      "expected": []
+    },
+    {
+      "id": "email-032",
+      "suite": "email",
+      "text": "Contacto de prueba: ev_32@example.net.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-032",
+      "suite": "phone",
+      "text": "Llama al 0034 600101184 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 23,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-032",
+      "suite": "nif",
+      "text": "Identificación: 45253408-B.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-032",
+      "suite": "nie",
+      "text": "Documento de prueba: Z1119008V.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-032",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES2421000418470200053604.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-032",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QGQ234384.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-032",
+      "suite": "date",
+      "text": "La fecha prevista es 05.09.2034.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-082",
+      "suite": "email",
+      "text": "Dato incompleto: ev32@",
+      "expected": []
+    },
+    {
+      "id": "phone-082",
+      "suite": "phone",
+      "text": "Referencia incompleta: +1 202-555-0132",
+      "expected": []
+    },
+    {
+      "id": "nif-082",
+      "suite": "nif",
+      "text": "NIF erróneo: 45253408N",
+      "expected": []
+    },
+    {
+      "id": "nie-082",
+      "suite": "nie",
+      "text": "NIE erróneo: Z1119008H",
+      "expected": []
+    },
+    {
+      "id": "iban-082",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES2521000418470200053604",
+      "expected": []
+    },
+    {
+      "id": "passport-082",
+      "suite": "passport",
+      "text": "Referencia: QAB12345",
+      "expected": []
+    },
+    {
+      "id": "date-082",
+      "suite": "date",
+      "text": "Fecha inválida: 00/10/2035",
+      "expected": []
+    },
+    {
+      "id": "email-033",
+      "suite": "email",
+      "text": "Contacto de prueba: ev-33@sub.example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 41,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-033",
+      "suite": "phone",
+      "text": "Llama al 600 101 221 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 20,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-033",
+      "suite": "nif",
+      "text": "Identificación: 45261327H.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-033",
+      "suite": "nie",
+      "text": "Documento de prueba: X1122727M.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-033",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES66 2100 0418 4202 0005 3675.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-033",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QHX234521.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-033",
+      "suite": "date",
+      "text": "La fecha prevista es 6 de octubre de 2035.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 41,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-083",
+      "suite": "email",
+      "text": "Dato incompleto: @example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-083",
+      "suite": "phone",
+      "text": "Referencia incompleta: 190000033",
+      "expected": []
+    },
+    {
+      "id": "nif-083",
+      "suite": "nif",
+      "text": "NIF erróneo: 45261327L",
+      "expected": []
+    },
+    {
+      "id": "nie-083",
+      "suite": "nie",
+      "text": "NIE erróneo: X1122727Y",
+      "expected": []
+    },
+    {
+      "id": "iban-083",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES6721000418420200053675",
+      "expected": []
+    },
+    {
+      "id": "passport-083",
+      "suite": "passport",
+      "text": "Referencia: QAB1234567",
+      "expected": []
+    },
+    {
+      "id": "date-083",
+      "suite": "date",
+      "text": "Fecha inválida: 32.12.2035",
+      "expected": []
+    },
+    {
+      "id": "email-034",
+      "suite": "email",
+      "text": "Contacto de prueba: ev34.o'hara@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 43,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-034",
+      "suite": "phone",
+      "text": "Llama al +34 600-101-258 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 24,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-034",
+      "suite": "nif",
+      "text": "Identificación: 45269246-W.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-034",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1126446N.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-034",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES43-2100-0418-4902-0005-3746.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-034",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QIE234658.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-034",
+      "suite": "date",
+      "text": "La fecha prevista es 07-11-2036.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-084",
+      "suite": "email",
+      "text": "Dato incompleto: ev34 at example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-084",
+      "suite": "phone",
+      "text": "Referencia incompleta: 600ABC034",
+      "expected": []
+    },
+    {
+      "id": "nif-084",
+      "suite": "nif",
+      "text": "NIF erróneo: 45269246A",
+      "expected": []
+    },
+    {
+      "id": "nie-084",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1126446J",
+      "expected": []
+    },
+    {
+      "id": "iban-084",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES4421000418490200053746",
+      "expected": []
+    },
+    {
+      "id": "passport-084",
+      "suite": "passport",
+      "text": "Referencia: 123QAB456",
+      "expected": []
+    },
+    {
+      "id": "date-084",
+      "suite": "date",
+      "text": "Fecha inválida: 10 de mesinventado de 2035",
+      "expected": []
+    },
+    {
+      "id": "email-035",
+      "suite": "email",
+      "text": "Contacto de prueba: evaluacion.35@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 45,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-035",
+      "suite": "phone",
+      "text": "Llama al 600101295 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 18,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-035",
+      "suite": "nif",
+      "text": "Identificación: 45277165D.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-035",
+      "suite": "nie",
+      "text": "Documento de prueba: Z1130165L.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-035",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: es2321000418450200053817.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-035",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QJL234795.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-035",
+      "suite": "date",
+      "text": "La fecha prevista es 08/12/2030.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-085",
+      "suite": "email",
+      "text": "Dato incompleto: ev35example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-085",
+      "suite": "phone",
+      "text": "Referencia incompleta: 120035",
+      "expected": []
+    },
+    {
+      "id": "nif-085",
+      "suite": "nif",
+      "text": "NIF erróneo: 45277165X",
+      "expected": []
+    },
+    {
+      "id": "nie-085",
+      "suite": "nie",
+      "text": "NIE erróneo: Z1130165C",
+      "expected": []
+    },
+    {
+      "id": "iban-085",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES2421000418450200053817",
+      "expected": []
+    },
+    {
+      "id": "passport-085",
+      "suite": "passport",
+      "text": "Referencia: QA123456",
+      "expected": []
+    },
+    {
+      "id": "date-085",
+      "suite": "date",
+      "text": "Fecha inválida: 44/13/2032",
+      "expected": []
+    },
+    {
+      "id": "email-036",
+      "suite": "email",
+      "text": "Contacto de prueba: ev+36@example.org.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-036",
+      "suite": "phone",
+      "text": "Llama al +34 600101332 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 22,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-036",
+      "suite": "nif",
+      "text": "Identificación: 45285084-Q.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-036",
+      "suite": "nie",
+      "text": "Documento de prueba: X1133884F.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-036",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES6521000418400200053888.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-036",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QKS234932.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-036",
+      "suite": "date",
+      "text": "La fecha prevista es 2031-01-09.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-086",
+      "suite": "email",
+      "text": "Dato incompleto: ev36@localhost",
+      "expected": []
+    },
+    {
+      "id": "phone-086",
+      "suite": "phone",
+      "text": "Referencia incompleta: 12345678936",
+      "expected": []
+    },
+    {
+      "id": "nif-086",
+      "suite": "nif",
+      "text": "NIF erróneo: 45285084V",
+      "expected": []
+    },
+    {
+      "id": "nie-086",
+      "suite": "nie",
+      "text": "NIE erróneo: X1133884P",
+      "expected": []
+    },
+    {
+      "id": "iban-086",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES6621000418400200053888",
+      "expected": []
+    },
+    {
+      "id": "passport-086",
+      "suite": "passport",
+      "text": "Referencia: QABC123456",
+      "expected": []
+    },
+    {
+      "id": "date-086",
+      "suite": "date",
+      "text": "Fecha inválida: 2032-13-44",
+      "expected": []
+    },
+    {
+      "id": "email-037",
+      "suite": "email",
+      "text": "Contacto de prueba: ev_37@example.net.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-037",
+      "suite": "phone",
+      "text": "Llama al 0034 600101369 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 23,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-037",
+      "suite": "nif",
+      "text": "Identificación: 45293003T.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-037",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1137603Z.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-037",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES42 2100 0418 4702 0005 3959.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-037",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QLZ235069.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-037",
+      "suite": "date",
+      "text": "La fecha prevista es 10.02.2032.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-087",
+      "suite": "email",
+      "text": "Dato incompleto: ev37@",
+      "expected": []
+    },
+    {
+      "id": "phone-087",
+      "suite": "phone",
+      "text": "Referencia incompleta: +1 202-555-0137",
+      "expected": []
+    },
+    {
+      "id": "nif-087",
+      "suite": "nif",
+      "text": "NIF erróneo: 45293003R",
+      "expected": []
+    },
+    {
+      "id": "nie-087",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1137603S",
+      "expected": []
+    },
+    {
+      "id": "iban-087",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES4321000418470200053959",
+      "expected": []
+    },
+    {
+      "id": "passport-087",
+      "suite": "passport",
+      "text": "Referencia: QAB12345",
+      "expected": []
+    },
+    {
+      "id": "date-087",
+      "suite": "date",
+      "text": "Fecha inválida: 00/10/2035",
+      "expected": []
+    },
+    {
+      "id": "email-038",
+      "suite": "email",
+      "text": "Contacto de prueba: ev-38@sub.example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 41,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-038",
+      "suite": "phone",
+      "text": "Llama al 600 101 406 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 20,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-038",
+      "suite": "nif",
+      "text": "Identificación: 45300922-F.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-038",
+      "suite": "nie",
+      "text": "Documento de prueba: Z1141322K.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-038",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES14-2100-0418-4002-0005-4030.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-038",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QMG235206.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-038",
+      "suite": "date",
+      "text": "La fecha prevista es 11 de octubre de 2033.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 42,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-088",
+      "suite": "email",
+      "text": "Dato incompleto: @example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-088",
+      "suite": "phone",
+      "text": "Referencia incompleta: 190000038",
+      "expected": []
+    },
+    {
+      "id": "nif-088",
+      "suite": "nif",
+      "text": "NIF erróneo: 45300922P",
+      "expected": []
+    },
+    {
+      "id": "nie-088",
+      "suite": "nie",
+      "text": "NIE erróneo: Z1141322E",
+      "expected": []
+    },
+    {
+      "id": "iban-088",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES1521000418400200054030",
+      "expected": []
+    },
+    {
+      "id": "passport-088",
+      "suite": "passport",
+      "text": "Referencia: QAB1234567",
+      "expected": []
+    },
+    {
+      "id": "date-088",
+      "suite": "date",
+      "text": "Fecha inválida: 32.12.2035",
+      "expected": []
+    },
+    {
+      "id": "email-039",
+      "suite": "email",
+      "text": "Contacto de prueba: ev39.o'hara@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 43,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-039",
+      "suite": "phone",
+      "text": "Llama al +34 600-101-443 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 24,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-039",
+      "suite": "nif",
+      "text": "Identificación: 45308841Z.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-039",
+      "suite": "nie",
+      "text": "Documento de prueba: X1145041D.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-039",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: es8821000418470200054101.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-039",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QNN235343.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-039",
+      "suite": "date",
+      "text": "La fecha prevista es 12-04-2034.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-089",
+      "suite": "email",
+      "text": "Dato incompleto: ev39 at example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-089",
+      "suite": "phone",
+      "text": "Referencia incompleta: 600ABC039",
+      "expected": []
+    },
+    {
+      "id": "nif-089",
+      "suite": "nif",
+      "text": "NIF erróneo: 45308841S",
+      "expected": []
+    },
+    {
+      "id": "nie-089",
+      "suite": "nie",
+      "text": "NIE erróneo: X1145041X",
+      "expected": []
+    },
+    {
+      "id": "iban-089",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES8921000418470200054101",
+      "expected": []
+    },
+    {
+      "id": "passport-089",
+      "suite": "passport",
+      "text": "Referencia: 123QAB456",
+      "expected": []
+    },
+    {
+      "id": "date-089",
+      "suite": "date",
+      "text": "Fecha inválida: 10 de mesinventado de 2035",
+      "expected": []
+    },
+    {
+      "id": "email-040",
+      "suite": "email",
+      "text": "Contacto de prueba: evaluacion.40@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 45,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-040",
+      "suite": "phone",
+      "text": "Llama al 600101480 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 18,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-040",
+      "suite": "nif",
+      "text": "Identificación: 45316760-K.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-040",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1148760Q.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-040",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES3321000418420200054172.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-040",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QOU235480.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-040",
+      "suite": "date",
+      "text": "La fecha prevista es 13/05/2035.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-090",
+      "suite": "email",
+      "text": "Dato incompleto: ev40example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-090",
+      "suite": "phone",
+      "text": "Referencia incompleta: 120040",
+      "expected": []
+    },
+    {
+      "id": "nif-090",
+      "suite": "nif",
+      "text": "NIF erróneo: 45316760E",
+      "expected": []
+    },
+    {
+      "id": "nie-090",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1148760V",
+      "expected": []
+    },
+    {
+      "id": "iban-090",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES3421000418420200054172",
+      "expected": []
+    },
+    {
+      "id": "passport-090",
+      "suite": "passport",
+      "text": "Referencia: QA123456",
+      "expected": []
+    },
+    {
+      "id": "date-090",
+      "suite": "date",
+      "text": "Fecha inválida: 44/13/2032",
+      "expected": []
+    },
+    {
+      "id": "email-041",
+      "suite": "email",
+      "text": "Contacto de prueba: ev+41@example.org.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-041",
+      "suite": "phone",
+      "text": "Llama al +34 600101517 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 22,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-041",
+      "suite": "nif",
+      "text": "Identificación: 45324679M.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-041",
+      "suite": "nie",
+      "text": "Documento de prueba: Z1152479T.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-041",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES10 2100 0418 4902 0005 4243.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-041",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QPB235617.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-041",
+      "suite": "date",
+      "text": "La fecha prevista es 2036-06-14.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-091",
+      "suite": "email",
+      "text": "Dato incompleto: ev41@localhost",
+      "expected": []
+    },
+    {
+      "id": "phone-091",
+      "suite": "phone",
+      "text": "Referencia incompleta: 12345678941",
+      "expected": []
+    },
+    {
+      "id": "nif-091",
+      "suite": "nif",
+      "text": "NIF erróneo: 45324679Y",
+      "expected": []
+    },
+    {
+      "id": "nie-091",
+      "suite": "nie",
+      "text": "NIE erróneo: Z1152479R",
+      "expected": []
+    },
+    {
+      "id": "iban-091",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES1121000418490200054243",
+      "expected": []
+    },
+    {
+      "id": "passport-091",
+      "suite": "passport",
+      "text": "Referencia: QABC123456",
+      "expected": []
+    },
+    {
+      "id": "date-091",
+      "suite": "date",
+      "text": "Fecha inválida: 2032-13-44",
+      "expected": []
+    },
+    {
+      "id": "email-042",
+      "suite": "email",
+      "text": "Contacto de prueba: ev_42@example.net.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-042",
+      "suite": "phone",
+      "text": "Llama al 0034 600101554 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 23,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-042",
+      "suite": "nif",
+      "text": "Identificación: 45332598-N.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-042",
+      "suite": "nie",
+      "text": "Documento de prueba: X1156198B.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-042",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES87-2100-0418-4502-0005-4314.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-042",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QQI235754.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-042",
+      "suite": "date",
+      "text": "La fecha prevista es 15.07.2030.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-092",
+      "suite": "email",
+      "text": "Dato incompleto: ev42@",
+      "expected": []
+    },
+    {
+      "id": "phone-092",
+      "suite": "phone",
+      "text": "Referencia incompleta: +1 202-555-0142",
+      "expected": []
+    },
+    {
+      "id": "nif-092",
+      "suite": "nif",
+      "text": "NIF erróneo: 45332598J",
+      "expected": []
+    },
+    {
+      "id": "nie-092",
+      "suite": "nie",
+      "text": "NIE erróneo: X1156198N",
+      "expected": []
+    },
+    {
+      "id": "iban-092",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES8821000418450200054314",
+      "expected": []
+    },
+    {
+      "id": "passport-092",
+      "suite": "passport",
+      "text": "Referencia: QAB12345",
+      "expected": []
+    },
+    {
+      "id": "date-092",
+      "suite": "date",
+      "text": "Fecha inválida: 00/10/2035",
+      "expected": []
+    },
+    {
+      "id": "email-043",
+      "suite": "email",
+      "text": "Contacto de prueba: ev-43@sub.example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 41,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-043",
+      "suite": "phone",
+      "text": "Llama al 600 101 591 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 20,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-043",
+      "suite": "nif",
+      "text": "Identificación: 45340517L.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-043",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1159917H.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-043",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: es3221000418400200054385.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-043",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QRP235891.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-043",
+      "suite": "date",
+      "text": "La fecha prevista es 16 de octubre de 2031.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 42,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-093",
+      "suite": "email",
+      "text": "Dato incompleto: @example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-093",
+      "suite": "phone",
+      "text": "Referencia incompleta: 190000043",
+      "expected": []
+    },
+    {
+      "id": "nif-093",
+      "suite": "nif",
+      "text": "NIF erróneo: 45340517C",
+      "expected": []
+    },
+    {
+      "id": "nie-093",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1159917L",
+      "expected": []
+    },
+    {
+      "id": "iban-093",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES3321000418400200054385",
+      "expected": []
+    },
+    {
+      "id": "passport-093",
+      "suite": "passport",
+      "text": "Referencia: QAB1234567",
+      "expected": []
+    },
+    {
+      "id": "date-093",
+      "suite": "date",
+      "text": "Fecha inválida: 32.12.2035",
+      "expected": []
+    },
+    {
+      "id": "email-044",
+      "suite": "email",
+      "text": "Contacto de prueba: ev44.o'hara@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 43,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-044",
+      "suite": "phone",
+      "text": "Llama al +34 600-101-628 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 24,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-044",
+      "suite": "nif",
+      "text": "Identificación: 45348436-A.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-044",
+      "suite": "nie",
+      "text": "Documento de prueba: Z1163636W.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-044",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES0921000418470200054456.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-044",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QSW236028.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-044",
+      "suite": "date",
+      "text": "La fecha prevista es 17-09-2032.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-094",
+      "suite": "email",
+      "text": "Dato incompleto: ev44 at example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-094",
+      "suite": "phone",
+      "text": "Referencia incompleta: 600ABC044",
+      "expected": []
+    },
+    {
+      "id": "nif-094",
+      "suite": "nif",
+      "text": "NIF erróneo: 45348436G",
+      "expected": []
+    },
+    {
+      "id": "nie-094",
+      "suite": "nie",
+      "text": "NIE erróneo: Z1163636A",
+      "expected": []
+    },
+    {
+      "id": "iban-094",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES1021000418470200054456",
+      "expected": []
+    },
+    {
+      "id": "passport-094",
+      "suite": "passport",
+      "text": "Referencia: 123QAB456",
+      "expected": []
+    },
+    {
+      "id": "date-094",
+      "suite": "date",
+      "text": "Fecha inválida: 10 de mesinventado de 2035",
+      "expected": []
+    },
+    {
+      "id": "email-045",
+      "suite": "email",
+      "text": "Contacto de prueba: evaluacion.45@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 45,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-045",
+      "suite": "phone",
+      "text": "Llama al 600101665 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 18,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-045",
+      "suite": "nif",
+      "text": "Identificación: 45356355X.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-045",
+      "suite": "nie",
+      "text": "Documento de prueba: X1167355J.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-045",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES86 2100 0418 4302 0005 4527.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-045",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QTD236165.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-045",
+      "suite": "date",
+      "text": "La fecha prevista es 18/10/2033.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-095",
+      "suite": "email",
+      "text": "Dato incompleto: ev45example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-095",
+      "suite": "phone",
+      "text": "Referencia incompleta: 120045",
+      "expected": []
+    },
+    {
+      "id": "nif-095",
+      "suite": "nif",
+      "text": "NIF erróneo: 45356355B",
+      "expected": []
+    },
+    {
+      "id": "nie-095",
+      "suite": "nie",
+      "text": "NIE erróneo: X1167355Z",
+      "expected": []
+    },
+    {
+      "id": "iban-095",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES8721000418430200054527",
+      "expected": []
+    },
+    {
+      "id": "passport-095",
+      "suite": "passport",
+      "text": "Referencia: QA123456",
+      "expected": []
+    },
+    {
+      "id": "date-095",
+      "suite": "date",
+      "text": "Fecha inválida: 44/13/2032",
+      "expected": []
+    },
+    {
+      "id": "email-046",
+      "suite": "email",
+      "text": "Contacto de prueba: ev+46@example.org.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-046",
+      "suite": "phone",
+      "text": "Llama al +34 600101702 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 22,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-046",
+      "suite": "nif",
+      "text": "Identificación: 45364274-V.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-046",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1171074C.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-046",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES28-2100-0418-4902-0005-4598.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-046",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QUK236302.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-046",
+      "suite": "date",
+      "text": "La fecha prevista es 2034-11-19.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-096",
+      "suite": "email",
+      "text": "Dato incompleto: ev46@localhost",
+      "expected": []
+    },
+    {
+      "id": "phone-096",
+      "suite": "phone",
+      "text": "Referencia incompleta: 12345678946",
+      "expected": []
+    },
+    {
+      "id": "nif-096",
+      "suite": "nif",
+      "text": "NIF erróneo: 45364274H",
+      "expected": []
+    },
+    {
+      "id": "nie-096",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1171074K",
+      "expected": []
+    },
+    {
+      "id": "iban-096",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES2921000418490200054598",
+      "expected": []
+    },
+    {
+      "id": "passport-096",
+      "suite": "passport",
+      "text": "Referencia: QABC123456",
+      "expected": []
+    },
+    {
+      "id": "date-096",
+      "suite": "date",
+      "text": "Fecha inválida: 2032-13-44",
+      "expected": []
+    },
+    {
+      "id": "email-047",
+      "suite": "email",
+      "text": "Contacto de prueba: ev_47@example.net.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-047",
+      "suite": "phone",
+      "text": "Llama al 0034 600101739 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 23,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-047",
+      "suite": "nif",
+      "text": "Identificación: 45372193R.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-047",
+      "suite": "nie",
+      "text": "Documento de prueba: Z1174793G.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-047",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: es0821000418450200054669.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-047",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QVR236439.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-047",
+      "suite": "date",
+      "text": "La fecha prevista es 20.12.2035.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-097",
+      "suite": "email",
+      "text": "Dato incompleto: ev47@",
+      "expected": []
+    },
+    {
+      "id": "phone-097",
+      "suite": "phone",
+      "text": "Referencia incompleta: +1 202-555-0147",
+      "expected": []
+    },
+    {
+      "id": "nif-097",
+      "suite": "nif",
+      "text": "NIF erróneo: 45372193W",
+      "expected": []
+    },
+    {
+      "id": "nie-097",
+      "suite": "nie",
+      "text": "NIE erróneo: Z1174793M",
+      "expected": []
+    },
+    {
+      "id": "iban-097",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES0921000418450200054669",
+      "expected": []
+    },
+    {
+      "id": "passport-097",
+      "suite": "passport",
+      "text": "Referencia: QAB12345",
+      "expected": []
+    },
+    {
+      "id": "date-097",
+      "suite": "date",
+      "text": "Fecha inválida: 00/10/2035",
+      "expected": []
+    },
+    {
+      "id": "email-048",
+      "suite": "email",
+      "text": "Contacto de prueba: ev-48@sub.example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 41,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-048",
+      "suite": "phone",
+      "text": "Llama al 600 101 776 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 20,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-048",
+      "suite": "nif",
+      "text": "Identificación: 45380112-P.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 26,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-048",
+      "suite": "nie",
+      "text": "Documento de prueba: X1178512S.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-048",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES5821000418430200054740.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 44,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-048",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QWY236576.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-048",
+      "suite": "date",
+      "text": "La fecha prevista es 21 de octubre de 2036.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 42,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-098",
+      "suite": "email",
+      "text": "Dato incompleto: @example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-098",
+      "suite": "phone",
+      "text": "Referencia incompleta: 190000048",
+      "expected": []
+    },
+    {
+      "id": "nif-098",
+      "suite": "nif",
+      "text": "NIF erróneo: 45380112D",
+      "expected": []
+    },
+    {
+      "id": "nie-098",
+      "suite": "nie",
+      "text": "NIE erróneo: X1178512Q",
+      "expected": []
+    },
+    {
+      "id": "iban-098",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES5921000418430200054740",
+      "expected": []
+    },
+    {
+      "id": "passport-098",
+      "suite": "passport",
+      "text": "Referencia: QAB1234567",
+      "expected": []
+    },
+    {
+      "id": "date-098",
+      "suite": "date",
+      "text": "Fecha inválida: 32.12.2035",
+      "expected": []
+    },
+    {
+      "id": "email-049",
+      "suite": "email",
+      "text": "Contacto de prueba: ev49.o'hara@example.com.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 43,
+          "category": "CORREO"
+        }
+      ]
+    },
+    {
+      "id": "phone-049",
+      "suite": "phone",
+      "text": "Llama al +34 600-101-813 para la prueba.",
+      "expected": [
+        {
+          "start": 9,
+          "end": 24,
+          "category": "TELEFONO"
+        }
+      ]
+    },
+    {
+      "id": "nif-049",
+      "suite": "nif",
+      "text": "Identificación: 45388031S.",
+      "expected": [
+        {
+          "start": 16,
+          "end": 25,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "nie-049",
+      "suite": "nie",
+      "text": "Documento de prueba: Y1182231E.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "iban-049",
+      "suite": "iban",
+      "text": "Cuenta para ensayo: ES11 2100 0418 4102 0005 4811.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 49,
+          "category": "IBAN"
+        }
+      ]
+    },
+    {
+      "id": "passport-049",
+      "suite": "passport",
+      "text": "Pasaporte sintético: QXF236713.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 30,
+          "category": "DOCUMENTO"
+        }
+      ]
+    },
+    {
+      "id": "date-049",
+      "suite": "date",
+      "text": "La fecha prevista es 22-02-2030.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 31,
+          "category": "FECHA"
+        }
+      ]
+    },
+    {
+      "id": "email-099",
+      "suite": "email",
+      "text": "Dato incompleto: ev49 at example.com",
+      "expected": []
+    },
+    {
+      "id": "phone-099",
+      "suite": "phone",
+      "text": "Referencia incompleta: 600ABC049",
+      "expected": []
+    },
+    {
+      "id": "nif-099",
+      "suite": "nif",
+      "text": "NIF erróneo: 45388031Q",
+      "expected": []
+    },
+    {
+      "id": "nie-099",
+      "suite": "nie",
+      "text": "NIE erróneo: Y1182231T",
+      "expected": []
+    },
+    {
+      "id": "iban-099",
+      "suite": "iban",
+      "text": "Cuenta errónea: ES1221000418410200054811",
+      "expected": []
+    },
+    {
+      "id": "passport-099",
+      "suite": "passport",
+      "text": "Referencia: 123QAB456",
+      "expected": []
+    },
+    {
+      "id": "date-099",
+      "suite": "date",
+      "text": "Fecha inválida: 10 de mesinventado de 2035",
+      "expected": []
+    },
+    {
+      "id": "ner-000",
+      "suite": "ner",
+      "text": "Lucía Serrano trabaja para Editorial Bruma y vive en Madrid.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 13,
+          "category": "PERSONA"
+        },
+        {
+          "start": 27,
+          "end": 42,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 53,
+          "end": 59,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-001",
+      "suite": "ner",
+      "text": "La entrevista con Marcos Torres se realizó en Valladolid para Banco del Río.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 46,
+          "end": 56,
+          "category": "UBICACION"
+        },
+        {
+          "start": 62,
+          "end": 75,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-002",
+      "suite": "ner",
+      "text": "Sonido Prisma encargó a Elena Ortiz la revisión de sonido en Valencia.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 13,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 24,
+          "end": 35,
+          "category": "PERSONA"
+        },
+        {
+          "start": 61,
+          "end": 69,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-003",
+      "suite": "ner",
+      "text": "Desde Santander, Javier Molina envió la propuesta a Teatro Aurora.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 15,
+          "category": "UBICACION"
+        },
+        {
+          "start": 17,
+          "end": 30,
+          "category": "PERSONA"
+        },
+        {
+          "start": 52,
+          "end": 65,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-004",
+      "suite": "ner",
+      "text": "El contrato entre Paula Gil y Radio Capital se firmó en Bilbao.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 27,
+          "category": "PERSONA"
+        },
+        {
+          "start": 30,
+          "end": 43,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 56,
+          "end": 62,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-005",
+      "suite": "ner",
+      "text": "Ayer Sergio Suárez presentó en Pamplona un informe para Laboratorios Delta.",
+      "expected": [
+        {
+          "start": 5,
+          "end": 18,
+          "category": "PERSONA"
+        },
+        {
+          "start": 31,
+          "end": 39,
+          "category": "UBICACION"
+        },
+        {
+          "start": 56,
+          "end": 74,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-006",
+      "suite": "ner",
+      "text": "El equipo de Orquesta del Puerto viajó a Zaragoza con Marta Cabrera.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 32,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 41,
+          "end": 49,
+          "category": "UBICACION"
+        },
+        {
+          "start": 54,
+          "end": 67,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-007",
+      "suite": "ner",
+      "text": "Hablamos con Daniel Fuentes sobre las grabaciones de Estudios Horizonte en Oviedo.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 27,
+          "category": "PERSONA"
+        },
+        {
+          "start": 53,
+          "end": 71,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 75,
+          "end": 81,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-008",
+      "suite": "ner",
+      "text": "La reunión de Luz Azul en Córdoba contó con Clara Castro.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 22,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 26,
+          "end": 33,
+          "category": "UBICACION"
+        },
+        {
+          "start": 44,
+          "end": 56,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-009",
+      "suite": "ner",
+      "text": "Pablo Navarro revisará el montaje que Distribuidora Estrella prepara en Segovia.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 13,
+          "category": "PERSONA"
+        },
+        {
+          "start": 38,
+          "end": 60,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 72,
+          "end": 79,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-010",
+      "suite": "ner",
+      "text": "Irene Ramos trabaja para Agencia Nexo y vive en Salamanca.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 11,
+          "category": "PERSONA"
+        },
+        {
+          "start": 25,
+          "end": 37,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 48,
+          "end": 57,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-011",
+      "suite": "ner",
+      "text": "La entrevista con Diego Morales se realizó en Barcelona para Taller Sónico.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 46,
+          "end": 55,
+          "category": "UBICACION"
+        },
+        {
+          "start": 61,
+          "end": 74,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-012",
+      "suite": "ner",
+      "text": "Clínica Alameda encargó a Alba Vega la revisión de sonido en Alicante.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 15,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 26,
+          "end": 35,
+          "category": "PERSONA"
+        },
+        {
+          "start": 61,
+          "end": 69,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-013",
+      "suite": "ner",
+      "text": "Desde Sevilla, Rubén Santos envió la propuesta a Transportes Sierra.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 13,
+          "category": "UBICACION"
+        },
+        {
+          "start": 15,
+          "end": 27,
+          "category": "PERSONA"
+        },
+        {
+          "start": 49,
+          "end": 67,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-014",
+      "suite": "ner",
+      "text": "El contrato entre Nuria Delgado y Producciones Horizonte se firmó en Burgos.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 34,
+          "end": 56,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 69,
+          "end": 75,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-015",
+      "suite": "ner",
+      "text": "Ayer Hugo Romero presentó en Málaga un informe para Televisión Costera.",
+      "expected": [
+        {
+          "start": 5,
+          "end": 16,
+          "category": "PERSONA"
+        },
+        {
+          "start": 29,
+          "end": 35,
+          "category": "UBICACION"
+        },
+        {
+          "start": 52,
+          "end": 70,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-016",
+      "suite": "ner",
+      "text": "El equipo de Fundación Encuentro viajó a Cáceres con Silvia Vidal.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 32,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 41,
+          "end": 48,
+          "category": "UBICACION"
+        },
+        {
+          "start": 53,
+          "end": 65,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-017",
+      "suite": "ner",
+      "text": "Hablamos con Andrés Reyes sobre las grabaciones de Cine Atlántico en Granada.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 25,
+          "category": "PERSONA"
+        },
+        {
+          "start": 51,
+          "end": 65,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 69,
+          "end": 76,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-018",
+      "suite": "ner",
+      "text": "La reunión de Imprenta Central en Murcia contó con Carmen Campos.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 30,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 34,
+          "end": 40,
+          "category": "UBICACION"
+        },
+        {
+          "start": 51,
+          "end": 64,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-019",
+      "suite": "ner",
+      "text": "Víctor Blanco revisará el montaje que Universidad del Norte prepara en Toledo.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 13,
+          "category": "PERSONA"
+        },
+        {
+          "start": 38,
+          "end": 59,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 71,
+          "end": 77,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-020",
+      "suite": "ner",
+      "text": "Lucía Molina trabaja para Estudios Horizonte y vive en Barcelona.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 12,
+          "category": "PERSONA"
+        },
+        {
+          "start": 26,
+          "end": 44,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 55,
+          "end": 64,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-021",
+      "suite": "ner",
+      "text": "La entrevista con Marcos Gil se realizó en Alicante para Luz Azul.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 28,
+          "category": "PERSONA"
+        },
+        {
+          "start": 43,
+          "end": 51,
+          "category": "UBICACION"
+        },
+        {
+          "start": 57,
+          "end": 65,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-022",
+      "suite": "ner",
+      "text": "Distribuidora Estrella encargó a Elena Suárez la revisión de sonido en Sevilla.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 22,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 33,
+          "end": 45,
+          "category": "PERSONA"
+        },
+        {
+          "start": 71,
+          "end": 78,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-023",
+      "suite": "ner",
+      "text": "Desde Burgos, Javier Cabrera envió la propuesta a Agencia Nexo.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 12,
+          "category": "UBICACION"
+        },
+        {
+          "start": 14,
+          "end": 28,
+          "category": "PERSONA"
+        },
+        {
+          "start": 50,
+          "end": 62,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-024",
+      "suite": "ner",
+      "text": "El contrato entre Paula Fuentes y Taller Sónico se firmó en Málaga.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 34,
+          "end": 47,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 60,
+          "end": 66,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-025",
+      "suite": "ner",
+      "text": "Ayer Sergio Castro presentó en Cáceres un informe para Clínica Alameda.",
+      "expected": [
+        {
+          "start": 5,
+          "end": 18,
+          "category": "PERSONA"
+        },
+        {
+          "start": 31,
+          "end": 38,
+          "category": "UBICACION"
+        },
+        {
+          "start": 55,
+          "end": 70,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-026",
+      "suite": "ner",
+      "text": "El equipo de Transportes Sierra viajó a Granada con Marta Navarro.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 31,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 40,
+          "end": 47,
+          "category": "UBICACION"
+        },
+        {
+          "start": 52,
+          "end": 65,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-027",
+      "suite": "ner",
+      "text": "Hablamos con Daniel Ramos sobre las grabaciones de Producciones Horizonte en Murcia.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 25,
+          "category": "PERSONA"
+        },
+        {
+          "start": 51,
+          "end": 73,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 77,
+          "end": 83,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-028",
+      "suite": "ner",
+      "text": "La reunión de Televisión Costera en Toledo contó con Clara Morales.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 32,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 36,
+          "end": 42,
+          "category": "UBICACION"
+        },
+        {
+          "start": 53,
+          "end": 66,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-029",
+      "suite": "ner",
+      "text": "Pablo Vega revisará el montaje que Fundación Encuentro prepara en Madrid.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 10,
+          "category": "PERSONA"
+        },
+        {
+          "start": 35,
+          "end": 54,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 66,
+          "end": 72,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-030",
+      "suite": "ner",
+      "text": "Irene Santos trabaja para Cine Atlántico y vive en Valladolid.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 12,
+          "category": "PERSONA"
+        },
+        {
+          "start": 26,
+          "end": 40,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 51,
+          "end": 61,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-031",
+      "suite": "ner",
+      "text": "La entrevista con Diego Delgado se realizó en Valencia para Imprenta Central.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 46,
+          "end": 54,
+          "category": "UBICACION"
+        },
+        {
+          "start": 60,
+          "end": 76,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-032",
+      "suite": "ner",
+      "text": "Universidad del Norte encargó a Alba Romero la revisión de sonido en Santander.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 21,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 32,
+          "end": 43,
+          "category": "PERSONA"
+        },
+        {
+          "start": 69,
+          "end": 78,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-033",
+      "suite": "ner",
+      "text": "Desde Bilbao, Rubén Vidal envió la propuesta a Editorial Bruma.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 12,
+          "category": "UBICACION"
+        },
+        {
+          "start": 14,
+          "end": 25,
+          "category": "PERSONA"
+        },
+        {
+          "start": 47,
+          "end": 62,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-034",
+      "suite": "ner",
+      "text": "El contrato entre Nuria Reyes y Banco del Río se firmó en Pamplona.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 29,
+          "category": "PERSONA"
+        },
+        {
+          "start": 32,
+          "end": 45,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 58,
+          "end": 66,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-035",
+      "suite": "ner",
+      "text": "Ayer Hugo Campos presentó en Zaragoza un informe para Sonido Prisma.",
+      "expected": [
+        {
+          "start": 5,
+          "end": 16,
+          "category": "PERSONA"
+        },
+        {
+          "start": 29,
+          "end": 37,
+          "category": "UBICACION"
+        },
+        {
+          "start": 54,
+          "end": 67,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-036",
+      "suite": "ner",
+      "text": "El equipo de Teatro Aurora viajó a Oviedo con Silvia Blanco.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 26,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 35,
+          "end": 41,
+          "category": "UBICACION"
+        },
+        {
+          "start": 46,
+          "end": 59,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-037",
+      "suite": "ner",
+      "text": "Hablamos con Andrés Serrano sobre las grabaciones de Radio Capital en Córdoba.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 27,
+          "category": "PERSONA"
+        },
+        {
+          "start": 53,
+          "end": 66,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 70,
+          "end": 77,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-038",
+      "suite": "ner",
+      "text": "La reunión de Laboratorios Delta en Segovia contó con Carmen Torres.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 32,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 36,
+          "end": 43,
+          "category": "UBICACION"
+        },
+        {
+          "start": 54,
+          "end": 67,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-039",
+      "suite": "ner",
+      "text": "Víctor Ortiz revisará el montaje que Orquesta del Puerto prepara en Salamanca.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 12,
+          "category": "PERSONA"
+        },
+        {
+          "start": 37,
+          "end": 56,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 68,
+          "end": 77,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-040",
+      "suite": "ner",
+      "text": "Lucía Cabrera trabaja para Producciones Horizonte y vive en Valencia.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 13,
+          "category": "PERSONA"
+        },
+        {
+          "start": 27,
+          "end": 49,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 60,
+          "end": 68,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-041",
+      "suite": "ner",
+      "text": "La entrevista con Marcos Fuentes se realizó en Santander para Televisión Costera.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 32,
+          "category": "PERSONA"
+        },
+        {
+          "start": 47,
+          "end": 56,
+          "category": "UBICACION"
+        },
+        {
+          "start": 62,
+          "end": 80,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-042",
+      "suite": "ner",
+      "text": "Fundación Encuentro encargó a Elena Castro la revisión de sonido en Bilbao.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 19,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 30,
+          "end": 42,
+          "category": "PERSONA"
+        },
+        {
+          "start": 68,
+          "end": 74,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-043",
+      "suite": "ner",
+      "text": "Desde Pamplona, Javier Navarro envió la propuesta a Cine Atlántico.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 14,
+          "category": "UBICACION"
+        },
+        {
+          "start": 16,
+          "end": 30,
+          "category": "PERSONA"
+        },
+        {
+          "start": 52,
+          "end": 66,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-044",
+      "suite": "ner",
+      "text": "El contrato entre Paula Ramos y Imprenta Central se firmó en Zaragoza.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 29,
+          "category": "PERSONA"
+        },
+        {
+          "start": 32,
+          "end": 48,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 61,
+          "end": 69,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-045",
+      "suite": "ner",
+      "text": "Ayer Sergio Morales presentó en Oviedo un informe para Universidad del Norte.",
+      "expected": [
+        {
+          "start": 5,
+          "end": 19,
+          "category": "PERSONA"
+        },
+        {
+          "start": 32,
+          "end": 38,
+          "category": "UBICACION"
+        },
+        {
+          "start": 55,
+          "end": 76,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-046",
+      "suite": "ner",
+      "text": "El equipo de Editorial Bruma viajó a Córdoba con Marta Vega.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 28,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 37,
+          "end": 44,
+          "category": "UBICACION"
+        },
+        {
+          "start": 49,
+          "end": 59,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-047",
+      "suite": "ner",
+      "text": "Hablamos con Daniel Santos sobre las grabaciones de Banco del Río en Segovia.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 26,
+          "category": "PERSONA"
+        },
+        {
+          "start": 52,
+          "end": 65,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 69,
+          "end": 76,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-048",
+      "suite": "ner",
+      "text": "La reunión de Sonido Prisma en Salamanca contó con Clara Delgado.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 27,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 31,
+          "end": 40,
+          "category": "UBICACION"
+        },
+        {
+          "start": 51,
+          "end": 64,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-049",
+      "suite": "ner",
+      "text": "Pablo Romero revisará el montaje que Teatro Aurora prepara en Barcelona.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 12,
+          "category": "PERSONA"
+        },
+        {
+          "start": 37,
+          "end": 50,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 62,
+          "end": 71,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-050",
+      "suite": "ner",
+      "text": "Irene Vidal trabaja para Radio Capital y vive en Alicante.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 11,
+          "category": "PERSONA"
+        },
+        {
+          "start": 25,
+          "end": 38,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 49,
+          "end": 57,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-051",
+      "suite": "ner",
+      "text": "La entrevista con Diego Reyes se realizó en Sevilla para Laboratorios Delta.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 29,
+          "category": "PERSONA"
+        },
+        {
+          "start": 44,
+          "end": 51,
+          "category": "UBICACION"
+        },
+        {
+          "start": 57,
+          "end": 75,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-052",
+      "suite": "ner",
+      "text": "Orquesta del Puerto encargó a Alba Campos la revisión de sonido en Burgos.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 19,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 30,
+          "end": 41,
+          "category": "PERSONA"
+        },
+        {
+          "start": 67,
+          "end": 73,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-053",
+      "suite": "ner",
+      "text": "Desde Málaga, Rubén Blanco envió la propuesta a Estudios Horizonte.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 12,
+          "category": "UBICACION"
+        },
+        {
+          "start": 14,
+          "end": 26,
+          "category": "PERSONA"
+        },
+        {
+          "start": 48,
+          "end": 66,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-054",
+      "suite": "ner",
+      "text": "El contrato entre Nuria Serrano y Luz Azul se firmó en Cáceres.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 34,
+          "end": 42,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 55,
+          "end": 62,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-055",
+      "suite": "ner",
+      "text": "Ayer Hugo Torres presentó en Granada un informe para Distribuidora Estrella.",
+      "expected": [
+        {
+          "start": 5,
+          "end": 16,
+          "category": "PERSONA"
+        },
+        {
+          "start": 29,
+          "end": 36,
+          "category": "UBICACION"
+        },
+        {
+          "start": 53,
+          "end": 75,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-056",
+      "suite": "ner",
+      "text": "El equipo de Agencia Nexo viajó a Murcia con Silvia Ortiz.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 25,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 34,
+          "end": 40,
+          "category": "UBICACION"
+        },
+        {
+          "start": 45,
+          "end": 57,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-057",
+      "suite": "ner",
+      "text": "Hablamos con Andrés Molina sobre las grabaciones de Taller Sónico en Toledo.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 26,
+          "category": "PERSONA"
+        },
+        {
+          "start": 52,
+          "end": 65,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 69,
+          "end": 75,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-058",
+      "suite": "ner",
+      "text": "La reunión de Clínica Alameda en Madrid contó con Carmen Gil.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 29,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 33,
+          "end": 39,
+          "category": "UBICACION"
+        },
+        {
+          "start": 50,
+          "end": 60,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-059",
+      "suite": "ner",
+      "text": "Víctor Suárez revisará el montaje que Transportes Sierra prepara en Valladolid.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 13,
+          "category": "PERSONA"
+        },
+        {
+          "start": 38,
+          "end": 56,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 68,
+          "end": 78,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-060",
+      "suite": "ner",
+      "text": "Lucía Navarro trabaja para Banco del Río y vive en Sevilla.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 13,
+          "category": "PERSONA"
+        },
+        {
+          "start": 27,
+          "end": 40,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 51,
+          "end": 58,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-061",
+      "suite": "ner",
+      "text": "La entrevista con Marcos Ramos se realizó en Burgos para Sonido Prisma.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 30,
+          "category": "PERSONA"
+        },
+        {
+          "start": 45,
+          "end": 51,
+          "category": "UBICACION"
+        },
+        {
+          "start": 57,
+          "end": 70,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-062",
+      "suite": "ner",
+      "text": "Teatro Aurora encargó a Elena Morales la revisión de sonido en Málaga.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 13,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 24,
+          "end": 37,
+          "category": "PERSONA"
+        },
+        {
+          "start": 63,
+          "end": 69,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-063",
+      "suite": "ner",
+      "text": "Desde Cáceres, Javier Vega envió la propuesta a Radio Capital.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 13,
+          "category": "UBICACION"
+        },
+        {
+          "start": 15,
+          "end": 26,
+          "category": "PERSONA"
+        },
+        {
+          "start": 48,
+          "end": 61,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-064",
+      "suite": "ner",
+      "text": "El contrato entre Paula Santos y Laboratorios Delta se firmó en Granada.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 30,
+          "category": "PERSONA"
+        },
+        {
+          "start": 33,
+          "end": 51,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 64,
+          "end": 71,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-065",
+      "suite": "ner",
+      "text": "Ayer Sergio Delgado presentó en Murcia un informe para Orquesta del Puerto.",
+      "expected": [
+        {
+          "start": 5,
+          "end": 19,
+          "category": "PERSONA"
+        },
+        {
+          "start": 32,
+          "end": 38,
+          "category": "UBICACION"
+        },
+        {
+          "start": 55,
+          "end": 74,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-066",
+      "suite": "ner",
+      "text": "El equipo de Estudios Horizonte viajó a Toledo con Marta Romero.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 31,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 40,
+          "end": 46,
+          "category": "UBICACION"
+        },
+        {
+          "start": 51,
+          "end": 63,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-067",
+      "suite": "ner",
+      "text": "Hablamos con Daniel Vidal sobre las grabaciones de Luz Azul en Madrid.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 25,
+          "category": "PERSONA"
+        },
+        {
+          "start": 51,
+          "end": 59,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 63,
+          "end": 69,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-068",
+      "suite": "ner",
+      "text": "La reunión de Distribuidora Estrella en Valladolid contó con Clara Reyes.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 36,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 40,
+          "end": 50,
+          "category": "UBICACION"
+        },
+        {
+          "start": 61,
+          "end": 72,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-069",
+      "suite": "ner",
+      "text": "Pablo Campos revisará el montaje que Agencia Nexo prepara en Valencia.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 12,
+          "category": "PERSONA"
+        },
+        {
+          "start": 37,
+          "end": 49,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 61,
+          "end": 69,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-070",
+      "suite": "ner",
+      "text": "Irene Blanco trabaja para Taller Sónico y vive en Santander.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 12,
+          "category": "PERSONA"
+        },
+        {
+          "start": 26,
+          "end": 39,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 50,
+          "end": 59,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-071",
+      "suite": "ner",
+      "text": "La entrevista con Diego Serrano se realizó en Bilbao para Clínica Alameda.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 46,
+          "end": 52,
+          "category": "UBICACION"
+        },
+        {
+          "start": 58,
+          "end": 73,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-072",
+      "suite": "ner",
+      "text": "Transportes Sierra encargó a Alba Torres la revisión de sonido en Pamplona.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 18,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 29,
+          "end": 40,
+          "category": "PERSONA"
+        },
+        {
+          "start": 66,
+          "end": 74,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-073",
+      "suite": "ner",
+      "text": "Desde Zaragoza, Rubén Ortiz envió la propuesta a Producciones Horizonte.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 14,
+          "category": "UBICACION"
+        },
+        {
+          "start": 16,
+          "end": 27,
+          "category": "PERSONA"
+        },
+        {
+          "start": 49,
+          "end": 71,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-074",
+      "suite": "ner",
+      "text": "El contrato entre Nuria Molina y Televisión Costera se firmó en Oviedo.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 30,
+          "category": "PERSONA"
+        },
+        {
+          "start": 33,
+          "end": 51,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 64,
+          "end": 70,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-075",
+      "suite": "ner",
+      "text": "Ayer Hugo Gil presentó en Córdoba un informe para Fundación Encuentro.",
+      "expected": [
+        {
+          "start": 5,
+          "end": 13,
+          "category": "PERSONA"
+        },
+        {
+          "start": 26,
+          "end": 33,
+          "category": "UBICACION"
+        },
+        {
+          "start": 50,
+          "end": 69,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-076",
+      "suite": "ner",
+      "text": "El equipo de Cine Atlántico viajó a Segovia con Silvia Suárez.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 27,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 36,
+          "end": 43,
+          "category": "UBICACION"
+        },
+        {
+          "start": 48,
+          "end": 61,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-077",
+      "suite": "ner",
+      "text": "Hablamos con Andrés Cabrera sobre las grabaciones de Imprenta Central en Salamanca.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 27,
+          "category": "PERSONA"
+        },
+        {
+          "start": 53,
+          "end": 69,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 73,
+          "end": 82,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-078",
+      "suite": "ner",
+      "text": "La reunión de Universidad del Norte en Barcelona contó con Carmen Fuentes.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 35,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 39,
+          "end": 48,
+          "category": "UBICACION"
+        },
+        {
+          "start": 59,
+          "end": 73,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-079",
+      "suite": "ner",
+      "text": "Víctor Castro revisará el montaje que Editorial Bruma prepara en Alicante.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 13,
+          "category": "PERSONA"
+        },
+        {
+          "start": 38,
+          "end": 53,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 65,
+          "end": 73,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-080",
+      "suite": "ner",
+      "text": "Lucía Vega trabaja para Luz Azul y vive en Bilbao.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 10,
+          "category": "PERSONA"
+        },
+        {
+          "start": 24,
+          "end": 32,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 43,
+          "end": 49,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-081",
+      "suite": "ner",
+      "text": "La entrevista con Marcos Santos se realizó en Pamplona para Distribuidora Estrella.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 46,
+          "end": 54,
+          "category": "UBICACION"
+        },
+        {
+          "start": 60,
+          "end": 82,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-082",
+      "suite": "ner",
+      "text": "Agencia Nexo encargó a Elena Delgado la revisión de sonido en Zaragoza.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 12,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 23,
+          "end": 36,
+          "category": "PERSONA"
+        },
+        {
+          "start": 62,
+          "end": 70,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-083",
+      "suite": "ner",
+      "text": "Desde Oviedo, Javier Romero envió la propuesta a Taller Sónico.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 12,
+          "category": "UBICACION"
+        },
+        {
+          "start": 14,
+          "end": 27,
+          "category": "PERSONA"
+        },
+        {
+          "start": 49,
+          "end": 62,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-084",
+      "suite": "ner",
+      "text": "El contrato entre Paula Vidal y Clínica Alameda se firmó en Córdoba.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 29,
+          "category": "PERSONA"
+        },
+        {
+          "start": 32,
+          "end": 47,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 60,
+          "end": 67,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-085",
+      "suite": "ner",
+      "text": "Ayer Sergio Reyes presentó en Segovia un informe para Transportes Sierra.",
+      "expected": [
+        {
+          "start": 5,
+          "end": 17,
+          "category": "PERSONA"
+        },
+        {
+          "start": 30,
+          "end": 37,
+          "category": "UBICACION"
+        },
+        {
+          "start": 54,
+          "end": 72,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-086",
+      "suite": "ner",
+      "text": "El equipo de Producciones Horizonte viajó a Salamanca con Marta Campos.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 35,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 44,
+          "end": 53,
+          "category": "UBICACION"
+        },
+        {
+          "start": 58,
+          "end": 70,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-087",
+      "suite": "ner",
+      "text": "Hablamos con Daniel Blanco sobre las grabaciones de Televisión Costera en Barcelona.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 26,
+          "category": "PERSONA"
+        },
+        {
+          "start": 52,
+          "end": 70,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 74,
+          "end": 83,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-088",
+      "suite": "ner",
+      "text": "La reunión de Fundación Encuentro en Alicante contó con Clara Serrano.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 33,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 37,
+          "end": 45,
+          "category": "UBICACION"
+        },
+        {
+          "start": 56,
+          "end": 69,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-089",
+      "suite": "ner",
+      "text": "Pablo Torres revisará el montaje que Cine Atlántico prepara en Sevilla.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 12,
+          "category": "PERSONA"
+        },
+        {
+          "start": 37,
+          "end": 51,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 63,
+          "end": 70,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-090",
+      "suite": "ner",
+      "text": "Irene Ortiz trabaja para Imprenta Central y vive en Burgos.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 11,
+          "category": "PERSONA"
+        },
+        {
+          "start": 25,
+          "end": 41,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 52,
+          "end": 58,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-091",
+      "suite": "ner",
+      "text": "La entrevista con Diego Molina se realizó en Málaga para Universidad del Norte.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 30,
+          "category": "PERSONA"
+        },
+        {
+          "start": 45,
+          "end": 51,
+          "category": "UBICACION"
+        },
+        {
+          "start": 57,
+          "end": 78,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-092",
+      "suite": "ner",
+      "text": "Editorial Bruma encargó a Alba Gil la revisión de sonido en Cáceres.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 15,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 26,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 60,
+          "end": 67,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-093",
+      "suite": "ner",
+      "text": "Desde Granada, Rubén Suárez envió la propuesta a Banco del Río.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 13,
+          "category": "UBICACION"
+        },
+        {
+          "start": 15,
+          "end": 27,
+          "category": "PERSONA"
+        },
+        {
+          "start": 49,
+          "end": 62,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-094",
+      "suite": "ner",
+      "text": "El contrato entre Nuria Cabrera y Sonido Prisma se firmó en Murcia.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 34,
+          "end": 47,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 60,
+          "end": 66,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-095",
+      "suite": "ner",
+      "text": "Ayer Hugo Fuentes presentó en Toledo un informe para Teatro Aurora.",
+      "expected": [
+        {
+          "start": 5,
+          "end": 17,
+          "category": "PERSONA"
+        },
+        {
+          "start": 30,
+          "end": 36,
+          "category": "UBICACION"
+        },
+        {
+          "start": 53,
+          "end": 66,
+          "category": "ORGANIZACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-096",
+      "suite": "ner",
+      "text": "El equipo de Radio Capital viajó a Madrid con Silvia Castro.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 26,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 35,
+          "end": 41,
+          "category": "UBICACION"
+        },
+        {
+          "start": 46,
+          "end": 59,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-097",
+      "suite": "ner",
+      "text": "Hablamos con Andrés Navarro sobre las grabaciones de Laboratorios Delta en Valladolid.",
+      "expected": [
+        {
+          "start": 13,
+          "end": 27,
+          "category": "PERSONA"
+        },
+        {
+          "start": 53,
+          "end": 71,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 75,
+          "end": 85,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "ner-098",
+      "suite": "ner",
+      "text": "La reunión de Orquesta del Puerto en Valencia contó con Carmen Ramos.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 33,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 37,
+          "end": 45,
+          "category": "UBICACION"
+        },
+        {
+          "start": 56,
+          "end": 68,
+          "category": "PERSONA"
+        }
+      ]
+    },
+    {
+      "id": "ner-099",
+      "suite": "ner",
+      "text": "Víctor Morales revisará el montaje que Estudios Horizonte prepara en Santander.",
+      "expected": [
+        {
+          "start": 0,
+          "end": 14,
+          "category": "PERSONA"
+        },
+        {
+          "start": 39,
+          "end": 57,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 69,
+          "end": 78,
+          "category": "UBICACION"
+        }
+      ]
+    },
+    {
+      "id": "literal-000",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 00; XNiebla Azul 00; Niebla Azul 00X; niebla azul 00",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-001",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 01; XNiebla Azul 01; Niebla Azul 01X; niebla azul 01",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-002",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 02; XNiebla Azul 02; Niebla Azul 02X; niebla azul 02",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-003",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 03; XNiebla Azul 03; Niebla Azul 03X; niebla azul 03",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-004",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 04; XNiebla Azul 04; Niebla Azul 04X; niebla azul 04",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-005",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 05; XNiebla Azul 05; Niebla Azul 05X; niebla azul 05",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-006",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 06; XNiebla Azul 06; Niebla Azul 06X; niebla azul 06",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-007",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 07; XNiebla Azul 07; Niebla Azul 07X; niebla azul 07",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-008",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 08; XNiebla Azul 08; Niebla Azul 08X; niebla azul 08",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-009",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 09; XNiebla Azul 09; Niebla Azul 09X; niebla azul 09",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-010",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 10; XNiebla Azul 10; Niebla Azul 10X; niebla azul 10",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-011",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 11; XNiebla Azul 11; Niebla Azul 11X; niebla azul 11",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-012",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 12; XNiebla Azul 12; Niebla Azul 12X; niebla azul 12",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-013",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 13; XNiebla Azul 13; Niebla Azul 13X; niebla azul 13",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-014",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 14; XNiebla Azul 14; Niebla Azul 14X; niebla azul 14",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-015",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 15; XNiebla Azul 15; Niebla Azul 15X; niebla azul 15",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-016",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 16; XNiebla Azul 16; Niebla Azul 16X; niebla azul 16",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-017",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 17; XNiebla Azul 17; Niebla Azul 17X; niebla azul 17",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-018",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 18; XNiebla Azul 18; Niebla Azul 18X; niebla azul 18",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-019",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 19; XNiebla Azul 19; Niebla Azul 19X; niebla azul 19",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-020",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 20; XNiebla Azul 20; Niebla Azul 20X; niebla azul 20",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-021",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 21; XNiebla Azul 21; Niebla Azul 21X; niebla azul 21",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-022",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 22; XNiebla Azul 22; Niebla Azul 22X; niebla azul 22",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-023",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 23; XNiebla Azul 23; Niebla Azul 23X; niebla azul 23",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-024",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 24; XNiebla Azul 24; Niebla Azul 24X; niebla azul 24",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-025",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 25; XNiebla Azul 25; Niebla Azul 25X; niebla azul 25",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-026",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 26; XNiebla Azul 26; Niebla Azul 26X; niebla azul 26",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-027",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 27; XNiebla Azul 27; Niebla Azul 27X; niebla azul 27",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-028",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 28; XNiebla Azul 28; Niebla Azul 28X; niebla azul 28",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-029",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 29; XNiebla Azul 29; Niebla Azul 29X; niebla azul 29",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-030",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 30; XNiebla Azul 30; Niebla Azul 30X; niebla azul 30",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-031",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 31; XNiebla Azul 31; Niebla Azul 31X; niebla azul 31",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-032",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 32; XNiebla Azul 32; Niebla Azul 32X; niebla azul 32",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-033",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 33; XNiebla Azul 33; Niebla Azul 33X; niebla azul 33",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-034",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 34; XNiebla Azul 34; Niebla Azul 34X; niebla azul 34",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-035",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 35; XNiebla Azul 35; Niebla Azul 35X; niebla azul 35",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-036",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 36; XNiebla Azul 36; Niebla Azul 36X; niebla azul 36",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-037",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 37; XNiebla Azul 37; Niebla Azul 37X; niebla azul 37",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-038",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 38; XNiebla Azul 38; Niebla Azul 38X; niebla azul 38",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-039",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 39; XNiebla Azul 39; Niebla Azul 39X; niebla azul 39",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-040",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 40; XNiebla Azul 40; Niebla Azul 40X; niebla azul 40",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-041",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 41; XNiebla Azul 41; Niebla Azul 41X; niebla azul 41",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-042",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 42; XNiebla Azul 42; Niebla Azul 42X; niebla azul 42",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-043",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 43; XNiebla Azul 43; Niebla Azul 43X; niebla azul 43",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-044",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 44; XNiebla Azul 44; Niebla Azul 44X; niebla azul 44",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-045",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 45; XNiebla Azul 45; Niebla Azul 45X; niebla azul 45",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-046",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 46; XNiebla Azul 46; Niebla Azul 46X; niebla azul 46",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-047",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 47; XNiebla Azul 47; Niebla Azul 47X; niebla azul 47",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-048",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 48; XNiebla Azul 48; Niebla Azul 48X; niebla azul 48",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "literal-049",
+      "suite": "literal",
+      "text": "😀 Niebla Azul 49; XNiebla Azul 49; Niebla Azul 49X; niebla azul 49",
+      "expected": [
+        {
+          "start": 2,
+          "end": 16,
+          "category": "PROYECTO"
+        }
+      ]
+    },
+    {
+      "id": "unknown_production-000",
+      "suite": "unknown_production",
+      "text": "El largometraje ficticio Cristal de Mercurio presenta al personaje Nárvex.",
+      "expected": []
+    }
+  ]
+}

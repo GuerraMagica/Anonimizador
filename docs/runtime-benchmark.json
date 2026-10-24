@@ -1,0 +1,36 @@
+{
+  "platform": "Darwin",
+  "macos": "26.5.2",
+  "cpu": "arm64",
+  "python": "3.12.14",
+  "model_initialization_new_process_seconds": 0.7424982499796897,
+  "second_initialization_seconds": 0.13109866704326123,
+  "analysis": {
+    "20000": {
+      "seconds": [
+        0.39519016700796783,
+        0.38438091601710767,
+        0.38925887492951006
+      ],
+      "candidates": 0
+    },
+    "100000": {
+      "seconds": [
+        1.9665363340172917,
+        1.9150327499955893,
+        1.9196464590495452
+      ],
+      "candidates": 0
+    }
+  },
+  "cancellation": {
+    "requested": 0.053316749981604517,
+    "was_busy": true,
+    "completed": 1.921401459025219,
+    "wait_after_request_seconds": 1.8680847090436146,
+    "max_heartbeat_gap_seconds": 0.02103975007776171,
+    "result_applied": false
+  },
+  "peak_rss_bytes": 602570752,
+  "notes": "Single process, synthetic prose, three warm analyses per size. Cold means first initialization in a new process; OS filesystem caches were not flushed. Offscreen Qt heartbeat, not manual GUI usability or worst-case document performance."
+}

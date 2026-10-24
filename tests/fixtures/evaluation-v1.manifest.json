@@ -1,0 +1,6 @@
+{
+  "sha256": "0a8db269991c4e7fa93f63eed17182ecc936ed0115c4a2ef55608443ba60e54f",
+  "cases": 851,
+  "frozen_against_commit": "8c23fccc67c0d377180e483e7fa1c82bf260ca2b",
+  "policy": "Never tune against these results and continue calling v1 independent acceptance."
+}
