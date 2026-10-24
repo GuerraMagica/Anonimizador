@@ -1,0 +1,8 @@
+{
+  "sha256": "265bd499f5b47bb09a34ab15040b6656d4cfe38bbaba61b747fa66cf0f0e32b5",
+  "cases": 100,
+  "entities_per_category": 100,
+  "frozen_against_commit": "51ae1c1498083984807937c1917f9607d8b42129",
+  "candidate_chosen_before_corpus": "es_core_news_md 3.8.0; user-authorized local comparison",
+  "policy": "Frozen before either model analyzed v2. If used to tune/choose further changes, it becomes development data."
+}

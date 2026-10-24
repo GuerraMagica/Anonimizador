@@ -1,0 +1,5659 @@
+{
+  "models": {
+    "es_core_news_sm": {
+      "version": "3.8.0",
+      "artifact_sha256": "e451a83d6df79b87e9eed0cb553f03e99e36a3bab18a7b79f0dcfd1fdf875e12",
+      "pipeline": [
+        "tok2vec",
+        "ner"
+      ],
+      "initialization_seconds": 0.15488854108843952,
+      "corpora": {
+        "v1_reference": {
+          "metrics": {
+            "PERSONA": {
+              "tp": 76,
+              "fp": 50,
+              "fn": 24,
+              "cases": 100,
+              "positives": 100,
+              "precision": 0.6031746031746031,
+              "recall": 0.76
+            },
+            "ORGANIZACION": {
+              "tp": 21,
+              "fp": 1,
+              "fn": 79,
+              "cases": 100,
+              "positives": 100,
+              "precision": 0.9545454545454546,
+              "recall": 0.21
+            },
+            "UBICACION": {
+              "tp": 97,
+              "fp": 47,
+              "fn": 3,
+              "cases": 100,
+              "positives": 100,
+              "precision": 0.6736111111111112,
+              "recall": 0.97
+            }
+          },
+          "gates": {
+            "PERSONA": false,
+            "ORGANIZACION": false,
+            "UBICACION": false
+          },
+          "gates_passed": false,
+          "errors": [
+            {
+              "case": "ner-000",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  27,
+                  42
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-001",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  62,
+                  75
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-001",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  62,
+                  75
+                ]
+              ]
+            },
+            {
+              "case": "ner-002",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  0,
+                  13
+                ]
+              ]
+            },
+            {
+              "case": "ner-002",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  0,
+                  13
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-003",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  52,
+                  65
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-003",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  52,
+                  65
+                ]
+              ]
+            },
+            {
+              "case": "ner-004",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  30,
+                  43
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-004",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  30,
+                  43
+                ]
+              ]
+            },
+            {
+              "case": "ner-005",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  5,
+                  18
+                ]
+              ],
+              "false_positives": [
+                [
+                  0,
+                  18
+                ]
+              ]
+            },
+            {
+              "case": "ner-006",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  13,
+                  32
+                ]
+              ],
+              "false_positives": [
+                [
+                  13,
+                  38
+                ]
+              ]
+            },
+            {
+              "case": "ner-007",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  53,
+                  71
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-007",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  53,
+                  71
+                ]
+              ]
+            },
+            {
+              "case": "ner-008",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  22
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-008",
+              "category": "UBICACION",
+              "false_negatives": [
+                [
+                  26,
+                  33
+                ]
+              ],
+              "false_positives": [
+                [
+                  14,
+                  22
+                ]
+              ]
+            },
+            {
+              "case": "ner-009",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  38,
+                  60
+                ]
+              ]
+            },
+            {
+              "case": "ner-009",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  38,
+                  60
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-011",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  61,
+                  74
+                ]
+              ]
+            },
+            {
+              "case": "ner-011",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  61,
+                  74
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-012",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  26,
+                  35
+                ]
+              ],
+              "false_positives": [
+                [
+                  0,
+                  15
+                ]
+              ]
+            },
+            {
+              "case": "ner-012",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  0,
+                  15
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-012",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  26,
+                  35
+                ]
+              ]
+            },
+            {
+              "case": "ner-013",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  15,
+                  27
+                ]
+              ],
+              "false_positives": [
+                [
+                  49,
+                  67
+                ]
+              ]
+            },
+            {
+              "case": "ner-013",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  49,
+                  67
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-014",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  34,
+                  56
+                ]
+              ]
+            },
+            {
+              "case": "ner-014",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  34,
+                  56
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-015",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  5,
+                  16
+                ]
+              ],
+              "false_positives": [
+                [
+                  0,
+                  16
+                ],
+                [
+                  52,
+                  70
+                ]
+              ]
+            },
+            {
+              "case": "ner-015",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  52,
+                  70
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-016",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  13,
+                  32
+                ]
+              ]
+            },
+            {
+              "case": "ner-016",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  13,
+                  32
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-017",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  51,
+                  65
+                ]
+              ]
+            },
+            {
+              "case": "ner-017",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  51,
+                  65
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-019",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  0,
+                  13
+                ]
+              ],
+              "false_positives": [
+                [
+                  7,
+                  13
+                ]
+              ]
+            },
+            {
+              "case": "ner-019",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  38,
+                  59
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-019",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  38,
+                  59
+                ]
+              ]
+            },
+            {
+              "case": "ner-020",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  26,
+                  44
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-020",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  26,
+                  44
+                ]
+              ]
+            },
+            {
+              "case": "ner-021",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  57,
+                  65
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-021",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  57,
+                  65
+                ]
+              ]
+            },
+            {
+              "case": "ner-022",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  0,
+                  22
+                ]
+              ]
+            },
+            {
+              "case": "ner-022",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  0,
+                  22
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-024",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  18,
+                  31
+                ]
+              ],
+              "false_positives": [
+                [
+                  34,
+                  47
+                ]
+              ]
+            },
+            {
+              "case": "ner-024",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  34,
+                  47
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-025",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  5,
+                  18
+                ]
+              ],
+              "false_positives": [
+                [
+                  0,
+                  18
+                ],
+                [
+                  55,
+                  70
+                ]
+              ]
+            },
+            {
+              "case": "ner-025",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  55,
+                  70
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-027",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  51,
+                  73
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-027",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  51,
+                  73
+                ]
+              ]
+            },
+            {
+              "case": "ner-028",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  32
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-028",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  32
+                ]
+              ]
+            },
+            {
+              "case": "ner-029",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  35,
+                  54
+                ]
+              ]
+            },
+            {
+              "case": "ner-029",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  35,
+                  54
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-030",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  26,
+                  40
+                ]
+              ]
+            },
+            {
+              "case": "ner-030",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  26,
+                  40
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-031",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  60,
+                  76
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-031",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  60,
+                  76
+                ]
+              ]
+            },
+            {
+              "case": "ner-032",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  32,
+                  43
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-032",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  0,
+                  21
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-032",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  0,
+                  21
+                ],
+                [
+                  32,
+                  43
+                ]
+              ]
+            },
+            {
+              "case": "ner-033",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  47,
+                  62
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-034",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  18,
+                  29
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-034",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  32,
+                  45
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-034",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  18,
+                  29
+                ],
+                [
+                  32,
+                  45
+                ]
+              ]
+            },
+            {
+              "case": "ner-035",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  5,
+                  16
+                ]
+              ],
+              "false_positives": [
+                [
+                  0,
+                  16
+                ],
+                [
+                  54,
+                  67
+                ]
+              ]
+            },
+            {
+              "case": "ner-035",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  54,
+                  67
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-036",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  46,
+                  59
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-036",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  13,
+                  26
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-036",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  13,
+                  26
+                ],
+                [
+                  46,
+                  59
+                ]
+              ]
+            },
+            {
+              "case": "ner-037",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  53,
+                  66
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-037",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  53,
+                  66
+                ]
+              ]
+            },
+            {
+              "case": "ner-039",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  0,
+                  12
+                ]
+              ],
+              "false_positives": [
+                [
+                  7,
+                  12
+                ]
+              ]
+            },
+            {
+              "case": "ner-040",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  27,
+                  49
+                ]
+              ]
+            },
+            {
+              "case": "ner-040",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  27,
+                  49
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-041",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  62,
+                  80
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-041",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  62,
+                  80
+                ]
+              ]
+            },
+            {
+              "case": "ner-042",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  0,
+                  19
+                ]
+              ]
+            },
+            {
+              "case": "ner-042",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  0,
+                  19
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-043",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  52,
+                  66
+                ]
+              ]
+            },
+            {
+              "case": "ner-043",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  52,
+                  66
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-045",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  5,
+                  19
+                ]
+              ],
+              "false_positives": [
+                [
+                  0,
+                  19
+                ]
+              ]
+            },
+            {
+              "case": "ner-045",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  55,
+                  76
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-045",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  55,
+                  76
+                ]
+              ]
+            },
+            {
+              "case": "ner-046",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  37,
+                  44
+                ]
+              ]
+            },
+            {
+              "case": "ner-046",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  13,
+                  28
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-046",
+              "category": "UBICACION",
+              "false_negatives": [
+                [
+                  37,
+                  44
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-047",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  52,
+                  65
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-047",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  52,
+                  65
+                ]
+              ]
+            },
+            {
+              "case": "ner-048",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  27
+                ]
+              ]
+            },
+            {
+              "case": "ner-048",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  27
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-049",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  37,
+                  50
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-049",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  37,
+                  50
+                ]
+              ]
+            },
+            {
+              "case": "ner-050",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  25,
+                  38
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-050",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  25,
+                  38
+                ]
+              ]
+            },
+            {
+              "case": "ner-052",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  30,
+                  41
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-052",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  30,
+                  41
+                ]
+              ]
+            },
+            {
+              "case": "ner-053",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  48,
+                  66
+                ]
+              ]
+            },
+            {
+              "case": "ner-053",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  48,
+                  66
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-054",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  18,
+                  31
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-054",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  34,
+                  42
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-054",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  18,
+                  31
+                ],
+                [
+                  34,
+                  42
+                ]
+              ]
+            },
+            {
+              "case": "ner-055",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  5,
+                  16
+                ]
+              ],
+              "false_positives": [
+                [
+                  0,
+                  16
+                ],
+                [
+                  53,
+                  75
+                ]
+              ]
+            },
+            {
+              "case": "ner-055",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  53,
+                  75
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-057",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  52,
+                  65
+                ]
+              ]
+            },
+            {
+              "case": "ner-057",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  52,
+                  65
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-058",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  29
+                ]
+              ]
+            },
+            {
+              "case": "ner-058",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  29
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-059",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  38,
+                  56
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-059",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  38,
+                  56
+                ]
+              ]
+            },
+            {
+              "case": "ner-060",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  27,
+                  40
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-060",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  27,
+                  40
+                ]
+              ]
+            },
+            {
+              "case": "ner-061",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  57,
+                  70
+                ]
+              ]
+            },
+            {
+              "case": "ner-061",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  57,
+                  70
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-062",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  0,
+                  13
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-062",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  0,
+                  13
+                ]
+              ]
+            },
+            {
+              "case": "ner-064",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  18,
+                  30
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-064",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  18,
+                  30
+                ]
+              ]
+            },
+            {
+              "case": "ner-065",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  5,
+                  19
+                ]
+              ],
+              "false_positives": [
+                [
+                  0,
+                  19
+                ]
+              ]
+            },
+            {
+              "case": "ner-066",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  40,
+                  46
+                ]
+              ]
+            },
+            {
+              "case": "ner-066",
+              "category": "UBICACION",
+              "false_negatives": [
+                [
+                  40,
+                  46
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-067",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  51,
+                  59
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-067",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  51,
+                  59
+                ]
+              ]
+            },
+            {
+              "case": "ner-068",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  36
+                ]
+              ]
+            },
+            {
+              "case": "ner-068",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  36
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-070",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  26,
+                  39
+                ]
+              ]
+            },
+            {
+              "case": "ner-070",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  26,
+                  39
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-071",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  58,
+                  73
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-071",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  58,
+                  73
+                ]
+              ]
+            },
+            {
+              "case": "ner-072",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  29,
+                  40
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-072",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  0,
+                  18
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-072",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  12,
+                  18
+                ],
+                [
+                  29,
+                  40
+                ]
+              ]
+            },
+            {
+              "case": "ner-073",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  49,
+                  71
+                ]
+              ]
+            },
+            {
+              "case": "ner-073",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  49,
+                  71
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-074",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  33,
+                  51
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-074",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  33,
+                  51
+                ]
+              ]
+            },
+            {
+              "case": "ner-075",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  5,
+                  13
+                ]
+              ],
+              "false_positives": [
+                [
+                  0,
+                  13
+                ],
+                [
+                  50,
+                  69
+                ]
+              ]
+            },
+            {
+              "case": "ner-075",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  50,
+                  69
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-076",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  13,
+                  27
+                ]
+              ]
+            },
+            {
+              "case": "ner-076",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  13,
+                  27
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-078",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  35
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-078",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  35
+                ]
+              ]
+            },
+            {
+              "case": "ner-079",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  38,
+                  53
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-080",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  24,
+                  32
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-080",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  24,
+                  32
+                ]
+              ]
+            },
+            {
+              "case": "ner-081",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  60,
+                  82
+                ]
+              ]
+            },
+            {
+              "case": "ner-081",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  60,
+                  82
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-083",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  49,
+                  62
+                ]
+              ]
+            },
+            {
+              "case": "ner-083",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  49,
+                  62
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-084",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  32,
+                  47
+                ]
+              ]
+            },
+            {
+              "case": "ner-084",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  32,
+                  47
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-085",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  5,
+                  17
+                ]
+              ],
+              "false_positives": [
+                [
+                  0,
+                  17
+                ],
+                [
+                  54,
+                  72
+                ]
+              ]
+            },
+            {
+              "case": "ner-085",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  54,
+                  72
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-086",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  13,
+                  35
+                ]
+              ]
+            },
+            {
+              "case": "ner-086",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  13,
+                  35
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-087",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  52,
+                  70
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-087",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  52,
+                  70
+                ]
+              ]
+            },
+            {
+              "case": "ner-088",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  33
+                ]
+              ]
+            },
+            {
+              "case": "ner-088",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  33
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-089",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  37,
+                  51
+                ]
+              ]
+            },
+            {
+              "case": "ner-089",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  37,
+                  51
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-091",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  57,
+                  78
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-091",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  57,
+                  78
+                ]
+              ]
+            },
+            {
+              "case": "ner-092",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  26,
+                  34
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-092",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  0,
+                  15
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-092",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  26,
+                  34
+                ]
+              ]
+            },
+            {
+              "case": "ner-093",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  49,
+                  62
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-093",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  49,
+                  62
+                ]
+              ]
+            },
+            {
+              "case": "ner-094",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  18,
+                  31
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-094",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  34,
+                  47
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-094",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  18,
+                  31
+                ],
+                [
+                  34,
+                  47
+                ]
+              ]
+            },
+            {
+              "case": "ner-095",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  5,
+                  17
+                ]
+              ],
+              "false_positives": [
+                [
+                  0,
+                  17
+                ]
+              ]
+            },
+            {
+              "case": "ner-095",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  53,
+                  66
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-095",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  53,
+                  66
+                ]
+              ]
+            },
+            {
+              "case": "ner-096",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  13,
+                  26
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-096",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  13,
+                  26
+                ]
+              ]
+            },
+            {
+              "case": "ner-099",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  39,
+                  57
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-099",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  39,
+                  57
+                ]
+              ]
+            }
+          ],
+          "analysis_seconds": 0.25729750003665686
+        },
+        "v2_frozen": {
+          "metrics": {
+            "PERSONA": {
+              "tp": 96,
+              "fp": 24,
+              "fn": 4,
+              "cases": 100,
+              "positives": 100,
+              "precision": 0.8,
+              "recall": 0.96
+            },
+            "ORGANIZACION": {
+              "tp": 42,
+              "fp": 1,
+              "fn": 58,
+              "cases": 100,
+              "positives": 100,
+              "precision": 0.9767441860465116,
+              "recall": 0.42
+            },
+            "UBICACION": {
+              "tp": 90,
+              "fp": 32,
+              "fn": 10,
+              "cases": 100,
+              "positives": 100,
+              "precision": 0.7377049180327869,
+              "recall": 0.9
+            }
+          },
+          "gates": {
+            "PERSONA": false,
+            "ORGANIZACION": false,
+            "UBICACION": false
+          },
+          "gates_passed": false,
+          "errors": [
+            {
+              "case": "ner-v2-001",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  61,
+                  76
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-001",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  61,
+                  76
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-002",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  24
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-002",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  24
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-003",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  63,
+                  80
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-003",
+              "category": "UBICACION",
+              "false_negatives": [
+                [
+                  84,
+                  88
+                ]
+              ],
+              "false_positives": [
+                [
+                  76,
+                  88
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-004",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  80,
+                  86
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-004",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  80,
+                  86
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-005",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  92,
+                  101
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-005",
+              "category": "UBICACION",
+              "false_negatives": [
+                [
+                  92,
+                  101
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-006",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  83,
+                  90
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-006",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  83,
+                  90
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-007",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  34
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-008",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  43,
+                  50
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-008",
+              "category": "UBICACION",
+              "false_negatives": [
+                [
+                  43,
+                  50
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-009",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  20,
+                  32
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-009",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  20,
+                  32
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-011",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  64,
+                  82
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-011",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  64,
+                  82
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-013",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  62,
+                  77
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-013",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  62,
+                  77
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-017",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  29
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-017",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  29
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-018",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  77,
+                  83
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-018",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  77,
+                  83
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-019",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  20,
+                  37
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-019",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  20,
+                  37
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-020",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  64,
+                  74
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-020",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  64,
+                  74
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-021",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  66,
+                  83
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-021",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  66,
+                  83
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-022",
+              "category": "ORGANIZACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  40,
+                  49
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-022",
+              "category": "UBICACION",
+              "false_negatives": [
+                [
+                  40,
+                  49
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-024",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  76,
+                  83
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-024",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  76,
+                  83
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-025",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  56,
+                  76
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-025",
+              "category": "UBICACION",
+              "false_negatives": [
+                [
+                  98,
+                  105
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-027",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  26
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-027",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  26
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-029",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  20,
+                  38
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-029",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  20,
+                  38
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-031",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  62,
+                  77
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-031",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  62,
+                  77
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-034",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  28,
+                  37
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-034",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  28,
+                  37
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-035",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  54,
+                  69
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-035",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  54,
+                  69
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-036",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  83,
+                  89
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-036",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  83,
+                  89
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-036",
+              "category": "UBICACION",
+              "false_negatives": [
+                [
+                  32,
+                  38
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-037",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  31
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-037",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  31
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-039",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  54,
+                  65
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-039",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  54,
+                  65
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-040",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  66,
+                  72
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-040",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  66,
+                  72
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-042",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  21
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-042",
+              "category": "UBICACION",
+              "false_negatives": [
+                [
+                  41,
+                  48
+                ]
+              ],
+              "false_positives": [
+                [
+                  14,
+                  21
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-043",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  63,
+                  83
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-045",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  55,
+                  67
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-045",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  55,
+                  67
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-047",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  32
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-047",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  32
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-048",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  14,
+                  24
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-049",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  20,
+                  35
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-049",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  20,
+                  35
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-051",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  66,
+                  84
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-051",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  66,
+                  84
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-053",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  61,
+                  76
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-053",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  61,
+                  76
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-054",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  79,
+                  85
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-054",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  79,
+                  85
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-055",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  56,
+                  73
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-055",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  56,
+                  73
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-058",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  82,
+                  92
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-058",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  82,
+                  92
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-059",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  20,
+                  37
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-059",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  20,
+                  37
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-060",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  63,
+                  70
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-060",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  63,
+                  70
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-061",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  66,
+                  86
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-063",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  64,
+                  76
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-063",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  64,
+                  76
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-065",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  54,
+                  72
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-065",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  54,
+                  72
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-067",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  29
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-067",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  29
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-071",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  68,
+                  83
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-071",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  68,
+                  83
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-072",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  20
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-072",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  20
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-076",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  86,
+                  96
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-076",
+              "category": "UBICACION",
+              "false_negatives": [
+                [
+                  32,
+                  41
+                ]
+              ],
+              "false_positives": [
+                [
+                  86,
+                  96
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-077",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  31
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-077",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  31
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-078",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  84,
+                  90
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-078",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  84,
+                  90
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-079",
+              "category": "UBICACION",
+              "false_negatives": [
+                [
+                  86,
+                  93
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-081",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  67,
+                  79
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-081",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  67,
+                  79
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-083",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  60,
+                  78
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-083",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  60,
+                  78
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-085",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  55,
+                  70
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-085",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  55,
+                  70
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-087",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  32
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-087",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  32
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-089",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  20,
+                  35
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-089",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  20,
+                  35
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-090",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  61,
+                  67
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-090",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  61,
+                  67
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-091",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  64,
+                  81
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-091",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  64,
+                  81
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-093",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  60,
+                  75
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-093",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  60,
+                  75
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-094",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  28,
+                  38
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-094",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  78,
+                  88
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-094",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  78,
+                  88
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-095",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  56,
+                  73
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-095",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  56,
+                  73
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-096",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  85,
+                  91
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-096",
+              "category": "UBICACION",
+              "false_negatives": [
+                [
+                  32,
+                  39
+                ]
+              ],
+              "false_positives": [
+                [
+                  85,
+                  91
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-097",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  29
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-098",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  81,
+                  88
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-098",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  81,
+                  88
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-099",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  20,
+                  40
+                ]
+              ],
+              "false_positives": []
+            }
+          ],
+          "analysis_seconds": 0.2810234589269385
+        }
+      }
+    },
+    "es_core_news_md": {
+      "version": "3.8.0",
+      "artifact_sha256": "478b8bb3f3e8eb149192f7d80e7cd64f990b7e9bccbc5329df41a57e86326be2",
+      "pipeline": [
+        "tok2vec",
+        "ner"
+      ],
+      "initialization_seconds": 0.41832804202567786,
+      "corpora": {
+        "v1_reference": {
+          "metrics": {
+            "PERSONA": {
+              "tp": 93,
+              "fp": 16,
+              "fn": 7,
+              "cases": 100,
+              "positives": 100,
+              "precision": 0.8532110091743119,
+              "recall": 0.93
+            },
+            "ORGANIZACION": {
+              "tp": 38,
+              "fp": 0,
+              "fn": 62,
+              "cases": 100,
+              "positives": 100,
+              "precision": 1.0,
+              "recall": 0.38
+            },
+            "UBICACION": {
+              "tp": 99,
+              "fp": 32,
+              "fn": 1,
+              "cases": 100,
+              "positives": 100,
+              "precision": 0.7557251908396947,
+              "recall": 0.99
+            }
+          },
+          "gates": {
+            "PERSONA": false,
+            "ORGANIZACION": false,
+            "UBICACION": false
+          },
+          "gates_passed": false,
+          "errors": [
+            {
+              "case": "ner-000",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  27,
+                  42
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-001",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  62,
+                  75
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-001",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  62,
+                  75
+                ]
+              ]
+            },
+            {
+              "case": "ner-002",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  7,
+                  13
+                ]
+              ]
+            },
+            {
+              "case": "ner-002",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  0,
+                  13
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-003",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  52,
+                  65
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-004",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  30,
+                  43
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-004",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  30,
+                  43
+                ]
+              ]
+            },
+            {
+              "case": "ner-007",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  53,
+                  71
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-007",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  53,
+                  71
+                ]
+              ]
+            },
+            {
+              "case": "ner-009",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  38,
+                  60
+                ]
+              ]
+            },
+            {
+              "case": "ner-009",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  38,
+                  60
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-012",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  26,
+                  35
+                ]
+              ],
+              "false_positives": [
+                [
+                  0,
+                  15
+                ]
+              ]
+            },
+            {
+              "case": "ner-012",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  0,
+                  15
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-012",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  26,
+                  35
+                ]
+              ]
+            },
+            {
+              "case": "ner-013",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  49,
+                  67
+                ]
+              ]
+            },
+            {
+              "case": "ner-013",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  49,
+                  67
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-014",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  34,
+                  56
+                ]
+              ]
+            },
+            {
+              "case": "ner-014",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  34,
+                  56
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-017",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  51,
+                  65
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-017",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  51,
+                  65
+                ]
+              ]
+            },
+            {
+              "case": "ner-019",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  38,
+                  59
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-019",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  38,
+                  59
+                ]
+              ]
+            },
+            {
+              "case": "ner-021",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  57,
+                  65
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-021",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  57,
+                  65
+                ]
+              ]
+            },
+            {
+              "case": "ner-022",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  0,
+                  22
+                ]
+              ]
+            },
+            {
+              "case": "ner-022",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  0,
+                  22
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-024",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  34,
+                  47
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-026",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  13,
+                  31
+                ]
+              ]
+            },
+            {
+              "case": "ner-026",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  13,
+                  31
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-027",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  51,
+                  73
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-027",
+              "category": "UBICACION",
+              "false_negatives": [
+                [
+                  77,
+                  83
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-030",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  26,
+                  40
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-030",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  26,
+                  40
+                ]
+              ]
+            },
+            {
+              "case": "ner-031",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  60,
+                  76
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-031",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  69,
+                  76
+                ]
+              ]
+            },
+            {
+              "case": "ner-032",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  0,
+                  21
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-032",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  0,
+                  21
+                ]
+              ]
+            },
+            {
+              "case": "ner-033",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  47,
+                  62
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-034",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  32,
+                  45
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-034",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  32,
+                  45
+                ]
+              ]
+            },
+            {
+              "case": "ner-036",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  13,
+                  26
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-037",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  53,
+                  66
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-037",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  53,
+                  66
+                ]
+              ]
+            },
+            {
+              "case": "ner-040",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  27,
+                  49
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-041",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  62,
+                  80
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-041",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  62,
+                  80
+                ]
+              ]
+            },
+            {
+              "case": "ner-043",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  52,
+                  66
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-043",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  52,
+                  66
+                ]
+              ]
+            },
+            {
+              "case": "ner-044",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  32,
+                  48
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-045",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  55,
+                  76
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-045",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  55,
+                  76
+                ]
+              ]
+            },
+            {
+              "case": "ner-046",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  13,
+                  28
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-047",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  52,
+                  65
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-047",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  52,
+                  65
+                ]
+              ]
+            },
+            {
+              "case": "ner-049",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  37,
+                  50
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-050",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  25,
+                  38
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-050",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  25,
+                  38
+                ]
+              ]
+            },
+            {
+              "case": "ner-052",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  30,
+                  41
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-052",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  30,
+                  41
+                ]
+              ]
+            },
+            {
+              "case": "ner-055",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  5,
+                  16
+                ]
+              ],
+              "false_positives": [
+                [
+                  0,
+                  16
+                ],
+                [
+                  53,
+                  75
+                ]
+              ]
+            },
+            {
+              "case": "ner-055",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  53,
+                  75
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-057",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  52,
+                  65
+                ]
+              ]
+            },
+            {
+              "case": "ner-057",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  52,
+                  65
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-059",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  38,
+                  56
+                ]
+              ]
+            },
+            {
+              "case": "ner-059",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  38,
+                  56
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-060",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  27,
+                  40
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-060",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  27,
+                  40
+                ]
+              ]
+            },
+            {
+              "case": "ner-061",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  57,
+                  70
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-061",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  57,
+                  70
+                ]
+              ]
+            },
+            {
+              "case": "ner-062",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  0,
+                  13
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-063",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  48,
+                  61
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-063",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  48,
+                  61
+                ]
+              ]
+            },
+            {
+              "case": "ner-068",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  36
+                ]
+              ]
+            },
+            {
+              "case": "ner-068",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  36
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-071",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  58,
+                  73
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-071",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  58,
+                  73
+                ]
+              ]
+            },
+            {
+              "case": "ner-072",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  29,
+                  40
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-072",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  0,
+                  18
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-072",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  12,
+                  18
+                ],
+                [
+                  29,
+                  40
+                ]
+              ]
+            },
+            {
+              "case": "ner-073",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  49,
+                  71
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-074",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  33,
+                  51
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-074",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  33,
+                  51
+                ]
+              ]
+            },
+            {
+              "case": "ner-075",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  5,
+                  13
+                ]
+              ],
+              "false_positives": [
+                [
+                  0,
+                  13
+                ]
+              ]
+            },
+            {
+              "case": "ner-076",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  13,
+                  27
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-076",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  13,
+                  27
+                ]
+              ]
+            },
+            {
+              "case": "ner-077",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  53,
+                  69
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-078",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  35
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-078",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  35
+                ]
+              ]
+            },
+            {
+              "case": "ner-079",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  38,
+                  53
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-081",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  60,
+                  82
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-081",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  60,
+                  82
+                ]
+              ]
+            },
+            {
+              "case": "ner-084",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  18,
+                  29
+                ]
+              ],
+              "false_positives": [
+                [
+                  18,
+                  47
+                ]
+              ]
+            },
+            {
+              "case": "ner-084",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  32,
+                  47
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-085",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  54,
+                  72
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-085",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  54,
+                  72
+                ]
+              ]
+            },
+            {
+              "case": "ner-086",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  13,
+                  35
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-089",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  37,
+                  51
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-090",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  25,
+                  41
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-091",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  57,
+                  78
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-091",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  57,
+                  78
+                ]
+              ]
+            },
+            {
+              "case": "ner-092",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  0,
+                  15
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-093",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  49,
+                  62
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-093",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  49,
+                  62
+                ]
+              ]
+            },
+            {
+              "case": "ner-094",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  34,
+                  47
+                ]
+              ]
+            },
+            {
+              "case": "ner-094",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  34,
+                  47
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-095",
+              "category": "PERSONA",
+              "false_negatives": [
+                [
+                  5,
+                  17
+                ]
+              ],
+              "false_positives": [
+                [
+                  0,
+                  17
+                ]
+              ]
+            },
+            {
+              "case": "ner-095",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  53,
+                  66
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-096",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  13,
+                  26
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-096",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  13,
+                  26
+                ]
+              ]
+            },
+            {
+              "case": "ner-099",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  39,
+                  57
+                ]
+              ],
+              "false_positives": []
+            }
+          ],
+          "analysis_seconds": 0.27101291704457253
+        },
+        "v2_frozen": {
+          "metrics": {
+            "PERSONA": {
+              "tp": 100,
+              "fp": 13,
+              "fn": 0,
+              "cases": 100,
+              "positives": 100,
+              "precision": 0.8849557522123894,
+              "recall": 1.0
+            },
+            "ORGANIZACION": {
+              "tp": 60,
+              "fp": 0,
+              "fn": 40,
+              "cases": 100,
+              "positives": 100,
+              "precision": 1.0,
+              "recall": 0.6
+            },
+            "UBICACION": {
+              "tp": 100,
+              "fp": 15,
+              "fn": 0,
+              "cases": 100,
+              "positives": 100,
+              "precision": 0.8695652173913043,
+              "recall": 1.0
+            }
+          },
+          "gates": {
+            "PERSONA": false,
+            "ORGANIZACION": false,
+            "UBICACION": false
+          },
+          "gates_passed": false,
+          "errors": [
+            {
+              "case": "ner-v2-002",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  24
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-002",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  24
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-003",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  63,
+                  80
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-003",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  63,
+                  80
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-005",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  55,
+                  70
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-007",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  34
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-009",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  20,
+                  32
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-009",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  20,
+                  32
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-011",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  64,
+                  82
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-011",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  64,
+                  82
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-017",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  29
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-017",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  29
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-019",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  20,
+                  37
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-019",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  20,
+                  37
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-020",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  64,
+                  74
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-020",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  64,
+                  74
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-023",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  61,
+                  76
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-024",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  76,
+                  83
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-024",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  76,
+                  83
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-025",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  56,
+                  76
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-027",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  26
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-027",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  26
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-029",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  20,
+                  38
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-029",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  20,
+                  38
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-031",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  62,
+                  77
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-031",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  62,
+                  77
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-035",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  54,
+                  69
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-035",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  54,
+                  69
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-037",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  31
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-037",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  31
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-041",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  72,
+                  87
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-042",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  21
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-042",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  21
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-043",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  63,
+                  83
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-045",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  55,
+                  67
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-045",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  55,
+                  67
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-049",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  20,
+                  35
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-049",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  20,
+                  35
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-053",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  61,
+                  76
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-053",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  61,
+                  76
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-055",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  56,
+                  73
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-055",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  56,
+                  73
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-059",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  20,
+                  37
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-060",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  63,
+                  70
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-060",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  63,
+                  70
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-061",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  66,
+                  86
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-063",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  64,
+                  76
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-063",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  64,
+                  76
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-067",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  14,
+                  29
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-067",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  29
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-071",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  68,
+                  83
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-071",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  68,
+                  83
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-073",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  63,
+                  80
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-073",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  63,
+                  80
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-079",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  20,
+                  35
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-081",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  67,
+                  79
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-081",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  67,
+                  79
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-083",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  60,
+                  78
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-083",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  60,
+                  78
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-089",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  20,
+                  35
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-089",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  20,
+                  35
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-091",
+              "category": "PERSONA",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  64,
+                  81
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-091",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  64,
+                  81
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-094",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  78,
+                  88
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-094",
+              "category": "UBICACION",
+              "false_negatives": [],
+              "false_positives": [
+                [
+                  78,
+                  88
+                ]
+              ]
+            },
+            {
+              "case": "ner-v2-095",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  56,
+                  73
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-097",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  14,
+                  29
+                ]
+              ],
+              "false_positives": []
+            },
+            {
+              "case": "ner-v2-099",
+              "category": "ORGANIZACION",
+              "false_negatives": [
+                [
+                  20,
+                  40
+                ]
+              ],
+              "false_positives": []
+            }
+          ],
+          "analysis_seconds": 0.3088497909484431
+        }
+      }
+    }
+  },
+  "spacy_version": "3.8.16",
+  "corpora": {
+    "v1_reference": {
+      "sha256": "0a8db269991c4e7fa93f63eed17182ecc936ed0115c4a2ef55608443ba60e54f",
+      "ner_cases": 100
+    },
+    "v2_frozen": {
+      "sha256": "265bd499f5b47bb09a34ab15040b6656d4cfe38bbaba61b747fa66cf0f0e32b5",
+      "ner_cases": 100
+    }
+  },
+  "network_attempts_observed": 0,
+  "active_model_unchanged": "es_core_news_sm",
+  "peak_process_rss_bytes": 417054720,
+  "macos": "26.5.2",
+  "python": "3.12.14",
+  "limits": "Synthetic exact-span NER only, CPU, sequential model loading in one process. Python audit hooks cannot police native syscalls. No production model switch or general guarantee.",
+  "candidate_ner_gates_passed": false
+}

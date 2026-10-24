@@ -1,0 +1,2307 @@
+{
+  "schema_version": 1,
+  "purpose": "Second synthetic NER evaluation, frozen before approved sm/md comparison",
+  "annotation_policy": "Exact full person/organization/location names; all scenarios synthetic; 50 public organization names in fictional contexts and 50 invented organization names.",
+  "cases": [
+    {
+      "id": "ner-v2-000",
+      "suite": "ner",
+      "text": "El informe fue revisado por Adriana Aguilar antes de su entrega a Iberdrola en Logroño.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 43,
+          "category": "PERSONA"
+        },
+        {
+          "start": 66,
+          "end": 75,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 79,
+          "end": 86,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-001",
+      "suite": "ner",
+      "text": "Durante el ensayo celebrado en Lugo, Bruno Cano representó a Estudios Umbral.",
+      "expected": [
+        {
+          "start": 31,
+          "end": 35,
+          "category": "UBICACION"
+        },
+        {
+          "start": 37,
+          "end": 47,
+          "category": "PERSONA"
+        },
+        {
+          "start": 61,
+          "end": 76,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-002",
+      "suite": "ner",
+      "text": "A petición de Telefónica, la supervisión en Tarragona quedó a cargo de Beatriz Durán.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 24,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 44,
+          "end": 53,
+          "category": "UBICACION"
+        },
+        {
+          "start": 71,
+          "end": 84,
+          "category": "PERSONA"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-003",
+      "suite": "ner",
+      "text": "Para preparar la sesión, Emilio Ferrero acudió a la oficina de Producciones Faro en León.",
+      "expected": [
+        {
+          "start": 25,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 63,
+          "end": 80,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-004",
+      "suite": "ner",
+      "text": "La responsable del archivo, Eva Iglesias, confirmó la recepción del material de Repsol desde Ourense.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 40,
+          "category": "PERSONA"
+        },
+        {
+          "start": 80,
+          "end": 86,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 93,
+          "end": 100,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-005",
+      "suite": "ner",
+      "text": "El acta identifica a Félix Méndez como interlocutor de Montaje Eclipse para las jornadas de Castellón.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 33,
+          "category": "PERSONA"
+        },
+        {
+          "start": 55,
+          "end": 70,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 92,
+          "end": 101,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-006",
+      "suite": "ner",
+      "text": "La sede de la reunión estaba en Huesca; participaron Gabriela Salas y un equipo de Acciona.",
+      "expected": [
+        {
+          "start": 32,
+          "end": 38,
+          "category": "UBICACION"
+        },
+        {
+          "start": 53,
+          "end": 67,
+          "category": "PERSONA"
+        },
+        {
+          "start": 83,
+          "end": 90,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-007",
+      "suite": "ner",
+      "text": "Un técnico de Editorial Astrolabio acompañó a Gonzalo Arias al estudio situado en Pontevedra.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 34,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 46,
+          "end": 59,
+          "category": "PERSONA"
+        },
+        {
+          "start": 82,
+          "end": 92,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-008",
+      "suite": "ner",
+      "text": "Se acordó que Inés Cortés tramitaría desde Almería las solicitudes dirigidas a Endesa.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 25,
+          "category": "PERSONA"
+        },
+        {
+          "start": 43,
+          "end": 50,
+          "category": "UBICACION"
+        },
+        {
+          "start": 79,
+          "end": 85,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-009",
+      "suite": "ner",
+      "text": "La documentación de Sonido Albor lleva la firma de Ismael Escobar y está fechada en Teruel.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 32,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 51,
+          "end": 65,
+          "category": "PERSONA"
+        },
+        {
+          "start": 84,
+          "end": 90,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-010",
+      "suite": "ner",
+      "text": "El informe fue revisado por Julia Galán antes de su entrega a Airbus en Albacete.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 62,
+          "end": 68,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 72,
+          "end": 80,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-011",
+      "suite": "ner",
+      "text": "Durante el ensayo celebrado en Huelva, Leonor León representó a Laboratorio Boreal.",
+      "expected": [
+        {
+          "start": 31,
+          "end": 37,
+          "category": "UBICACION"
+        },
+        {
+          "start": 39,
+          "end": 50,
+          "category": "PERSONA"
+        },
+        {
+          "start": 64,
+          "end": 82,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-012",
+      "suite": "ner",
+      "text": "A petición de Renfe, la supervisión en Soria quedó a cargo de Lorenzo Pascual.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 19,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 39,
+          "end": 44,
+          "category": "UBICACION"
+        },
+        {
+          "start": 62,
+          "end": 77,
+          "category": "PERSONA"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-013",
+      "suite": "ner",
+      "text": "Para preparar la sesión, Manuel Valdés acudió a la oficina de Fundación Ronda en Badajoz.",
+      "expected": [
+        {
+          "start": 25,
+          "end": 38,
+          "category": "PERSONA"
+        },
+        {
+          "start": 62,
+          "end": 77,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 81,
+          "end": 88,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-014",
+      "suite": "ner",
+      "text": "La responsable del archivo, Olga Benítez, confirmó la recepción del material de Seat desde Jaén.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 40,
+          "category": "PERSONA"
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 91,
+          "end": 95,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-015",
+      "suite": "ner",
+      "text": "El acta identifica a Ramón Domínguez como interlocutor de Agencia Claroscuro para las jornadas de Cuenca.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 36,
+          "category": "PERSONA"
+        },
+        {
+          "start": 58,
+          "end": 76,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 98,
+          "end": 104,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-016",
+      "suite": "ner",
+      "text": "La sede de la reunión estaba en Girona; participaron Raquel Esteban y un equipo de Inditex.",
+      "expected": [
+        {
+          "start": 32,
+          "end": 38,
+          "category": "UBICACION"
+        },
+        {
+          "start": 53,
+          "end": 67,
+          "category": "PERSONA"
+        },
+        {
+          "start": 83,
+          "end": 90,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-017",
+      "suite": "ner",
+      "text": "Un técnico de Teatro Azabache acompañó a Rocío Herrera al estudio situado en Zamora.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 29,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 41,
+          "end": 54,
+          "category": "PERSONA"
+        },
+        {
+          "start": 77,
+          "end": 83,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-018",
+      "suite": "ner",
+      "text": "Se acordó que Teresa Luna tramitaría desde Ávila las solicitudes dirigidas a Mapfre.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 25,
+          "category": "PERSONA"
+        },
+        {
+          "start": 43,
+          "end": 48,
+          "category": "UBICACION"
+        },
+        {
+          "start": 77,
+          "end": 83,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-019",
+      "suite": "ner",
+      "text": "La documentación de Transportes Junco lleva la firma de Tomás Prieto y está fechada en Lleida.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 56,
+          "end": 68,
+          "category": "PERSONA"
+        },
+        {
+          "start": 87,
+          "end": 93,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-020",
+      "suite": "ner",
+      "text": "El informe fue revisado por Adriana Arias antes de su entrega a Telefónica en León.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 41,
+          "category": "PERSONA"
+        },
+        {
+          "start": 64,
+          "end": 74,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 78,
+          "end": 82,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-021",
+      "suite": "ner",
+      "text": "Durante el ensayo celebrado en Ourense, Bruno Cortés representó a Producciones Faro.",
+      "expected": [
+        {
+          "start": 31,
+          "end": 38,
+          "category": "UBICACION"
+        },
+        {
+          "start": 40,
+          "end": 52,
+          "category": "PERSONA"
+        },
+        {
+          "start": 66,
+          "end": 83,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-022",
+      "suite": "ner",
+      "text": "A petición de Repsol, la supervisión en Castellón quedó a cargo de Beatriz Escobar.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 20,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 40,
+          "end": 49,
+          "category": "UBICACION"
+        },
+        {
+          "start": 67,
+          "end": 82,
+          "category": "PERSONA"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-023",
+      "suite": "ner",
+      "text": "Para preparar la sesión, Emilio Galán acudió a la oficina de Montaje Eclipse en Huesca.",
+      "expected": [
+        {
+          "start": 25,
+          "end": 37,
+          "category": "PERSONA"
+        },
+        {
+          "start": 61,
+          "end": 76,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 80,
+          "end": 86,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-024",
+      "suite": "ner",
+      "text": "La responsable del archivo, Eva León, confirmó la recepción del material de Acciona desde Pontevedra.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 36,
+          "category": "PERSONA"
+        },
+        {
+          "start": 76,
+          "end": 83,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 90,
+          "end": 100,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-025",
+      "suite": "ner",
+      "text": "El acta identifica a Félix Pascual como interlocutor de Editorial Astrolabio para las jornadas de Almería.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 56,
+          "end": 76,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 98,
+          "end": 105,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-026",
+      "suite": "ner",
+      "text": "La sede de la reunión estaba en Teruel; participaron Gabriela Valdés y un equipo de Endesa.",
+      "expected": [
+        {
+          "start": 32,
+          "end": 38,
+          "category": "UBICACION"
+        },
+        {
+          "start": 53,
+          "end": 68,
+          "category": "PERSONA"
+        },
+        {
+          "start": 84,
+          "end": 90,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-027",
+      "suite": "ner",
+      "text": "Un técnico de Sonido Albor acompañó a Gonzalo Benítez al estudio situado en Albacete.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 26,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 38,
+          "end": 53,
+          "category": "PERSONA"
+        },
+        {
+          "start": 76,
+          "end": 84,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-028",
+      "suite": "ner",
+      "text": "Se acordó que Inés Domínguez tramitaría desde Huelva las solicitudes dirigidas a Airbus.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 28,
+          "category": "PERSONA"
+        },
+        {
+          "start": 46,
+          "end": 52,
+          "category": "UBICACION"
+        },
+        {
+          "start": 81,
+          "end": 87,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-029",
+      "suite": "ner",
+      "text": "La documentación de Laboratorio Boreal lleva la firma de Ismael Esteban y está fechada en Soria.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 38,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 57,
+          "end": 71,
+          "category": "PERSONA"
+        },
+        {
+          "start": 90,
+          "end": 95,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-030",
+      "suite": "ner",
+      "text": "El informe fue revisado por Julia Herrera antes de su entrega a Renfe en Badajoz.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 41,
+          "category": "PERSONA"
+        },
+        {
+          "start": 64,
+          "end": 69,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 73,
+          "end": 80,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-031",
+      "suite": "ner",
+      "text": "Durante el ensayo celebrado en Jaén, Leonor Luna representó a Fundación Ronda.",
+      "expected": [
+        {
+          "start": 31,
+          "end": 35,
+          "category": "UBICACION"
+        },
+        {
+          "start": 37,
+          "end": 48,
+          "category": "PERSONA"
+        },
+        {
+          "start": 62,
+          "end": 77,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-032",
+      "suite": "ner",
+      "text": "A petición de Seat, la supervisión en Cuenca quedó a cargo de Lorenzo Prieto.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 18,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 38,
+          "end": 44,
+          "category": "UBICACION"
+        },
+        {
+          "start": 62,
+          "end": 76,
+          "category": "PERSONA"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-033",
+      "suite": "ner",
+      "text": "Para preparar la sesión, Manuel Aguilar acudió a la oficina de Agencia Claroscuro en Girona.",
+      "expected": [
+        {
+          "start": 25,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 63,
+          "end": 81,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 85,
+          "end": 91,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-034",
+      "suite": "ner",
+      "text": "La responsable del archivo, Olga Cano, confirmó la recepción del material de Inditex desde Zamora.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 37,
+          "category": "PERSONA"
+        },
+        {
+          "start": 77,
+          "end": 84,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 91,
+          "end": 97,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-035",
+      "suite": "ner",
+      "text": "El acta identifica a Ramón Durán como interlocutor de Teatro Azabache para las jornadas de Ávila.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 32,
+          "category": "PERSONA"
+        },
+        {
+          "start": 54,
+          "end": 69,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 91,
+          "end": 96,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-036",
+      "suite": "ner",
+      "text": "La sede de la reunión estaba en Lleida; participaron Raquel Ferrero y un equipo de Mapfre.",
+      "expected": [
+        {
+          "start": 32,
+          "end": 38,
+          "category": "UBICACION"
+        },
+        {
+          "start": 53,
+          "end": 67,
+          "category": "PERSONA"
+        },
+        {
+          "start": 83,
+          "end": 89,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-037",
+      "suite": "ner",
+      "text": "Un técnico de Transportes Junco acompañó a Rocío Iglesias al estudio situado en Logroño.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 31,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 43,
+          "end": 57,
+          "category": "PERSONA"
+        },
+        {
+          "start": 80,
+          "end": 87,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-038",
+      "suite": "ner",
+      "text": "Se acordó que Teresa Méndez tramitaría desde Lugo las solicitudes dirigidas a Iberdrola.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 27,
+          "category": "PERSONA"
+        },
+        {
+          "start": 45,
+          "end": 49,
+          "category": "UBICACION"
+        },
+        {
+          "start": 78,
+          "end": 87,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-039",
+      "suite": "ner",
+      "text": "La documentación de Estudios Umbral lleva la firma de Tomás Salas y está fechada en Tarragona.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 35,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 54,
+          "end": 65,
+          "category": "PERSONA"
+        },
+        {
+          "start": 84,
+          "end": 93,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-040",
+      "suite": "ner",
+      "text": "El informe fue revisado por Adriana Benítez antes de su entrega a Repsol en Huesca.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 43,
+          "category": "PERSONA"
+        },
+        {
+          "start": 66,
+          "end": 72,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 76,
+          "end": 82,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-041",
+      "suite": "ner",
+      "text": "Durante el ensayo celebrado en Pontevedra, Bruno Domínguez representó a Montaje Eclipse.",
+      "expected": [
+        {
+          "start": 31,
+          "end": 41,
+          "category": "UBICACION"
+        },
+        {
+          "start": 43,
+          "end": 58,
+          "category": "PERSONA"
+        },
+        {
+          "start": 72,
+          "end": 87,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-042",
+      "suite": "ner",
+      "text": "A petición de Acciona, la supervisión en Almería quedó a cargo de Beatriz Esteban.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 21,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 41,
+          "end": 48,
+          "category": "UBICACION"
+        },
+        {
+          "start": 66,
+          "end": 81,
+          "category": "PERSONA"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-043",
+      "suite": "ner",
+      "text": "Para preparar la sesión, Emilio Herrera acudió a la oficina de Editorial Astrolabio en Teruel.",
+      "expected": [
+        {
+          "start": 25,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 63,
+          "end": 83,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 87,
+          "end": 93,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-044",
+      "suite": "ner",
+      "text": "La responsable del archivo, Eva Luna, confirmó la recepción del material de Endesa desde Albacete.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 36,
+          "category": "PERSONA"
+        },
+        {
+          "start": 76,
+          "end": 82,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 89,
+          "end": 97,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-045",
+      "suite": "ner",
+      "text": "El acta identifica a Félix Prieto como interlocutor de Sonido Albor para las jornadas de Huelva.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 33,
+          "category": "PERSONA"
+        },
+        {
+          "start": 55,
+          "end": 67,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 89,
+          "end": 95,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-046",
+      "suite": "ner",
+      "text": "La sede de la reunión estaba en Soria; participaron Gabriela Aguilar y un equipo de Airbus.",
+      "expected": [
+        {
+          "start": 32,
+          "end": 37,
+          "category": "UBICACION"
+        },
+        {
+          "start": 52,
+          "end": 68,
+          "category": "PERSONA"
+        },
+        {
+          "start": 84,
+          "end": 90,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-047",
+      "suite": "ner",
+      "text": "Un técnico de Laboratorio Boreal acompañó a Gonzalo Cano al estudio situado en Badajoz.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 32,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 44,
+          "end": 56,
+          "category": "PERSONA"
+        },
+        {
+          "start": 79,
+          "end": 86,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-048",
+      "suite": "ner",
+      "text": "Se acordó que Inés Durán tramitaría desde Jaén las solicitudes dirigidas a Renfe.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 24,
+          "category": "PERSONA"
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "category": "UBICACION"
+        },
+        {
+          "start": 75,
+          "end": 80,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-049",
+      "suite": "ner",
+      "text": "La documentación de Fundación Ronda lleva la firma de Ismael Ferrero y está fechada en Cuenca.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 35,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 54,
+          "end": 68,
+          "category": "PERSONA"
+        },
+        {
+          "start": 87,
+          "end": 93,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-050",
+      "suite": "ner",
+      "text": "El informe fue revisado por Julia Iglesias antes de su entrega a Seat en Girona.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 42,
+          "category": "PERSONA"
+        },
+        {
+          "start": 65,
+          "end": 69,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 73,
+          "end": 79,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-051",
+      "suite": "ner",
+      "text": "Durante el ensayo celebrado en Zamora, Leonor Méndez representó a Agencia Claroscuro.",
+      "expected": [
+        {
+          "start": 31,
+          "end": 37,
+          "category": "UBICACION"
+        },
+        {
+          "start": 39,
+          "end": 52,
+          "category": "PERSONA"
+        },
+        {
+          "start": 66,
+          "end": 84,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-052",
+      "suite": "ner",
+      "text": "A petición de Inditex, la supervisión en Ávila quedó a cargo de Lorenzo Salas.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 21,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 41,
+          "end": 46,
+          "category": "UBICACION"
+        },
+        {
+          "start": 64,
+          "end": 77,
+          "category": "PERSONA"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-053",
+      "suite": "ner",
+      "text": "Para preparar la sesión, Manuel Arias acudió a la oficina de Teatro Azabache en Lleida.",
+      "expected": [
+        {
+          "start": 25,
+          "end": 37,
+          "category": "PERSONA"
+        },
+        {
+          "start": 61,
+          "end": 76,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 80,
+          "end": 86,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-054",
+      "suite": "ner",
+      "text": "La responsable del archivo, Olga Cortés, confirmó la recepción del material de Mapfre desde Logroño.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 79,
+          "end": 85,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 92,
+          "end": 99,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-055",
+      "suite": "ner",
+      "text": "El acta identifica a Ramón Escobar como interlocutor de Transportes Junco para las jornadas de Lugo.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 56,
+          "end": 73,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 95,
+          "end": 99,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-056",
+      "suite": "ner",
+      "text": "La sede de la reunión estaba en Tarragona; participaron Raquel Galán y un equipo de Iberdrola.",
+      "expected": [
+        {
+          "start": 32,
+          "end": 41,
+          "category": "UBICACION"
+        },
+        {
+          "start": 56,
+          "end": 68,
+          "category": "PERSONA"
+        },
+        {
+          "start": 84,
+          "end": 93,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-057",
+      "suite": "ner",
+      "text": "Un técnico de Estudios Umbral acompañó a Rocío León al estudio situado en León.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 29,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 41,
+          "end": 51,
+          "category": "PERSONA"
+        },
+        {
+          "start": 74,
+          "end": 78,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-058",
+      "suite": "ner",
+      "text": "Se acordó que Teresa Pascual tramitaría desde Ourense las solicitudes dirigidas a Telefónica.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 28,
+          "category": "PERSONA"
+        },
+        {
+          "start": 46,
+          "end": 53,
+          "category": "UBICACION"
+        },
+        {
+          "start": 82,
+          "end": 92,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-059",
+      "suite": "ner",
+      "text": "La documentación de Producciones Faro lleva la firma de Tomás Valdés y está fechada en Castellón.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 37,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 56,
+          "end": 68,
+          "category": "PERSONA"
+        },
+        {
+          "start": 87,
+          "end": 96,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-060",
+      "suite": "ner",
+      "text": "El informe fue revisado por Adriana Cano antes de su entrega a Acciona en Teruel.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 40,
+          "category": "PERSONA"
+        },
+        {
+          "start": 63,
+          "end": 70,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 74,
+          "end": 80,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-061",
+      "suite": "ner",
+      "text": "Durante el ensayo celebrado en Albacete, Bruno Durán representó a Editorial Astrolabio.",
+      "expected": [
+        {
+          "start": 31,
+          "end": 39,
+          "category": "UBICACION"
+        },
+        {
+          "start": 41,
+          "end": 52,
+          "category": "PERSONA"
+        },
+        {
+          "start": 66,
+          "end": 86,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-062",
+      "suite": "ner",
+      "text": "A petición de Endesa, la supervisión en Huelva quedó a cargo de Beatriz Ferrero.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 20,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 40,
+          "end": 46,
+          "category": "UBICACION"
+        },
+        {
+          "start": 64,
+          "end": 79,
+          "category": "PERSONA"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-063",
+      "suite": "ner",
+      "text": "Para preparar la sesión, Emilio Iglesias acudió a la oficina de Sonido Albor en Soria.",
+      "expected": [
+        {
+          "start": 25,
+          "end": 40,
+          "category": "PERSONA"
+        },
+        {
+          "start": 64,
+          "end": 76,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 80,
+          "end": 85,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-064",
+      "suite": "ner",
+      "text": "La responsable del archivo, Eva Méndez, confirmó la recepción del material de Airbus desde Badajoz.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 38,
+          "category": "PERSONA"
+        },
+        {
+          "start": 78,
+          "end": 84,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 91,
+          "end": 98,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-065",
+      "suite": "ner",
+      "text": "El acta identifica a Félix Salas como interlocutor de Laboratorio Boreal para las jornadas de Jaén.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 32,
+          "category": "PERSONA"
+        },
+        {
+          "start": 54,
+          "end": 72,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-066",
+      "suite": "ner",
+      "text": "La sede de la reunión estaba en Cuenca; participaron Gabriela Arias y un equipo de Renfe.",
+      "expected": [
+        {
+          "start": 32,
+          "end": 38,
+          "category": "UBICACION"
+        },
+        {
+          "start": 53,
+          "end": 67,
+          "category": "PERSONA"
+        },
+        {
+          "start": 83,
+          "end": 88,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-067",
+      "suite": "ner",
+      "text": "Un técnico de Fundación Ronda acompañó a Gonzalo Cortés al estudio situado en Girona.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 29,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 41,
+          "end": 55,
+          "category": "PERSONA"
+        },
+        {
+          "start": 78,
+          "end": 84,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-068",
+      "suite": "ner",
+      "text": "Se acordó que Inés Escobar tramitaría desde Zamora las solicitudes dirigidas a Seat.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 26,
+          "category": "PERSONA"
+        },
+        {
+          "start": 44,
+          "end": 50,
+          "category": "UBICACION"
+        },
+        {
+          "start": 79,
+          "end": 83,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-069",
+      "suite": "ner",
+      "text": "La documentación de Agencia Claroscuro lleva la firma de Ismael Galán y está fechada en Ávila.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 38,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 57,
+          "end": 69,
+          "category": "PERSONA"
+        },
+        {
+          "start": 88,
+          "end": 93,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-070",
+      "suite": "ner",
+      "text": "El informe fue revisado por Julia León antes de su entrega a Inditex en Lleida.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 38,
+          "category": "PERSONA"
+        },
+        {
+          "start": 61,
+          "end": 68,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 72,
+          "end": 78,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-071",
+      "suite": "ner",
+      "text": "Durante el ensayo celebrado en Logroño, Leonor Pascual representó a Teatro Azabache.",
+      "expected": [
+        {
+          "start": 31,
+          "end": 38,
+          "category": "UBICACION"
+        },
+        {
+          "start": 40,
+          "end": 54,
+          "category": "PERSONA"
+        },
+        {
+          "start": 68,
+          "end": 83,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-072",
+      "suite": "ner",
+      "text": "A petición de Mapfre, la supervisión en Lugo quedó a cargo de Lorenzo Valdés.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 20,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 40,
+          "end": 44,
+          "category": "UBICACION"
+        },
+        {
+          "start": 62,
+          "end": 76,
+          "category": "PERSONA"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-073",
+      "suite": "ner",
+      "text": "Para preparar la sesión, Manuel Benítez acudió a la oficina de Transportes Junco en Tarragona.",
+      "expected": [
+        {
+          "start": 25,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 63,
+          "end": 80,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 84,
+          "end": 93,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-074",
+      "suite": "ner",
+      "text": "La responsable del archivo, Olga Domínguez, confirmó la recepción del material de Iberdrola desde León.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 42,
+          "category": "PERSONA"
+        },
+        {
+          "start": 82,
+          "end": 91,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 98,
+          "end": 102,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-075",
+      "suite": "ner",
+      "text": "El acta identifica a Ramón Esteban como interlocutor de Estudios Umbral para las jornadas de Ourense.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 56,
+          "end": 71,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 93,
+          "end": 100,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-076",
+      "suite": "ner",
+      "text": "La sede de la reunión estaba en Castellón; participaron Raquel Herrera y un equipo de Telefónica.",
+      "expected": [
+        {
+          "start": 32,
+          "end": 41,
+          "category": "UBICACION"
+        },
+        {
+          "start": 56,
+          "end": 70,
+          "category": "PERSONA"
+        },
+        {
+          "start": 86,
+          "end": 96,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-077",
+      "suite": "ner",
+      "text": "Un técnico de Producciones Faro acompañó a Rocío Luna al estudio situado en Huesca.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 31,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 43,
+          "end": 53,
+          "category": "PERSONA"
+        },
+        {
+          "start": 76,
+          "end": 82,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-078",
+      "suite": "ner",
+      "text": "Se acordó que Teresa Prieto tramitaría desde Pontevedra las solicitudes dirigidas a Repsol.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 27,
+          "category": "PERSONA"
+        },
+        {
+          "start": 45,
+          "end": 55,
+          "category": "UBICACION"
+        },
+        {
+          "start": 84,
+          "end": 90,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-079",
+      "suite": "ner",
+      "text": "La documentación de Montaje Eclipse lleva la firma de Tomás Aguilar y está fechada en Almería.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 35,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 54,
+          "end": 67,
+          "category": "PERSONA"
+        },
+        {
+          "start": 86,
+          "end": 93,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-080",
+      "suite": "ner",
+      "text": "El informe fue revisado por Adriana Cortés antes de su entrega a Endesa en Soria.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 42,
+          "category": "PERSONA"
+        },
+        {
+          "start": 65,
+          "end": 71,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 75,
+          "end": 80,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-081",
+      "suite": "ner",
+      "text": "Durante el ensayo celebrado en Badajoz, Bruno Escobar representó a Sonido Albor.",
+      "expected": [
+        {
+          "start": 31,
+          "end": 38,
+          "category": "UBICACION"
+        },
+        {
+          "start": 40,
+          "end": 53,
+          "category": "PERSONA"
+        },
+        {
+          "start": 67,
+          "end": 79,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-082",
+      "suite": "ner",
+      "text": "A petición de Airbus, la supervisión en Jaén quedó a cargo de Beatriz Galán.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 20,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 40,
+          "end": 44,
+          "category": "UBICACION"
+        },
+        {
+          "start": 62,
+          "end": 75,
+          "category": "PERSONA"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-083",
+      "suite": "ner",
+      "text": "Para preparar la sesión, Emilio León acudió a la oficina de Laboratorio Boreal en Cuenca.",
+      "expected": [
+        {
+          "start": 25,
+          "end": 36,
+          "category": "PERSONA"
+        },
+        {
+          "start": 60,
+          "end": 78,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 82,
+          "end": 88,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-084",
+      "suite": "ner",
+      "text": "La responsable del archivo, Eva Pascual, confirmó la recepción del material de Renfe desde Girona.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 79,
+          "end": 84,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 91,
+          "end": 97,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-085",
+      "suite": "ner",
+      "text": "El acta identifica a Félix Valdés como interlocutor de Fundación Ronda para las jornadas de Zamora.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 33,
+          "category": "PERSONA"
+        },
+        {
+          "start": 55,
+          "end": 70,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 92,
+          "end": 98,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-086",
+      "suite": "ner",
+      "text": "La sede de la reunión estaba en Ávila; participaron Gabriela Benítez y un equipo de Seat.",
+      "expected": [
+        {
+          "start": 32,
+          "end": 37,
+          "category": "UBICACION"
+        },
+        {
+          "start": 52,
+          "end": 68,
+          "category": "PERSONA"
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-087",
+      "suite": "ner",
+      "text": "Un técnico de Agencia Claroscuro acompañó a Gonzalo Domínguez al estudio situado en Lleida.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 32,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 44,
+          "end": 61,
+          "category": "PERSONA"
+        },
+        {
+          "start": 84,
+          "end": 90,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-088",
+      "suite": "ner",
+      "text": "Se acordó que Inés Esteban tramitaría desde Logroño las solicitudes dirigidas a Inditex.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 26,
+          "category": "PERSONA"
+        },
+        {
+          "start": 44,
+          "end": 51,
+          "category": "UBICACION"
+        },
+        {
+          "start": 80,
+          "end": 87,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-089",
+      "suite": "ner",
+      "text": "La documentación de Teatro Azabache lleva la firma de Ismael Herrera y está fechada en Lugo.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 35,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 54,
+          "end": 68,
+          "category": "PERSONA"
+        },
+        {
+          "start": 87,
+          "end": 91,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-090",
+      "suite": "ner",
+      "text": "El informe fue revisado por Julia Luna antes de su entrega a Mapfre en Tarragona.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 38,
+          "category": "PERSONA"
+        },
+        {
+          "start": 61,
+          "end": 67,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 71,
+          "end": 80,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-091",
+      "suite": "ner",
+      "text": "Durante el ensayo celebrado en León, Leonor Prieto representó a Transportes Junco.",
+      "expected": [
+        {
+          "start": 31,
+          "end": 35,
+          "category": "UBICACION"
+        },
+        {
+          "start": 37,
+          "end": 50,
+          "category": "PERSONA"
+        },
+        {
+          "start": 64,
+          "end": 81,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-092",
+      "suite": "ner",
+      "text": "A petición de Iberdrola, la supervisión en Ourense quedó a cargo de Lorenzo Aguilar.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 23,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 43,
+          "end": 50,
+          "category": "UBICACION"
+        },
+        {
+          "start": 68,
+          "end": 83,
+          "category": "PERSONA"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-093",
+      "suite": "ner",
+      "text": "Para preparar la sesión, Manuel Cano acudió a la oficina de Estudios Umbral en Castellón.",
+      "expected": [
+        {
+          "start": 25,
+          "end": 36,
+          "category": "PERSONA"
+        },
+        {
+          "start": 60,
+          "end": 75,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 79,
+          "end": 88,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-094",
+      "suite": "ner",
+      "text": "La responsable del archivo, Olga Durán, confirmó la recepción del material de Telefónica desde Huesca.",
+      "expected": [
+        {
+          "start": 28,
+          "end": 38,
+          "category": "PERSONA"
+        },
+        {
+          "start": 78,
+          "end": 88,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 95,
+          "end": 101,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-095",
+      "suite": "ner",
+      "text": "El acta identifica a Ramón Ferrero como interlocutor de Producciones Faro para las jornadas de Pontevedra.",
+      "expected": [
+        {
+          "start": 21,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 56,
+          "end": 73,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 95,
+          "end": 105,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-096",
+      "suite": "ner",
+      "text": "La sede de la reunión estaba en Almería; participaron Raquel Iglesias y un equipo de Repsol.",
+      "expected": [
+        {
+          "start": 32,
+          "end": 39,
+          "category": "UBICACION"
+        },
+        {
+          "start": 54,
+          "end": 69,
+          "category": "PERSONA"
+        },
+        {
+          "start": 85,
+          "end": 91,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-097",
+      "suite": "ner",
+      "text": "Un técnico de Montaje Eclipse acompañó a Rocío Méndez al estudio situado en Teruel.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 29,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 41,
+          "end": 53,
+          "category": "PERSONA"
+        },
+        {
+          "start": 76,
+          "end": 82,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    },
+    {
+      "id": "ner-v2-098",
+      "suite": "ner",
+      "text": "Se acordó que Teresa Salas tramitaría desde Albacete las solicitudes dirigidas a Acciona.",
+      "expected": [
+        {
+          "start": 14,
+          "end": 26,
+          "category": "PERSONA"
+        },
+        {
+          "start": 44,
+          "end": 52,
+          "category": "UBICACION"
+        },
+        {
+          "start": 81,
+          "end": 88,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context"
+    },
+    {
+      "id": "ner-v2-099",
+      "suite": "ner",
+      "text": "La documentación de Editorial Astrolabio lleva la firma de Tomás Arias y está fechada en Huelva.",
+      "expected": [
+        {
+          "start": 20,
+          "end": 40,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 59,
+          "end": 70,
+          "category": "PERSONA"
+        },
+        {
+          "start": 89,
+          "end": 95,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name"
+    }
+  ]
+}

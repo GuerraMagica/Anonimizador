@@ -9,3 +9,5 @@ Dependencias fijadas con hashes y modelo español local autorizado; sin descarga
 Correcciones de revisión: publicación mediante creación final exclusiva sin ningún borrado automático (los fallos pueden dejar copias parciales informadas); capacidad de verificación derivada para salidas que crecen con etiquetas. Regresión final: 102 pruebas.
 
 Continuación: revisión paginada de 100 filas visibles, contador global de pendientes y preservación de confirmación al navegar; edición y corrección usan el ID y las coordenadas globales. Benchmark denso reproducible publicado.
+
+Experimento autorizado: comparación offline de es_core_news_sm/md 3.8.0 con segundo corpus NER congelado; errores y denominadores publicados. El mediano mejora pero no supera los umbrales, por lo que permanece fuera de la configuración activa.

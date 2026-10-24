@@ -437,5 +437,20 @@
     "sha256": "e451a83d6df79b87e9eed0cb553f03e99e36a3bab18a7b79f0dcfd1fdf875e12",
     "license_declared": "GPL-3.0"
   },
-  "note": "Conservative upper bound of compatible wheels, not measured network traffic. Actual dependency selection is pinned with hashes in requirements.lock. Model downloaded and SHA256 checked before installation."
+  "note": "Conservative upper bound of compatible wheels, not measured network traffic. Actual dependency selection is pinned with hashes in requirements.lock. Model downloaded and SHA256 checked before installation.",
+  "comparison_models": [
+    {
+      "name": "es_core_news_md",
+      "version": "3.8.0",
+      "wheel": "es_core_news_md-3.8.0-py3-none-any.whl",
+      "bytes": 42284033,
+      "url": "https://github.com/explosion/spacy-models/releases/download/es_core_news_md-3.8.0/es_core_news_md-3.8.0-py3-none-any.whl",
+      "sha256": "478b8bb3f3e8eb149192f7d80e7cd64f990b7e9bccbc5329df41a57e86326be2",
+      "license": "GPL-3.0",
+      "role": "authorized comparison only; active model remains es_core_news_sm",
+      "separately_authorized_download_limit_bytes": 45000000,
+      "sha256_verified_before_install": true,
+      "installed_without_dependencies": true
+    }
+  ]
 }

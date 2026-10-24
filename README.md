@@ -51,3 +51,7 @@ Se usan archivos y textos sintéticos. Las pruebas del núcleo validan transform
 Presidio y spaCy declaran MIT; PySide6/Qt permite opciones LGPL/GPL/comerciales según componente. Los pesos españoles `es_core_news_sm` 3.8.0 declaran **GPL-3.0**. No se incluyen pesos ni paquetes binarios en Git. Sus licencias y las transitivas requieren revisión antes de redistribuir un instalador. Este proyecto no incluye instalador, firma ni notarización.
 
 La [especificación](docs/superpowers/specs/2026-10-23-local-document-anonymizer-design.md) y el [plan](docs/superpowers/plans/2026-10-24-local-document-anonymizer.md) separan requisitos aprobados, implementación y aceptación. `graphify-out/` es una instantánea documental histórica, anterior al código actual.
+
+## Experimento NER adicional
+
+Se comparó `es_core_news_md` 3.8.0 con el pequeño mediante una descarga autorizada aparte (42,3 MB, GPL-3.0, checksum verificado). Mejora resultados, pero en el segundo corpus el recall de organizaciones alcanza solo el 60 %, con precisión de persona/ubicación también por debajo del 90 %. Sigue siendo un recurso de evaluación: **el modelo activo continúa siendo el pequeño y la aceptación global está pendiente**. Véanse [protocolo y resultados](docs/validacion-2026-10-24.md). El comparador `tests/compare_ner_models.py` no descarga recursos ni cambia el modelo de la aplicación.

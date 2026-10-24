@@ -200,3 +200,13 @@ Dentro del plan preaprobado, limitar los widgets visibles a 100 candidatos por p
 - [x] Implementar el conjunto visible acotado y navegación sin mutación de revisión.
 - [x] Regresión Qt completa y benchmark reproducible con los mismos 3 000 candidatos; documentar tiempo/memoria observados, sin prometer latencia universal.
 - [x] Commit y push verificados. El experimento de otro modelo requiere autorización específica de descarga; no sustituir el modelo activo automáticamente.
+
+## Comparación NER autorizada — continuación de tarea 8
+
+El usuario autorizó expresamente descargar `es_core_news_md` 3.8.0 (42 284 033 bytes, GPL-3.0) del repositorio oficial de spaCy, verificar el SHA-256 e instalarlo solo en la .venv, sin dependencias y con máximo 45 MB. El modelo pequeño se conserva como referencia y sigue activo en la aplicación.
+
+- [x] Descargar con límite y verificar checksum antes de instalar un único paquete, sin índice ni dependencias.
+- [x] TDD de métricas exactas y validación del corpus por hash.
+- [x] Congelar un segundo corpus NER antes de que cualquiera de los dos modelos lo analice (100 entidades por categoría, escenarios sintéticos, 50 organizaciones públicas y 50 inventadas).
+- [x] Comparar sm/md en CPU y offline con v1 como referencia y v2 separado; publicar denominadores, errores y gates sin afinar contra los resultados.
+- [ ] Revisión del incremento y regresión completa, commit y push verificados. Mantener aceptación global abierta si falla NER o smoke visual.

@@ -92,3 +92,23 @@ Se sustituyó la tabla completa por páginas de **100 candidatos** manteniendo t
 | Cerrar documento | 0,0625 s | 0,00385 s |
 
 La navegación a la página siguiente tardó 0,0392 s. Son ensayos puntuales, no una promesa de latencia ni sustituto del smoke visual manual. Reproducir la nueva medición con `QT_QPA_PLATFORM=offscreen PYTHONPATH=src .venv/bin/python tests/benchmark_dense_table.py`. El coste de esta decisión es pasar de una lista continua a navegación por páginas; no se ocultan candidatos ni se cambian las puertas de revisión.
+
+## Comparación autorizada con el modelo mediano
+
+Se instaló únicamente para evaluación `es_core_news_md` 3.8.0, **42 284 033 bytes**, sin dependencias nuevas, dentro de la `.venv`. SHA-256 oficial comprobado antes de instalar: `478b8bb3f3e8eb149192f7d80e7cd64f990b7e9bccbc5329df41a57e86326be2`. La [publicación oficial](https://github.com/explosion/spacy-models/releases/tag/es_core_news_md-3.8.0) declara CPU, compatibilidad spaCy 3.8 y GPL-3.0. El registro de artefactos distingue esta autorización adicional del entorno original.
+
+El modelo candidato se eligió antes de preparar o medir el segundo corpus. Se congelaron [100 casos NER adicionales](../tests/fixtures/ner-comparison-v2.json), [hash y protocolo](../tests/fixtures/ner-comparison-v2.manifest.json), con 100 personas, 100 organizaciones y 100 ubicaciones. Las organizaciones mezclan 50 nombres públicos en contextos ficticios y 50 inventados. v1 se usa como referencia de comparación; v2 fue congelado antes de ejecutar ambos modelos. Si estos errores guían nuevos ajustes, ese conjunto pasa a desarrollo y se necesitará otra evaluación independiente.
+
+[Comparación completa y errores exactos](ner-model-comparison.json):
+
+| Categoría en v2 | Pequeño: precisión / recall | Mediano: precisión / recall | TP / FP / FN del mediano |
+| --- | --- | --- | --- |
+| Persona | 80 % / 96 % | 88,50 % / 100 % | 100 / 13 / 0 |
+| Organización | 97,67 % / 42 % | 100 % / 60 % | 60 / 0 / 40 |
+| Ubicación | 73,77 % / 90 % | 86,96 % / 100 % | 100 / 15 / 0 |
+
+**El mediano mejora las métricas, pero NO supera las puertas NER de precisión y recall ≥90 % por categoría.** En v1, el recall de organización pasa del 21 % al 38 %, también insuficiente. No se integra como modelo activo ni se declara el producto aceptado. La aplicación conserva `es_core_news_sm`; no se cambia ningún patrón o peso ni se reetiqueta el corpus para mejorar resultados.
+
+Ambos modelos se cargaron desde rutas locales con un audit hook de Python que bloquea conexiones; se observaron 0 intentos de red en esa ejecución. Esto no inspecciona syscalls nativas. El benchmark del comparador mide cargas secuenciales y análisis de textos pequeños; el pico de memoria es del proceso completo, no atribuible de forma aislada a un solo modelo.
+
+Reproducir después de preparar expresamente ambos recursos locales: `PYTHONPATH=src .venv/bin/python tests/compare_ner_models.py`. Devuelve **2** porque el candidato no supera las puertas. Su instalación para evaluación no modifica el lock de dependencias ni la selección de modelo del producto. El siguiente paso de calidad necesita revisar la estrategia de reconocimiento, especialmente ante organizaciones inventadas; un modelo mayor por sí solo no ha resuelto el requisito.
