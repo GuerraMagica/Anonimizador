@@ -50,8 +50,8 @@ Crear paquete `src/local_anonymizer/` sin imports de Qt/NLP desde el núcleo. `p
 
 **Interfaces:** produce tipos anteriores y `load_document(path: Path) -> Document`. La revisión inicial es 0; una sesión nueva recibe un ID aleatorio. Rechazar entradas no regulares y symlinks de entrada en esta versión. Leer descriptor con tamaño acotado; comparar fstat antes/después para detectar cambios durante la lectura. No seguir cambios posteriores.
 
-- [ ] Crear `.venv` con el Python 3.12 arm64 existente y `venv --without-pip`; no descargar Python ni instalar paquetes.
-- [ ] Escribir pruebas de límites exactos, UTF-8/BOM, CRLF, emoji, formato incorrecto, controles y archivo cambiado durante lectura; usar `TemporaryDirectory` y originales sintéticos.
+- [x] Crear `.venv` con el Python 3.12 arm64 existente y `venv --without-pip`; no descargar Python ni instalar paquetes.
+- [x] Escribir pruebas de límites exactos, UTF-8/BOM, CRLF, emoji, formato incorrecto, controles y archivo cambiado durante lectura; usar `TemporaryDirectory` y originales sintéticos.
 
 ```python
 def test_preserves_crlf_and_non_bmp(self):
@@ -60,10 +60,10 @@ def test_preserves_crlf_and_non_bmp(self):
     self.assertEqual(source.read_bytes(), original_bytes)
 ```
 
-- [ ] Ejecutar `PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p 'test_ingest.py' -v`; registrar fallo por módulo ausente.
-- [ ] Implementar los tipos y la lectura mínima; mensajes de error solo por código, sin texto/ruta ni traceback de terceros.
-- [ ] Repetir tests de entrada y dominio; añadir 1 048 576/1 048 577 bytes, 100 000/100 001 caracteres y repr sin centinelas sensibles. Se exige PASS.
-- [ ] Commit `feat: add validated local text ingestion`; push y verificar SHA.
+- [x] Ejecutar `PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p 'test_ingest.py' -v`; registrar fallo por módulo ausente.
+- [x] Implementar los tipos y la lectura mínima; mensajes de error solo por código, sin texto/ruta ni traceback de terceros.
+- [x] Repetir tests de entrada y dominio; añadir 1 048 576/1 048 577 bytes, 100 000/100 001 caracteres y repr sin centinelas sensibles. Se exige PASS.
+- [x] Commit `feat: add validated local text ingestion`; push y verificar SHA.
 
 ## Task 2: Revisión, etiquetas y mapa de procedencia
 
