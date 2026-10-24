@@ -90,7 +90,7 @@ def test_same_group_has_same_label(self):
 
 **Interfaces:** consume `Review`, `Preview`, `Detector`; produce `verify_preview(review: Review, preview: Preview, detector: Detector, rejections: tuple[ResidualDecision, ...] = ()) -> Verification`. El resultado liga sesión, revisión, digest y configuración. Nunca escribir archivos en esta tarea.
 
-- [ ] Escribir tests con detector determinista: valor original persistente, contenido recreado al unir segmentos, etiqueta detectada como falso positivo, cruce conservado/sustituido y rechazo caducado por revisión/configuración/digest.
+- [x] Escribir tests con detector determinista: valor original persistente, contenido recreado al unir segmentos, etiqueta detectada como falso positivo, cruce conservado/sustituido y rechazo caducado por revisión/configuración/digest.
 
 ```python
 def test_selected_value_elsewhere_blocks_export(self):
@@ -99,10 +99,10 @@ def test_selected_value_elsewhere_blocks_export(self):
     self.assertIn('SELECTED_VALUE_REMAINS', result.issues)
 ```
 
-- [ ] Ejecutar `... -m unittest discover -s tests -p 'test_verification.py' -v` y observar FAIL.
-- [ ] Implementar comparación con reconstrucción esperada, búsqueda exacta residual y segunda pasada. Heredar rechazos del original solo con correspondencia continua exacta de segmentos y misma categoría/procedencia; nunca por valor igual. Rechazos de salida requieren `ResidualKey` completo. No convertir coordenadas residuales en hallazgos originales.
-- [ ] Ejecutar tests del módulo y toda la regresión. Confirmación humana falsa y detector que falla deben bloquear; ningún mensaje/repr contiene centinelas. Se exige PASS.
-- [ ] Commit `feat: verify residual content against review state`; push y verificar SHA.
+- [x] Ejecutar `... -m unittest discover -s tests -p 'test_verification.py' -v` y observar FAIL.
+- [x] Implementar comparación con reconstrucción esperada, búsqueda exacta residual y segunda pasada. Heredar rechazos del original solo con correspondencia continua exacta de segmentos y misma categoría/procedencia; nunca por valor igual. Rechazos de salida requieren `ResidualKey` completo. No convertir coordenadas residuales en hallazgos originales.
+- [x] Ejecutar tests del módulo y toda la regresión. Confirmación humana falsa y detector que falla deben bloquear; ningún mensaje/repr contiene centinelas. Se exige PASS.
+- [x] Commit `feat: verify residual content against review state`; push y verificar SHA.
 
 ## Task 4: Publicación sin sobrescritura e informe
 
@@ -110,7 +110,7 @@ def test_selected_value_elsewhere_blocks_export(self):
 
 **Interfaces:** `publish_text(review: Review, preview: Preview, verification: Verification, destination: Path) -> Receipt`; `build_report(receipt: Receipt, counts: dict[str, int], versions: dict[str, str]) -> dict` y `save_report(report: dict, destination: Path) -> Receipt`. Contenido sensible fuera del esquema del informe; validar claves/valores, no aceptar diccionarios arbitrarios como informe final.
 
-- [ ] Escribir tests de destino existente, symlink/hardlink al original, bytes y permisos de salida, espacio/permisos/lectura fallidos, colisión concurrente y sustitución de destino antes de limpiar. Probar informe sin texto, valores, rutas o hash de origen.
+- [x] Escribir tests de destino existente, symlink/hardlink al original, bytes y permisos de salida, espacio/permisos/lectura fallidos, colisión concurrente y sustitución de destino antes de limpiar. Probar informe sin texto, valores, rutas o hash de origen.
 
 ```python
 def test_concurrent_destination_is_never_overwritten(self):
@@ -120,10 +120,10 @@ def test_concurrent_destination_is_never_overwritten(self):
     self.assertEqual(source.read_bytes(), original_bytes)
 ```
 
-- [ ] Ejecutar tests del módulo y observar FAIL.
-- [ ] Implementar directorio fijado con descriptor, temporal aleatorio exclusivo 0600, escritura/fsync y lectura de comprobación. Publicar con `os.link` sin reemplazo; un fallo de soporte no permite fallback a rename/copia sobrescribible. Reabrir destino con no-follow, comprobar identidad/bytes/digest y limpiar únicamente inodos propios. Usar `dir_fd` para no depender de cambios de symlinks en directorios.
-- [ ] Ejecutar tests en el sistema de archivos local y regresión; comprobar que no quedan temporales en éxito y que limpieza fallida se comunica sin traceback sensible. Informe independiente: su fallo no borra el TXT correcto. Se exige PASS.
-- [ ] Commit `feat: publish verified copies without replacing files`; push y verificar SHA.
+- [x] Ejecutar tests del módulo y observar FAIL.
+- [x] Implementar directorio fijado con descriptor, temporal aleatorio exclusivo 0600, escritura/fsync y lectura de comprobación. Publicar con `os.link` sin reemplazo; un fallo de soporte no permite fallback a rename/copia sobrescribible. Reabrir destino con no-follow, comprobar identidad/bytes/digest y limpiar únicamente inodos propios. Usar `dir_fd` para no depender de cambios de symlinks en directorios.
+- [x] Ejecutar tests en el sistema de archivos local y regresión; comprobar que no quedan temporales en éxito y que limpieza fallida se comunica sin traceback sensible. Informe independiente: su fallo no borra el TXT correcto. Se exige PASS.
+- [x] Commit `feat: publish verified copies without replacing files`; push y verificar SHA.
 
 ## Task 5: Estado de sesión y cancelación
 

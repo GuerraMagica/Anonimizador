@@ -8,8 +8,9 @@ import re
 
 
 class AnonymizerError(Exception):
-    def __init__(self, code: str):
+    def __init__(self, code: str, *, cleanup_paths: tuple[Path, ...] = ()):
         self.code = code if re.fullmatch(r'[A-Z][A-Z0-9_]{0,63}', code) else 'INTERNAL_ERROR'
+        self.cleanup_paths = cleanup_paths
         super().__init__(self.code)
 
 
