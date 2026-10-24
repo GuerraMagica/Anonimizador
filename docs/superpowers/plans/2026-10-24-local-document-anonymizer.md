@@ -131,7 +131,7 @@ def test_concurrent_destination_is_never_overwritten(self):
 
 **Interfaces:** `Session` coordina `load`, `set_findings`, `set_decisions`, `preview`, `confirm`, `verify` y `cancel`; métodos reciben un token de trabajo `(session_id, revision, job_id)` para resultados asíncronos. No depende de Qt.
 
-- [ ] Escribir tests de cambio de decisiones tras confirmar, resultado tardío de otro documento, cancelación pendiente, un solo trabajo activo y limpieza de estado al cerrar. `confirmed` no se vuelve verdadero por terminar un detector.
+- [x] Escribir tests de cambio de decisiones tras confirmar, resultado tardío de otro documento, cancelación pendiente, un solo trabajo activo y limpieza de estado al cerrar. `confirmed` no se vuelve verdadero por terminar un detector.
 
 ```python
 def test_late_result_cannot_reenable_export(self):
@@ -140,9 +140,9 @@ def test_late_result_cannot_reenable_export(self):
     self.assertFalse(session.can_export)
 ```
 
-- [ ] Ejecutar tests del módulo y observar FAIL.
-- [ ] Implementar estado, tokens y revocación; ejecutar regresión con detector doble, sin presentarla como validación de NLP real.
-- [ ] Commit `feat: manage review sessions and stale work results`; push y verificar SHA.
+- [x] Ejecutar tests del módulo y observar FAIL.
+- [x] Implementar estado, tokens y revocación; ejecutar regresión con detector doble, sin presentarla como validación de NLP real.
+- [x] Commit `feat: manage review sessions and stale work results`; push y verificar SHA.
 
 ## Task 6: Entorno y detección real — puerta de autorización
 
