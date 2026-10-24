@@ -1,6 +1,6 @@
 # Local Document Anonymizer — especificación del primer MVP
 
-Fecha: 23 de octubre de 2026. Estado: **propuesta para revisión; implementación no autorizada**.
+Fecha inicial: 23 de octubre de 2026. Última revisión: 24 de octubre de 2026. Estado: **propuesta para revisión; implementación no autorizada**.
 
 ## 1. Objetivo y decisiones
 
@@ -11,7 +11,7 @@ Decisiones expresas del usuario:
 - macOS Apple Silicon; preferencia por Python y herramientas abiertas, locales y sencillas.
 - La primera versión puede cambiar la maquetación y exportar texto saneado.
 - **Opción A elegida de momento:** interfaz y motor en el mismo proceso, con módulos separados.
-- Trabajar por etapas: aprobar especificación, después aprobar plan y solo entonces implementar.
+- Trabajar por etapas: aprobar especificación y preparar plan antes de implementar. La autorización posterior del usuario preaprueba el plan que se considere adecuado; no se repetirá esa aprobación si el plan respeta el alcance aprobado.
 
 El alcance reducido, los límites, las métricas y los detalles siguientes son propuestas del autor de esta especificación. La elección de A no se interpreta como aprobación de todos ellos.
 
@@ -203,8 +203,24 @@ Mantener README de instalación/uso y límites, procedimiento de pruebas y un ch
 
 Evolución prevista, con especificaciones propias: DOCX a TXT con inventario OOXML; PDF a TXT con cobertura explícita; después OCR o exportaciones visuales si se necesitan. Reevaluar proceso separado antes de añadir parsers complejos. La independencia del dominio permite ese cambio sin reescribir detección, revisión y transformación.
 
-## 11. Revisión pendiente
+## 11. Estado de revisión
 
-Esta especificación necesita aprobación expresa. Después se redactará un plan de tareas y pruebas para otra aprobación antes de ejecutar. Las instalaciones y descargas deberán detallar artefactos, tamaños y accesos externos antes de solicitar la autorización correspondiente.
+Esta especificación necesita aprobación expresa, conforme a la fase 3 solicitada por el usuario. Después se redactará un plan de tareas y pruebas; el usuario ha aprobado anticipadamente el plan que se considere adecuado, por lo que no se repetirá su aprobación si se ajusta a la especificación aceptada. Las instalaciones y descargas seguirán detallando artefactos, tamaños y accesos externos antes de solicitar la autorización correspondiente. La preaprobación del plan no se interpreta como aprobación de esta especificación ni como autorización para escribir producto durante la fase de diseño.
 
 Se dejan al implementador nombres de clases/archivos, disposición concreta de widgets, primitivas de Qt, estrategia exacta de publicación exclusiva, herramientas de test y versiones compatibles del entorno, siempre que respeten estos contratos. Cambios de alcance, nuevos modelos, persistencia sensible, procesos adicionales o relajación de bloqueos requieren revisión con el usuario.
+
+## 12. Revisión de la fase 3 con graphify — 24/10/2026
+
+Se ha generado un [grafo documental](../../../graphify-out/graph.json) y un [informe de extracción](../../../graphify-out/GRAPH_REPORT.md) sobre los dos documentos existentes en el commit `74fe844efa5b982e8954d04a5972e42dd3c7bbdb`, anterior a esta revisión. Es una instantánea, no un índice actualizado automáticamente: esta sección y los cambios posteriores de autorización no están incorporados en sus nodos. El informe conserva los hashes de las fuentes para identificar exactamente su cobertura.
+
+La extracción contiene 40 nodos, 54 relaciones explícitas y 6 comunidades; el diagnóstico no encuentra extremos ausentes, relaciones duplicadas, bucles ni colapsos entre pares. Estos resultados acreditan propiedades del grafo construido, no exhaustividad de la extracción ni corrección de la aplicación. El visor HTML de graphify usa una biblioteca JavaScript externa; esa dependencia del artefacto no forma parte del diseño offline del producto.
+
+La consulta de revisión conecta controles ya definidos en esta especificación: revisión humana → bloqueos de estado → exportación; exportación → rondas residuales y publicación exclusiva; publicación exclusiva → criterios de aceptación. Es una relación entre requisitos del diseño. Se conserva su separación al planificar:
+
+- **Detección:** medir precisión, recall y falsos negativos; no confundir un acierto del diccionario con detección de una producción desconocida.
+- **Revisión:** exigir decisiones completas y vigentes, con procedencia y tratamiento explícito de conflictos.
+- **Transformación:** comprobar los intervalos, la coherencia de etiquetas y los valores seleccionados que puedan persistir.
+- **Archivo exportado:** comprobar ausencia de sobrescritura, igualdad de bytes y digest del destino final.
+- **Privacidad:** comprobar procesamiento sin red y ausencia de contenido sensible en diagnósticos e informe, conservando la revisión del riesgo contextual.
+
+No surge de esta revisión una necesidad demostrada de cambiar la opción A, añadir procesos, modelos o formatos. Se mantiene la propuesta TXT/Markdown → TXT y la evolución DOCX → PDF → OCR como ampliaciones separadas. Siguen pendientes la aprobación del diseño, la instalación autorizada, la evaluación real de detectores y rendimiento y las pruebas en macOS. No se han escrito ni probado funcionalidades de producto durante esta fase.

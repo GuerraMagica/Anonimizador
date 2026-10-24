@@ -91,6 +91,7 @@ _Questions this graph is uniquely positioned to answer:_
 
 - Documentation-only graph of a proposed application, not evidence of implemented or tested product behavior.
 - Built from the two documentation files at commit `74fe844efa5b982e8954d04a5972e42dd3c7bbdb`. Later design changes must be compared with this snapshot.
+- The phase-3 review on 24/10/2026 was written after this extraction. Its added section and revised plan-approval wording are not included in these nodes; this graph is a historical snapshot, not a live index.
 - Semantic extraction used a Codex session agent; no Gemini API, model download or package installation was used for this build.
 - The default HTML viewer loads vis-network JavaScript from unpkg.com. It needs that network resource; graph.json and this report can be consulted locally without it.
 - `graphify-out/` is in the working tree. Only reviewed, portable outputs are versioned; machine paths and caches are ignored.
