@@ -163,10 +163,10 @@ def test_late_result_cannot_reenable_export(self):
 
 **Interfaces:** `MainWindow` usa `Session`, el detector aprobado y un worker de Qt; mostrar entrada y previsualización de solo lectura y texto plano. Menú para abrir, tabla de candidatos, aceptar/rechazar/corregir, selección manual, términos, grupos, acción, confirmación, rondas residuales, destino e informe independiente.
 
-- [ ] Escribir tests de Qt con `unittest` y `QtTest`, sin añadir pytest-qt: UTF-16 con emoji, confirmación invalidada, un trabajo activo, cancelación pendiente, HTML mostrado literalmente y errores sin texto sensible.
-- [ ] Observar FAIL; implementar interfaz mínima y mensajes profesionales en español; no añadir servicios ni exponer configuración técnica innecesaria.
+- [x] Escribir tests de Qt con `unittest` y `QtTest`, sin añadir pytest-qt: UTF-16 con emoji, confirmación invalidada, un trabajo activo, cancelación pendiente, HTML mostrado literalmente y errores sin texto sensible.
+- [x] Observar FAIL; implementar interfaz mínima y mensajes profesionales en español; no añadir servicios ni exponer configuración técnica innecesaria.
 - [ ] Ejecutar tests con `QT_QPA_PLATFORM=offscreen` y un smoke manual en macOS. Registrar lo automático y lo observado por separado. No afirmar éxito de la GUI por inspección estática.
-- [ ] Commit `feat: add local document review desktop workflow`; push y verificar SHA.
+- [x] Commit `feat: add local document review desktop workflow`; push y verificar SHA.
 
 ## Task 8: Evaluación, privacidad y entrega
 

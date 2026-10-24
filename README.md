@@ -23,10 +23,25 @@ Presidio aporta recognizers configurados explícitamente para correo, teléfonos
 
 El correo usa la lista de dominios incluida en `tldextract`, sin caché ni actualizaciones de red. El modelo se carga por ruta local; si falta o falla un detector, el análisis se bloquea. No hay telemetría ni persistencia de documentos o diccionarios en la aplicación.
 
+## Uso de la versión de desarrollo
+
+```sh
+PYTHONPATH=src .venv/bin/python -m local_anonymizer
+```
+
+1. Abre un TXT/Markdown. El análisis se ejecuta en un único worker y el original permanece intacto.
+2. Revisa toda la fuente, decide cada candidato (`Sustituir` o `Conservar`) y resuelve solapamientos. Puedes corregir categoría o fragmento, seleccionar omisiones y añadir vocabulario literal. Reanalizar reinicia las decisiones.
+3. Elige etiqueta o redacción. El grupo opcional permite compartir una etiqueta entre alias de la misma categoría; por defecto se agrupan valores idénticos. No uses el mismo grupo para personas distintas.
+4. Construye la vista previa, comprueba todo el resultado, marca la revisión humana y confirma. Cualquier cambio obliga a reconstruir y confirmar.
+5. Revisa los residuales. Localízalos en el original para corregirlo o rechaza explícitamente falsos positivos de esa salida. Un valor seleccionado que persista siempre bloquea la exportación.
+6. Guarda un TXT nuevo. El destino no puede existir: también se bloquean enlaces y colisiones concurrentes. Después puedes guardar un informe JSON independiente y opcional.
+
+Cancelar descarta resultados pero espera a que termine la llamada del motor; no mata hilos. El cierre también espera al trabajo activo. Si la publicación falla después de crear una copia, se comunica el archivo pendiente para inspección; nunca se borra a ciegas un destino que otro proceso pudiera haber sustituido. La aplicación no garantiza borrado físico en SSD, memoria, snapshots o copias sincronizadas.
+
 ## Pruebas
 
 ```sh
-PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
+QT_QPA_PLATFORM=offscreen PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 ```
 
 Se usan archivos y textos sintéticos. Las pruebas del núcleo validan transformación, estado, procedencia y publicación exclusiva; no demuestran eficacia del modelo. La evaluación independiente de detección y la comprobación de GUI se documentarán por separado antes de declarar aceptación.

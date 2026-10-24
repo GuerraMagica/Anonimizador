@@ -100,6 +100,11 @@ class Session:
         self.review = replace(r, confirmed=True)
         self.verification = None
 
+    def withdraw_confirmation(self):
+        self.review = replace(self._require_review(), confirmed=False)
+        self.verification = None
+        self.rejections = ()
+
     def begin_job(self, *, verification=False):
         if self.busy:
             raise AnonymizerError('JOB_ACTIVE')
