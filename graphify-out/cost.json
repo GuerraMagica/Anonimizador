@@ -1,0 +1,15 @@
+{
+  "runs": [
+    {
+      "date": "2026-10-24T08:44:35.295515+00:00",
+      "input_tokens": null,
+      "output_tokens": null,
+      "usage_available": false,
+      "files": 2
+    }
+  ],
+  "total_input_tokens": null,
+  "total_output_tokens": null,
+  "usage_available": false,
+  "note": "Measured agent token usage is not exposed by the tool; unavailable is not zero."
+}

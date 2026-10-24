@@ -2,5 +2,6 @@
 __pycache__/
 .venv/
 graphify-out/.graphify_*
+graphify-out/.vocab.txt
 graphify-out/.needs_update
 graphify-out/cache/

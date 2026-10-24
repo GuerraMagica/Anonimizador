@@ -1,0 +1,16 @@
+{
+  "corpus_tokens": 8546,
+  "corpus_words": 6410,
+  "nodes": 40,
+  "edges": 54,
+  "avg_query_tokens": 3322,
+  "reduction_ratio": 2.6,
+  "per_question": [
+    {
+      "question": "what are the core abstractions",
+      "query_tokens": 3322,
+      "reduction": 2.6
+    }
+  ],
+  "note": "Generic benchmark. Only one of five default English questions matched this Spanish documentation graph. Character/word-based token approximations; not measured billing or demonstrated workflow savings."
+}
