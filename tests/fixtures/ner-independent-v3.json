@@ -1,0 +1,2406 @@
+{
+  "schema_version": 1,
+  "purpose": "Independent synthetic exact-span NER evaluation frozen before candidate measurement; public/invented organization types fully crossed with five templates.",
+  "cases": [
+    {
+      "id": "v3-public_name_in_fictional_context-000",
+      "suite": "ner",
+      "text": "El contrato entre Alicia Alonso y Microsoft se firmó en Barcelona.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 34,
+          "end": 43,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 56,
+          "end": 65,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 0
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-001",
+      "suite": "ner",
+      "text": "El contrato entre Alberto Hidalgo y Google se firmó en Zaragoza.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 33,
+          "category": "PERSONA"
+        },
+        {
+          "start": 36,
+          "end": 42,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 55,
+          "end": 63,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 0
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-002",
+      "suite": "ner",
+      "text": "El contrato entre Celia Quintana y Amazon se firmó en Palma.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 32,
+          "category": "PERSONA"
+        },
+        {
+          "start": 35,
+          "end": 41,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 54,
+          "end": 59,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 0
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-003",
+      "suite": "ner",
+      "text": "El contrato entre Cristóbal Blanco y Netflix se firmó en Córdoba.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 37,
+          "end": 44,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 57,
+          "end": 64,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 0
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-004",
+      "suite": "ner",
+      "text": "El contrato entre Daniela Jiménez y Santander se firmó en Gijón.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 33,
+          "category": "PERSONA"
+        },
+        {
+          "start": 36,
+          "end": 45,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 58,
+          "end": 63,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 0
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-005",
+      "suite": "ner",
+      "text": "El contrato entre Diego Ramos y BBVA se firmó en Pamplona.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 29,
+          "category": "PERSONA"
+        },
+        {
+          "start": 32,
+          "end": 36,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 49,
+          "end": 57,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 0
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-006",
+      "suite": "ner",
+      "text": "El contrato entre Elena Castro y Ikea se firmó en Segovia.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 30,
+          "category": "PERSONA"
+        },
+        {
+          "start": 33,
+          "end": 37,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 50,
+          "end": 57,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 0
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-007",
+      "suite": "ner",
+      "text": "El contrato entre Enrique Lara y Samsung se firmó en Valencia.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 30,
+          "category": "PERSONA"
+        },
+        {
+          "start": 33,
+          "end": 40,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 53,
+          "end": 61,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 0
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-008",
+      "suite": "ner",
+      "text": "El contrato entre Fátima Serrano y Toyota se firmó en Málaga.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 32,
+          "category": "PERSONA"
+        },
+        {
+          "start": 35,
+          "end": 41,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 54,
+          "end": 60,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 0
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-009",
+      "suite": "ner",
+      "text": "El contrato entre Héctor Delgado y Nestlé se firmó en Bilbao.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 32,
+          "category": "PERSONA"
+        },
+        {
+          "start": 35,
+          "end": 41,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 54,
+          "end": 60,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 0
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-010",
+      "suite": "ner",
+      "text": "Desde Valladolid, Irene Medina envió una propuesta a Microsoft.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 16,
+          "category": "UBICACION"
+        },
+        {
+          "start": 18,
+          "end": 30,
+          "category": "PERSONA"
+        },
+        {
+          "start": 53,
+          "end": 62,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 1
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-011",
+      "suite": "ner",
+      "text": "Desde Granada, Javier Torres envió una propuesta a Google.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 13,
+          "category": "UBICACION"
+        },
+        {
+          "start": 15,
+          "end": 28,
+          "category": "PERSONA"
+        },
+        {
+          "start": 51,
+          "end": 57,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 1
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-012",
+      "suite": "ner",
+      "text": "Desde Santander, Lidia Espinosa envió una propuesta a Amazon.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 15,
+          "category": "UBICACION"
+        },
+        {
+          "start": 17,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 54,
+          "end": 60,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 1
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-013",
+      "suite": "ner",
+      "text": "Desde Salamanca, Marcos Navarro envió una propuesta a Netflix.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 15,
+          "category": "UBICACION"
+        },
+        {
+          "start": 17,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 54,
+          "end": 61,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 1
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-014",
+      "suite": "ner",
+      "text": "Desde Sevilla, Natalia Vega envió una propuesta a Santander.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 13,
+          "category": "UBICACION"
+        },
+        {
+          "start": 15,
+          "end": 27,
+          "category": "PERSONA"
+        },
+        {
+          "start": 50,
+          "end": 59,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 1
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-015",
+      "suite": "ner",
+      "text": "Desde Murcia, Nicolás Fuentes envió una propuesta a BBVA.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 12,
+          "category": "UBICACION"
+        },
+        {
+          "start": 14,
+          "end": 29,
+          "category": "PERSONA"
+        },
+        {
+          "start": 52,
+          "end": 56,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 1
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-016",
+      "suite": "ner",
+      "text": "Desde Alicante, Patricia Ortega envió una propuesta a Ikea.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 14,
+          "category": "UBICACION"
+        },
+        {
+          "start": 16,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 54,
+          "end": 58,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 1
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-017",
+      "suite": "ner",
+      "text": "Desde Vigo, Rubén Zúñiga envió una propuesta a Samsung.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 10,
+          "category": "UBICACION"
+        },
+        {
+          "start": 12,
+          "end": 24,
+          "category": "PERSONA"
+        },
+        {
+          "start": 47,
+          "end": 54,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 1
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-018",
+      "suite": "ner",
+      "text": "Desde Oviedo, Silvia Garrido envió una propuesta a Toyota.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 12,
+          "category": "UBICACION"
+        },
+        {
+          "start": 14,
+          "end": 28,
+          "category": "PERSONA"
+        },
+        {
+          "start": 51,
+          "end": 57,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 1
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-019",
+      "suite": "ner",
+      "text": "Desde Toledo, Víctor Paredes envió una propuesta a Nestlé.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 12,
+          "category": "UBICACION"
+        },
+        {
+          "start": 14,
+          "end": 28,
+          "category": "PERSONA"
+        },
+        {
+          "start": 51,
+          "end": 57,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 1
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-020",
+      "suite": "ner",
+      "text": "La portavoz de Microsoft, Alicia Blanco, asistió al encuentro de Valencia.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 24,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 26,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 65,
+          "end": 73,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 2
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-021",
+      "suite": "ner",
+      "text": "La portavoz de Google, Alberto Jiménez, asistió al encuentro de Málaga.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 21,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 23,
+          "end": 38,
+          "category": "PERSONA"
+        },
+        {
+          "start": 64,
+          "end": 70,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 2
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-022",
+      "suite": "ner",
+      "text": "La portavoz de Amazon, Celia Ramos, asistió al encuentro de Bilbao.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 21,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 23,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 60,
+          "end": 66,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 2
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-023",
+      "suite": "ner",
+      "text": "La portavoz de Netflix, Cristóbal Castro, asistió al encuentro de Valladolid.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 22,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 24,
+          "end": 40,
+          "category": "PERSONA"
+        },
+        {
+          "start": 66,
+          "end": 76,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 2
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-024",
+      "suite": "ner",
+      "text": "La portavoz de Santander, Daniela Lara, asistió al encuentro de Granada.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 24,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 26,
+          "end": 38,
+          "category": "PERSONA"
+        },
+        {
+          "start": 64,
+          "end": 71,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 2
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-025",
+      "suite": "ner",
+      "text": "La portavoz de BBVA, Diego Serrano, asistió al encuentro de Santander.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 19,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 21,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 60,
+          "end": 69,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 2
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-026",
+      "suite": "ner",
+      "text": "La portavoz de Ikea, Elena Delgado, asistió al encuentro de Salamanca.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 19,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 21,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 60,
+          "end": 69,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 2
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-027",
+      "suite": "ner",
+      "text": "La portavoz de Samsung, Enrique Medina, asistió al encuentro de Sevilla.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 22,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 24,
+          "end": 38,
+          "category": "PERSONA"
+        },
+        {
+          "start": 64,
+          "end": 71,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 2
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-028",
+      "suite": "ner",
+      "text": "La portavoz de Toyota, Fátima Torres, asistió al encuentro de Murcia.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 21,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 23,
+          "end": 36,
+          "category": "PERSONA"
+        },
+        {
+          "start": 62,
+          "end": 68,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 2
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-029",
+      "suite": "ner",
+      "text": "La portavoz de Nestlé, Héctor Espinosa, asistió al encuentro de Alicante.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 21,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 23,
+          "end": 38,
+          "category": "PERSONA"
+        },
+        {
+          "start": 64,
+          "end": 72,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 2
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-030",
+      "suite": "ner",
+      "text": "En Vigo recibieron a Irene Navarro, que trabaja para Microsoft.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 7,
+          "category": "UBICACION"
+        },
+        {
+          "start": 21,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 53,
+          "end": 62,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 3
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-031",
+      "suite": "ner",
+      "text": "En Oviedo recibieron a Javier Vega, que trabaja para Google.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 9,
+          "category": "UBICACION"
+        },
+        {
+          "start": 23,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 53,
+          "end": 59,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 3
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-032",
+      "suite": "ner",
+      "text": "En Toledo recibieron a Lidia Fuentes, que trabaja para Amazon.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 9,
+          "category": "UBICACION"
+        },
+        {
+          "start": 23,
+          "end": 36,
+          "category": "PERSONA"
+        },
+        {
+          "start": 55,
+          "end": 61,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 3
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-033",
+      "suite": "ner",
+      "text": "En Barcelona recibieron a Marcos Ortega, que trabaja para Netflix.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 12,
+          "category": "UBICACION"
+        },
+        {
+          "start": 26,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 58,
+          "end": 65,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 3
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-034",
+      "suite": "ner",
+      "text": "En Zaragoza recibieron a Natalia Zúñiga, que trabaja para Santander.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 11,
+          "category": "UBICACION"
+        },
+        {
+          "start": 25,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 58,
+          "end": 67,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 3
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-035",
+      "suite": "ner",
+      "text": "En Palma recibieron a Nicolás Garrido, que trabaja para BBVA.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 8,
+          "category": "UBICACION"
+        },
+        {
+          "start": 22,
+          "end": 37,
+          "category": "PERSONA"
+        },
+        {
+          "start": 56,
+          "end": 60,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 3
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-036",
+      "suite": "ner",
+      "text": "En Córdoba recibieron a Patricia Paredes, que trabaja para Ikea.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 10,
+          "category": "UBICACION"
+        },
+        {
+          "start": 24,
+          "end": 40,
+          "category": "PERSONA"
+        },
+        {
+          "start": 59,
+          "end": 63,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 3
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-037",
+      "suite": "ner",
+      "text": "En Gijón recibieron a Rubén Alonso, que trabaja para Samsung.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 8,
+          "category": "UBICACION"
+        },
+        {
+          "start": 22,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 53,
+          "end": 60,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 3
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-038",
+      "suite": "ner",
+      "text": "En Pamplona recibieron a Silvia Hidalgo, que trabaja para Toyota.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 11,
+          "category": "UBICACION"
+        },
+        {
+          "start": 25,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 58,
+          "end": 64,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 3
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-039",
+      "suite": "ner",
+      "text": "En Segovia recibieron a Víctor Quintana, que trabaja para Nestlé.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 10,
+          "category": "UBICACION"
+        },
+        {
+          "start": 24,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 58,
+          "end": 64,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 3
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-040",
+      "suite": "ner",
+      "text": "La carta de Microsoft a Alicia Castro menciona su próxima visita a Sevilla.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 21,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 24,
+          "end": 37,
+          "category": "PERSONA"
+        },
+        {
+          "start": 67,
+          "end": 74,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 4
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-041",
+      "suite": "ner",
+      "text": "La carta de Google a Alberto Lara menciona su próxima visita a Murcia.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 18,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 21,
+          "end": 33,
+          "category": "PERSONA"
+        },
+        {
+          "start": 63,
+          "end": 69,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 4
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-042",
+      "suite": "ner",
+      "text": "La carta de Amazon a Celia Serrano menciona su próxima visita a Alicante.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 18,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 21,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 64,
+          "end": 72,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 4
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-043",
+      "suite": "ner",
+      "text": "La carta de Netflix a Cristóbal Delgado menciona su próxima visita a Vigo.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 19,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 22,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 69,
+          "end": 73,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 4
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-044",
+      "suite": "ner",
+      "text": "La carta de Santander a Daniela Medina menciona su próxima visita a Oviedo.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 21,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 24,
+          "end": 38,
+          "category": "PERSONA"
+        },
+        {
+          "start": 68,
+          "end": 74,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 4
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-045",
+      "suite": "ner",
+      "text": "La carta de BBVA a Diego Torres menciona su próxima visita a Toledo.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 16,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 19,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 61,
+          "end": 67,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 4
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-046",
+      "suite": "ner",
+      "text": "La carta de Ikea a Elena Espinosa menciona su próxima visita a Barcelona.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 16,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 19,
+          "end": 33,
+          "category": "PERSONA"
+        },
+        {
+          "start": 63,
+          "end": 72,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 4
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-047",
+      "suite": "ner",
+      "text": "La carta de Samsung a Enrique Navarro menciona su próxima visita a Zaragoza.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 19,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 22,
+          "end": 37,
+          "category": "PERSONA"
+        },
+        {
+          "start": 67,
+          "end": 75,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 4
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-048",
+      "suite": "ner",
+      "text": "La carta de Toyota a Fátima Vega menciona su próxima visita a Palma.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 18,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 21,
+          "end": 32,
+          "category": "PERSONA"
+        },
+        {
+          "start": 62,
+          "end": 67,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 4
+    },
+    {
+      "id": "v3-public_name_in_fictional_context-049",
+      "suite": "ner",
+      "text": "La carta de Nestlé a Héctor Fuentes menciona su próxima visita a Córdoba.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 18,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 21,
+          "end": 35,
+          "category": "PERSONA"
+        },
+        {
+          "start": 65,
+          "end": 72,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "public_name_in_fictional_context",
+      "template": 4
+    },
+    {
+      "id": "v3-invented_name-000",
+      "suite": "ner",
+      "text": "El contrato entre Alicia Alonso y Estudios Cobalto se firmó en Barcelona.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 34,
+          "end": 50,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 63,
+          "end": 72,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 0
+    },
+    {
+      "id": "v3-invented_name-001",
+      "suite": "ner",
+      "text": "El contrato entre Alberto Hidalgo y Producciones Madroño se firmó en Zaragoza.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 33,
+          "category": "PERSONA"
+        },
+        {
+          "start": 36,
+          "end": 56,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 69,
+          "end": 77,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 0
+    },
+    {
+      "id": "v3-invented_name-002",
+      "suite": "ner",
+      "text": "El contrato entre Celia Quintana y Editorial Alondra se firmó en Palma.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 32,
+          "category": "PERSONA"
+        },
+        {
+          "start": 35,
+          "end": 52,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 65,
+          "end": 70,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 0
+    },
+    {
+      "id": "v3-invented_name-003",
+      "suite": "ner",
+      "text": "El contrato entre Cristóbal Blanco y Fundación Lentisco se firmó en Córdoba.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 37,
+          "end": 55,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 68,
+          "end": 75,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 0
+    },
+    {
+      "id": "v3-invented_name-004",
+      "suite": "ner",
+      "text": "El contrato entre Daniela Jiménez y Transportes Granate se firmó en Gijón.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 33,
+          "category": "PERSONA"
+        },
+        {
+          "start": 36,
+          "end": 55,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 68,
+          "end": 73,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 0
+    },
+    {
+      "id": "v3-invented_name-005",
+      "suite": "ner",
+      "text": "El contrato entre Diego Ramos y Laboratorio Nébula se firmó en Pamplona.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 29,
+          "category": "PERSONA"
+        },
+        {
+          "start": 32,
+          "end": 50,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 63,
+          "end": 71,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 0
+    },
+    {
+      "id": "v3-invented_name-006",
+      "suite": "ner",
+      "text": "El contrato entre Elena Castro y Agencia Arrayán se firmó en Segovia.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 30,
+          "category": "PERSONA"
+        },
+        {
+          "start": 33,
+          "end": 48,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 61,
+          "end": 68,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 0
+    },
+    {
+      "id": "v3-invented_name-007",
+      "suite": "ner",
+      "text": "El contrato entre Enrique Lara y Sonido Dársena se firmó en Valencia.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 30,
+          "category": "PERSONA"
+        },
+        {
+          "start": 33,
+          "end": 47,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 60,
+          "end": 68,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 0
+    },
+    {
+      "id": "v3-invented_name-008",
+      "suite": "ner",
+      "text": "El contrato entre Fátima Serrano y Teatro Celaje se firmó en Málaga.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 32,
+          "category": "PERSONA"
+        },
+        {
+          "start": 35,
+          "end": 48,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 61,
+          "end": 67,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 0
+    },
+    {
+      "id": "v3-invented_name-009",
+      "suite": "ner",
+      "text": "El contrato entre Héctor Delgado y Montaje Quimera se firmó en Bilbao.",
+      "expected": [
+        {
+          "start": 18,
+          "end": 32,
+          "category": "PERSONA"
+        },
+        {
+          "start": 35,
+          "end": 50,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 63,
+          "end": 69,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 0
+    },
+    {
+      "id": "v3-invented_name-010",
+      "suite": "ner",
+      "text": "Desde Valladolid, Irene Medina envió una propuesta a Estudios Cobalto.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 16,
+          "category": "UBICACION"
+        },
+        {
+          "start": 18,
+          "end": 30,
+          "category": "PERSONA"
+        },
+        {
+          "start": 53,
+          "end": 69,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 1
+    },
+    {
+      "id": "v3-invented_name-011",
+      "suite": "ner",
+      "text": "Desde Granada, Javier Torres envió una propuesta a Producciones Madroño.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 13,
+          "category": "UBICACION"
+        },
+        {
+          "start": 15,
+          "end": 28,
+          "category": "PERSONA"
+        },
+        {
+          "start": 51,
+          "end": 71,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 1
+    },
+    {
+      "id": "v3-invented_name-012",
+      "suite": "ner",
+      "text": "Desde Santander, Lidia Espinosa envió una propuesta a Editorial Alondra.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 15,
+          "category": "UBICACION"
+        },
+        {
+          "start": 17,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 54,
+          "end": 71,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 1
+    },
+    {
+      "id": "v3-invented_name-013",
+      "suite": "ner",
+      "text": "Desde Salamanca, Marcos Navarro envió una propuesta a Fundación Lentisco.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 15,
+          "category": "UBICACION"
+        },
+        {
+          "start": 17,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 54,
+          "end": 72,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 1
+    },
+    {
+      "id": "v3-invented_name-014",
+      "suite": "ner",
+      "text": "Desde Sevilla, Natalia Vega envió una propuesta a Transportes Granate.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 13,
+          "category": "UBICACION"
+        },
+        {
+          "start": 15,
+          "end": 27,
+          "category": "PERSONA"
+        },
+        {
+          "start": 50,
+          "end": 69,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 1
+    },
+    {
+      "id": "v3-invented_name-015",
+      "suite": "ner",
+      "text": "Desde Murcia, Nicolás Fuentes envió una propuesta a Laboratorio Nébula.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 12,
+          "category": "UBICACION"
+        },
+        {
+          "start": 14,
+          "end": 29,
+          "category": "PERSONA"
+        },
+        {
+          "start": 52,
+          "end": 70,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 1
+    },
+    {
+      "id": "v3-invented_name-016",
+      "suite": "ner",
+      "text": "Desde Alicante, Patricia Ortega envió una propuesta a Agencia Arrayán.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 14,
+          "category": "UBICACION"
+        },
+        {
+          "start": 16,
+          "end": 31,
+          "category": "PERSONA"
+        },
+        {
+          "start": 54,
+          "end": 69,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 1
+    },
+    {
+      "id": "v3-invented_name-017",
+      "suite": "ner",
+      "text": "Desde Vigo, Rubén Zúñiga envió una propuesta a Sonido Dársena.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 10,
+          "category": "UBICACION"
+        },
+        {
+          "start": 12,
+          "end": 24,
+          "category": "PERSONA"
+        },
+        {
+          "start": 47,
+          "end": 61,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 1
+    },
+    {
+      "id": "v3-invented_name-018",
+      "suite": "ner",
+      "text": "Desde Oviedo, Silvia Garrido envió una propuesta a Teatro Celaje.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 12,
+          "category": "UBICACION"
+        },
+        {
+          "start": 14,
+          "end": 28,
+          "category": "PERSONA"
+        },
+        {
+          "start": 51,
+          "end": 64,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 1
+    },
+    {
+      "id": "v3-invented_name-019",
+      "suite": "ner",
+      "text": "Desde Toledo, Víctor Paredes envió una propuesta a Montaje Quimera.",
+      "expected": [
+        {
+          "start": 6,
+          "end": 12,
+          "category": "UBICACION"
+        },
+        {
+          "start": 14,
+          "end": 28,
+          "category": "PERSONA"
+        },
+        {
+          "start": 51,
+          "end": 66,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 1
+    },
+    {
+      "id": "v3-invented_name-020",
+      "suite": "ner",
+      "text": "La portavoz de Estudios Cobalto, Alicia Blanco, asistió al encuentro de Valencia.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 31,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 33,
+          "end": 46,
+          "category": "PERSONA"
+        },
+        {
+          "start": 72,
+          "end": 80,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 2
+    },
+    {
+      "id": "v3-invented_name-021",
+      "suite": "ner",
+      "text": "La portavoz de Producciones Madroño, Alberto Jiménez, asistió al encuentro de Málaga.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 35,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 37,
+          "end": 52,
+          "category": "PERSONA"
+        },
+        {
+          "start": 78,
+          "end": 84,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 2
+    },
+    {
+      "id": "v3-invented_name-022",
+      "suite": "ner",
+      "text": "La portavoz de Editorial Alondra, Celia Ramos, asistió al encuentro de Bilbao.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 32,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 34,
+          "end": 45,
+          "category": "PERSONA"
+        },
+        {
+          "start": 71,
+          "end": 77,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 2
+    },
+    {
+      "id": "v3-invented_name-023",
+      "suite": "ner",
+      "text": "La portavoz de Fundación Lentisco, Cristóbal Castro, asistió al encuentro de Valladolid.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 33,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 35,
+          "end": 51,
+          "category": "PERSONA"
+        },
+        {
+          "start": 77,
+          "end": 87,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 2
+    },
+    {
+      "id": "v3-invented_name-024",
+      "suite": "ner",
+      "text": "La portavoz de Transportes Granate, Daniela Lara, asistió al encuentro de Granada.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 34,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 36,
+          "end": 48,
+          "category": "PERSONA"
+        },
+        {
+          "start": 74,
+          "end": 81,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 2
+    },
+    {
+      "id": "v3-invented_name-025",
+      "suite": "ner",
+      "text": "La portavoz de Laboratorio Nébula, Diego Serrano, asistió al encuentro de Santander.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 33,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 35,
+          "end": 48,
+          "category": "PERSONA"
+        },
+        {
+          "start": 74,
+          "end": 83,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 2
+    },
+    {
+      "id": "v3-invented_name-026",
+      "suite": "ner",
+      "text": "La portavoz de Agencia Arrayán, Elena Delgado, asistió al encuentro de Salamanca.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 30,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 32,
+          "end": 45,
+          "category": "PERSONA"
+        },
+        {
+          "start": 71,
+          "end": 80,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 2
+    },
+    {
+      "id": "v3-invented_name-027",
+      "suite": "ner",
+      "text": "La portavoz de Sonido Dársena, Enrique Medina, asistió al encuentro de Sevilla.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 29,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 31,
+          "end": 45,
+          "category": "PERSONA"
+        },
+        {
+          "start": 71,
+          "end": 78,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 2
+    },
+    {
+      "id": "v3-invented_name-028",
+      "suite": "ner",
+      "text": "La portavoz de Teatro Celaje, Fátima Torres, asistió al encuentro de Murcia.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 28,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 30,
+          "end": 43,
+          "category": "PERSONA"
+        },
+        {
+          "start": 69,
+          "end": 75,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 2
+    },
+    {
+      "id": "v3-invented_name-029",
+      "suite": "ner",
+      "text": "La portavoz de Montaje Quimera, Héctor Espinosa, asistió al encuentro de Alicante.",
+      "expected": [
+        {
+          "start": 15,
+          "end": 30,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 32,
+          "end": 47,
+          "category": "PERSONA"
+        },
+        {
+          "start": 73,
+          "end": 81,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 2
+    },
+    {
+      "id": "v3-invented_name-030",
+      "suite": "ner",
+      "text": "En Vigo recibieron a Irene Navarro, que trabaja para Estudios Cobalto.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 7,
+          "category": "UBICACION"
+        },
+        {
+          "start": 21,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 53,
+          "end": 69,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 3
+    },
+    {
+      "id": "v3-invented_name-031",
+      "suite": "ner",
+      "text": "En Oviedo recibieron a Javier Vega, que trabaja para Producciones Madroño.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 9,
+          "category": "UBICACION"
+        },
+        {
+          "start": 23,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 53,
+          "end": 73,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 3
+    },
+    {
+      "id": "v3-invented_name-032",
+      "suite": "ner",
+      "text": "En Toledo recibieron a Lidia Fuentes, que trabaja para Editorial Alondra.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 9,
+          "category": "UBICACION"
+        },
+        {
+          "start": 23,
+          "end": 36,
+          "category": "PERSONA"
+        },
+        {
+          "start": 55,
+          "end": 72,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 3
+    },
+    {
+      "id": "v3-invented_name-033",
+      "suite": "ner",
+      "text": "En Barcelona recibieron a Marcos Ortega, que trabaja para Fundación Lentisco.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 12,
+          "category": "UBICACION"
+        },
+        {
+          "start": 26,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 58,
+          "end": 76,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 3
+    },
+    {
+      "id": "v3-invented_name-034",
+      "suite": "ner",
+      "text": "En Zaragoza recibieron a Natalia Zúñiga, que trabaja para Transportes Granate.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 11,
+          "category": "UBICACION"
+        },
+        {
+          "start": 25,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 58,
+          "end": 77,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 3
+    },
+    {
+      "id": "v3-invented_name-035",
+      "suite": "ner",
+      "text": "En Palma recibieron a Nicolás Garrido, que trabaja para Laboratorio Nébula.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 8,
+          "category": "UBICACION"
+        },
+        {
+          "start": 22,
+          "end": 37,
+          "category": "PERSONA"
+        },
+        {
+          "start": 56,
+          "end": 74,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 3
+    },
+    {
+      "id": "v3-invented_name-036",
+      "suite": "ner",
+      "text": "En Córdoba recibieron a Patricia Paredes, que trabaja para Agencia Arrayán.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 10,
+          "category": "UBICACION"
+        },
+        {
+          "start": 24,
+          "end": 40,
+          "category": "PERSONA"
+        },
+        {
+          "start": 59,
+          "end": 74,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 3
+    },
+    {
+      "id": "v3-invented_name-037",
+      "suite": "ner",
+      "text": "En Gijón recibieron a Rubén Alonso, que trabaja para Sonido Dársena.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 8,
+          "category": "UBICACION"
+        },
+        {
+          "start": 22,
+          "end": 34,
+          "category": "PERSONA"
+        },
+        {
+          "start": 53,
+          "end": 67,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 3
+    },
+    {
+      "id": "v3-invented_name-038",
+      "suite": "ner",
+      "text": "En Pamplona recibieron a Silvia Hidalgo, que trabaja para Teatro Celaje.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 11,
+          "category": "UBICACION"
+        },
+        {
+          "start": 25,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 58,
+          "end": 71,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 3
+    },
+    {
+      "id": "v3-invented_name-039",
+      "suite": "ner",
+      "text": "En Segovia recibieron a Víctor Quintana, que trabaja para Montaje Quimera.",
+      "expected": [
+        {
+          "start": 3,
+          "end": 10,
+          "category": "UBICACION"
+        },
+        {
+          "start": 24,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 58,
+          "end": 73,
+          "category": "ORGANIZACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 3
+    },
+    {
+      "id": "v3-invented_name-040",
+      "suite": "ner",
+      "text": "La carta de Estudios Cobalto a Alicia Castro menciona su próxima visita a Sevilla.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 28,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 31,
+          "end": 44,
+          "category": "PERSONA"
+        },
+        {
+          "start": 74,
+          "end": 81,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 4
+    },
+    {
+      "id": "v3-invented_name-041",
+      "suite": "ner",
+      "text": "La carta de Producciones Madroño a Alberto Lara menciona su próxima visita a Murcia.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 32,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 35,
+          "end": 47,
+          "category": "PERSONA"
+        },
+        {
+          "start": 77,
+          "end": 83,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 4
+    },
+    {
+      "id": "v3-invented_name-042",
+      "suite": "ner",
+      "text": "La carta de Editorial Alondra a Celia Serrano menciona su próxima visita a Alicante.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 29,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 32,
+          "end": 45,
+          "category": "PERSONA"
+        },
+        {
+          "start": 75,
+          "end": 83,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 4
+    },
+    {
+      "id": "v3-invented_name-043",
+      "suite": "ner",
+      "text": "La carta de Fundación Lentisco a Cristóbal Delgado menciona su próxima visita a Vigo.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 30,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 33,
+          "end": 50,
+          "category": "PERSONA"
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 4
+    },
+    {
+      "id": "v3-invented_name-044",
+      "suite": "ner",
+      "text": "La carta de Transportes Granate a Daniela Medina menciona su próxima visita a Oviedo.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 31,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 34,
+          "end": 48,
+          "category": "PERSONA"
+        },
+        {
+          "start": 78,
+          "end": 84,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 4
+    },
+    {
+      "id": "v3-invented_name-045",
+      "suite": "ner",
+      "text": "La carta de Laboratorio Nébula a Diego Torres menciona su próxima visita a Toledo.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 30,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 33,
+          "end": 45,
+          "category": "PERSONA"
+        },
+        {
+          "start": 75,
+          "end": 81,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 4
+    },
+    {
+      "id": "v3-invented_name-046",
+      "suite": "ner",
+      "text": "La carta de Agencia Arrayán a Elena Espinosa menciona su próxima visita a Barcelona.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 27,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 30,
+          "end": 44,
+          "category": "PERSONA"
+        },
+        {
+          "start": 74,
+          "end": 83,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 4
+    },
+    {
+      "id": "v3-invented_name-047",
+      "suite": "ner",
+      "text": "La carta de Sonido Dársena a Enrique Navarro menciona su próxima visita a Zaragoza.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 26,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 29,
+          "end": 44,
+          "category": "PERSONA"
+        },
+        {
+          "start": 74,
+          "end": 82,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 4
+    },
+    {
+      "id": "v3-invented_name-048",
+      "suite": "ner",
+      "text": "La carta de Teatro Celaje a Fátima Vega menciona su próxima visita a Palma.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 25,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 28,
+          "end": 39,
+          "category": "PERSONA"
+        },
+        {
+          "start": 69,
+          "end": 74,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 4
+    },
+    {
+      "id": "v3-invented_name-049",
+      "suite": "ner",
+      "text": "La carta de Montaje Quimera a Héctor Fuentes menciona su próxima visita a Córdoba.",
+      "expected": [
+        {
+          "start": 12,
+          "end": 27,
+          "category": "ORGANIZACION"
+        },
+        {
+          "start": 30,
+          "end": 44,
+          "category": "PERSONA"
+        },
+        {
+          "start": 74,
+          "end": 81,
+          "category": "UBICACION"
+        }
+      ],
+      "organization_kind": "invented_name",
+      "template": 4
+    }
+  ]
+}

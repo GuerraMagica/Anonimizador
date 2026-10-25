@@ -1,0 +1,249 @@
+{
+  "fingerprint": "gliner-es:v1:a9d0568a4626b3c65886ffbef6bd28b0887590028a0518a5c14cbf0a41406cde",
+  "initialization_seconds": 10.376141749904491,
+  "results": {
+    "evaluation-v1": {
+      "metrics": {
+        "PERSONA": {
+          "tp": 100,
+          "fp": 0,
+          "fn": 0,
+          "cases": 100,
+          "positives": 100,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "ORGANIZACION": {
+          "tp": 100,
+          "fp": 10,
+          "fn": 0,
+          "cases": 100,
+          "positives": 100,
+          "precision": 0.9090909090909091,
+          "recall": 1.0
+        },
+        "UBICACION": {
+          "tp": 100,
+          "fp": 0,
+          "fn": 0,
+          "cases": 100,
+          "positives": 100,
+          "precision": 1.0,
+          "recall": 1.0
+        }
+      },
+      "gates": {
+        "PERSONA": true,
+        "ORGANIZACION": true,
+        "UBICACION": true
+      },
+      "gates_passed": true,
+      "errors": [
+        {
+          "case": "ner-006",
+          "category": "ORGANIZACION",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              0,
+              32
+            ]
+          ]
+        },
+        {
+          "case": "ner-016",
+          "category": "ORGANIZACION",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              0,
+              32
+            ]
+          ]
+        },
+        {
+          "case": "ner-026",
+          "category": "ORGANIZACION",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              0,
+              31
+            ]
+          ]
+        },
+        {
+          "case": "ner-036",
+          "category": "ORGANIZACION",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              0,
+              26
+            ]
+          ]
+        },
+        {
+          "case": "ner-046",
+          "category": "ORGANIZACION",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              0,
+              28
+            ]
+          ]
+        },
+        {
+          "case": "ner-056",
+          "category": "ORGANIZACION",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              0,
+              25
+            ]
+          ]
+        },
+        {
+          "case": "ner-066",
+          "category": "ORGANIZACION",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              0,
+              31
+            ]
+          ]
+        },
+        {
+          "case": "ner-076",
+          "category": "ORGANIZACION",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              0,
+              27
+            ]
+          ]
+        },
+        {
+          "case": "ner-086",
+          "category": "ORGANIZACION",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              0,
+              35
+            ]
+          ]
+        },
+        {
+          "case": "ner-096",
+          "category": "ORGANIZACION",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              0,
+              26
+            ]
+          ]
+        }
+      ],
+      "sha256": "0a8db269991c4e7fa93f63eed17182ecc936ed0115c4a2ef55608443ba60e54f",
+      "seconds": 5.082381499931216
+    },
+    "ner-comparison-v2": {
+      "metrics": {
+        "PERSONA": {
+          "tp": 100,
+          "fp": 5,
+          "fn": 0,
+          "cases": 100,
+          "positives": 100,
+          "precision": 0.9523809523809523,
+          "recall": 1.0
+        },
+        "ORGANIZACION": {
+          "tp": 100,
+          "fp": 0,
+          "fn": 0,
+          "cases": 100,
+          "positives": 100,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "UBICACION": {
+          "tp": 100,
+          "fp": 0,
+          "fn": 0,
+          "cases": 100,
+          "positives": 100,
+          "precision": 1.0,
+          "recall": 1.0
+        }
+      },
+      "gates": {
+        "PERSONA": true,
+        "ORGANIZACION": true,
+        "UBICACION": true
+      },
+      "gates_passed": true,
+      "errors": [
+        {
+          "case": "ner-v2-017",
+          "category": "PERSONA",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              0,
+              10
+            ]
+          ]
+        },
+        {
+          "case": "ner-v2-057",
+          "category": "PERSONA",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              3,
+              10
+            ]
+          ]
+        },
+        {
+          "case": "ner-v2-077",
+          "category": "PERSONA",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              0,
+              10
+            ]
+          ]
+        },
+        {
+          "case": "ner-v2-097",
+          "category": "PERSONA",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              0,
+              10
+            ],
+            [
+              3,
+              10
+            ]
+          ]
+        }
+      ],
+      "sha256": "265bd499f5b47bb09a34ab15040b6656d4cfe38bbaba61b747fa66cf0f0e32b5",
+      "seconds": 5.314737792010419
+    }
+  },
+  "network_attempts": [],
+  "peak_rss_bytes": 3752312832,
+  "limits": "Synthetic exact-span evaluation. Audit hook does not police native syscalls; OS sandbox also applied by launcher when available."
+}

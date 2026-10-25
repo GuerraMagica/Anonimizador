@@ -1,0 +1,142 @@
+{
+  "fingerprint": "gliner-es:v1:aaa6c1d8dd1e5bc68833a307e7b76052f62f886e9900858af24a3ae9c6f3a1d2",
+  "initialization_seconds": 10.792579290922731,
+  "results": {
+    "ner-independent-v3": {
+      "metrics": {
+        "PERSONA": {
+          "tp": 100,
+          "fp": 0,
+          "fn": 0,
+          "cases": 100,
+          "positives": 100,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "ORGANIZACION": {
+          "tp": 96,
+          "fp": 0,
+          "fn": 4,
+          "cases": 100,
+          "positives": 100,
+          "precision": 1.0,
+          "recall": 0.96
+        },
+        "UBICACION": {
+          "tp": 100,
+          "fp": 5,
+          "fn": 0,
+          "cases": 100,
+          "positives": 100,
+          "precision": 0.9523809523809523,
+          "recall": 1.0
+        }
+      },
+      "gates": {
+        "PERSONA": true,
+        "ORGANIZACION": true,
+        "UBICACION": true
+      },
+      "gates_passed": true,
+      "errors": [
+        {
+          "case": "v3-public_name_in_fictional_context-014",
+          "category": "ORGANIZACION",
+          "false_negatives": [
+            [
+              50,
+              59
+            ]
+          ],
+          "false_positives": []
+        },
+        {
+          "case": "v3-public_name_in_fictional_context-014",
+          "category": "UBICACION",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              50,
+              59
+            ]
+          ]
+        },
+        {
+          "case": "v3-public_name_in_fictional_context-024",
+          "category": "ORGANIZACION",
+          "false_negatives": [
+            [
+              15,
+              24
+            ]
+          ],
+          "false_positives": []
+        },
+        {
+          "case": "v3-public_name_in_fictional_context-024",
+          "category": "UBICACION",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              15,
+              24
+            ],
+            [
+              15,
+              71
+            ]
+          ]
+        },
+        {
+          "case": "v3-public_name_in_fictional_context-034",
+          "category": "ORGANIZACION",
+          "false_negatives": [
+            [
+              58,
+              67
+            ]
+          ],
+          "false_positives": []
+        },
+        {
+          "case": "v3-public_name_in_fictional_context-034",
+          "category": "UBICACION",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              58,
+              67
+            ]
+          ]
+        },
+        {
+          "case": "v3-public_name_in_fictional_context-044",
+          "category": "ORGANIZACION",
+          "false_negatives": [
+            [
+              12,
+              21
+            ]
+          ],
+          "false_positives": []
+        },
+        {
+          "case": "v3-public_name_in_fictional_context-044",
+          "category": "UBICACION",
+          "false_negatives": [],
+          "false_positives": [
+            [
+              12,
+              21
+            ]
+          ]
+        }
+      ],
+      "sha256": "7321600a3b31365d3ed7dcd4d00772068b17d3f018df46383bf3aad04bbe56c2",
+      "seconds": 5.123086082981899
+    }
+  },
+  "network_attempts": [],
+  "peak_rss_bytes": 3267526656,
+  "limits": "Synthetic exact-span evaluation. Audit hook does not police native syscalls; OS sandbox also applied by launcher when available."
+}

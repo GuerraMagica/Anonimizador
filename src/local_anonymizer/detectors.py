@@ -62,9 +62,9 @@ class _PrivateRecognizerLogs(logging.Filter):
 
 
 class LocalDetector:
-    def __init__(self, model_path: Path):
-        model_path = Path(model_path)
-        if not (model_path.is_dir() and (model_path / 'config.cfg').is_file()):
+    def __init__(self, model_path: Path | None, *, structured_only=False):
+        model_path = Path(model_path) if model_path is not None else None
+        if not structured_only and not (model_path and model_path.is_dir() and (model_path / 'config.cfg').is_file()):
             raise AnonymizerError('MODEL_UNAVAILABLE')
         try:
             import spacy
@@ -99,15 +99,17 @@ class LocalDetector:
                     Pattern('Spanish',r'\b(?:0?[1-9]|[12][0-9]|3[01]) de (?:enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre) de [0-9]{4}\b',0.6),
                 ]), Category.FECHA, 'presidio:date:es'),
             )
-            self._nlp = spacy.load(model_path, exclude=['parser', 'senter', 'morphologizer',
-                                                       'attribute_ruler', 'lemmatizer'])
-            if (self._nlp.meta.get('lang') != 'es' or self._nlp.meta.get('version') != '3.8.0'
-                    or not set(NER_CATEGORIES) <= set(self._nlp.get_pipe('ner').labels)):
-                raise ValueError('model')
-            self._nlp.max_length = MAX_ANALYSIS_CHARACTERS
+            self._nlp = None
+            if not structured_only:
+                self._nlp = spacy.load(model_path, exclude=['parser', 'senter', 'morphologizer',
+                                                           'attribute_ruler', 'lemmatizer'])
+                if (self._nlp.meta.get('lang') != 'es' or self._nlp.meta.get('version') != '3.8.0'
+                        or not set(NER_CATEGORIES) <= set(self._nlp.get_pipe('ner').labels)):
+                    raise ValueError('model')
+                self._nlp.max_length = MAX_ANALYSIS_CHARACTERS
             versions = {p: metadata.version(p) for p in ('spacy','presidio-analyzer','phonenumbers','tldextract')}
-            digest = sha256(json.dumps({'versions':versions, 'analysis_limit':MAX_ANALYSIS_CHARACTERS, 'adapter':'v2'}, sort_keys=True).encode())
-            for path in sorted(model_path.rglob('*')):
+            digest = sha256(json.dumps({'versions':versions, 'analysis_limit':MAX_ANALYSIS_CHARACTERS, 'adapter':'v2', 'structured_only': structured_only, 'rules_sha256':sha256(Path(__file__).read_bytes()).hexdigest()}, sort_keys=True).encode())
+            for path in (sorted(model_path.rglob('*')) if not structured_only else ()):
                 if path.is_file() and '__pycache__' not in path.parts:
                     digest.update(path.relative_to(model_path).as_posix().encode())
                     with path.open('rb') as f:
@@ -139,7 +141,7 @@ class LocalDetector:
                         continue
                     findings.append(Finding(uuid4().hex, session_id, result.start,result.end,
                                             category,Confidentiality.PII,(provenance,),result.score))
-            for ent in self._nlp(text).ents:
+            for ent in (self._nlp(text).ents if self._nlp is not None else ()):
                 if ent.label_ in NER_CATEGORIES:
                     findings.append(Finding(uuid4().hex, session_id, ent.start_char,ent.end_char,
                                             NER_CATEGORIES[ent.label_],Confidentiality.PII,
