@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "local-document-anonymizer"
-version = "0.1.0.dev0"
-description = "Local document review and non-destructive text sanitization"
+version = "0.2.0.dev0"
+description = "Local document review, OCR and non-destructive text or raster PDF sanitization"
 requires-python = ">=3.12,<3.13"
 dependencies = []
 

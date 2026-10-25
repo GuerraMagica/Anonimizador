@@ -113,6 +113,8 @@ def _raster_pdf(payload,*,cancelled):
 
 
 def ocr_pdf(payload:bytes,*,cancelled=lambda:False):
+    from .native_process import background_thread,run_native
+    if background_thread():return run_native('ocr_pdf',(payload,),cancelled=cancelled)
     _check(cancelled)
     pages,_=_raster_pdf(payload,cancelled=cancelled)
     text,boxes=_ocr_pages(pages,cancelled=cancelled)
@@ -126,6 +128,8 @@ def ocr_rasters(pages,*,cancelled=lambda:False):
 
 def ocr_raster_details(pages,*,cancelled=lambda:False):
     """Return full second-pass OCR and boxes within the detector output capacity."""
+    from .native_process import background_thread,run_native
+    if background_thread():return run_native('ocr_raster_details',(pages,),cancelled=cancelled)
     from .detectors import MAX_ANALYSIS_CHARACTERS
     _check(cancelled)
     return _ocr_pages(pages,cancelled=cancelled,max_characters=MAX_ANALYSIS_CHARACTERS)
@@ -135,14 +139,24 @@ def load_source(path:Path,*,cancelled=lambda:False)->LoadedSource:
     _check(cancelled);path=Path(path);suffix=path.suffix.lower()
     if suffix in ('.txt','.md','.markdown'):
         document=load_document(path);_check(cancelled)
-        return LoadedSource(document,SourceKind.TEXT if suffix=='.txt' else SourceKind.MARKDOWN)
+        return LoadedSource(document,SourceKind.TEXT if suffix=='.txt' else SourceKind.MARKDOWN,
+                            input_bytes=len(document.text.encode('utf-8')))
     kinds={'.pdf':SourceKind.PDF,'.docx':SourceKind.DOCX,'.png':SourceKind.IMAGE,
            '.jpg':SourceKind.IMAGE,'.jpeg':SourceKind.IMAGE,'.tif':SourceKind.IMAGE,'.tiff':SourceKind.IMAGE}
     if suffix not in kinds:raise AnonymizerError('INPUT_FORMAT')
+    from .native_process import background_thread,run_native
+    if background_thread() and suffix!='.docx':
+        return run_native('load_source',(path,),cancelled=cancelled)
     payload,identity=_read(path,cancelled);kind=kinds[suffix];notes=()
     if kind==SourceKind.DOCX:
         from .office import convert_docx
         pdf,notes=convert_docx(payload,cancelled=cancelled)
+        # Office has its own process-group cleanup. Keep it outside the native
+        # child, which may be terminated if OCR itself stops responding.
+        if background_thread():
+            text,pages,boxes,pdf_notes=run_native('pdf_details',(pdf,),cancelled=cancelled)
+            return LoadedSource(Document(str(uuid4()),0,path.absolute(),identity,text,hashlib.sha256(payload).hexdigest()),
+                                kind,pages,boxes,tuple(sorted(set(notes+pdf_notes))),len(payload))
     elif kind==SourceKind.IMAGE:
         fitz,Image=_libraries()
         from io import BytesIO
@@ -160,8 +174,8 @@ def load_source(path:Path,*,cancelled=lambda:False)->LoadedSource:
         except Exception:raise AnonymizerError('INPUT_IMAGE_INVALID') from None
         text,boxes=_ocr_pages(tuple(pages),cancelled=cancelled)
         notes=('VISUAL_REVIEW_REQUIRED','OCR_CAN_MISS_CONTENT','NONVISIBLE_CONTENT_NOT_INSPECTED')
-        return LoadedSource(Document(str(uuid4()),0,path.absolute(),identity,text,hashlib.sha256(payload).hexdigest()),kind,tuple(pages),boxes,notes)
+        return LoadedSource(Document(str(uuid4()),0,path.absolute(),identity,text,hashlib.sha256(payload).hexdigest()),kind,tuple(pages),boxes,notes,len(payload))
     else:pdf=payload
     pages,pdf_notes=_raster_pdf(pdf,cancelled=cancelled)
     text,boxes=_ocr_pages(pages,cancelled=cancelled);_check(cancelled)
-    return LoadedSource(Document(str(uuid4()),0,path.absolute(),identity,text,hashlib.sha256(payload).hexdigest()),kind,pages,boxes,tuple(sorted(set(notes+pdf_notes))))
+    return LoadedSource(Document(str(uuid4()),0,path.absolute(),identity,text,hashlib.sha256(payload).hexdigest()),kind,pages,boxes,tuple(sorted(set(notes+pdf_notes))),len(payload))

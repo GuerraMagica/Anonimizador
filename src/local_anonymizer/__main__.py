@@ -1,7 +1,7 @@
 """Run the local desktop application without creating a server or persistent log."""
 import sys
 from PySide6.QtWidgets import QApplication
-from .gui import MainWindow
+from .desktop import MainWindow
 
 
 def main():

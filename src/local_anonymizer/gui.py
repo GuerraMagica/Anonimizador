@@ -49,14 +49,19 @@ def qt_to_python(text, position):
 
 class ConfiguredDetector:
     """Bind session vocabulary to both initial and residual analysis."""
-    def __init__(self, base, terms):
+    def __init__(self, base, terms, *, cancelled=lambda:False):
         self.base, self.terms = base, tuple(terms)
+        self.cancelled=cancelled
         config = json.dumps(self.terms,ensure_ascii=False).encode()
         self.fingerprint = 'session:' + sha256(base.fingerprint.encode()+config).hexdigest()
 
     def analyze(self, text, session_id):
+        if self.cancelled():raise AnonymizerError('CANCELLED')
         document = Document(session_id,0,Path('.'),FileIdentity(0,0),text,'')
-        return self.base.analyze(text,session_id) + literal_findings(document,self.terms)
+        analyze=getattr(self.base,'analyze_cancellable',None)
+        result=(analyze(text,session_id,self.cancelled) if analyze else self.base.analyze(text,session_id))
+        if self.cancelled():raise AnonymizerError('CANCELLED')
+        return result + literal_findings(document,self.terms)
 
 
 class _Worker(QObject):
@@ -437,16 +442,18 @@ class MainWindow(QMainWindow):
         try:
             counts=Counter(f.category.value for f in self.session.review.findings)
             counts.update(d.disposition.value for d in self.session.review.decisions)
-            versions={'application':__version__.split('.dev')[0],'python':platform.python_version(),
-                      'model':'3.8.0','spacy':metadata.version('spacy'),
-                      'presidio_analyzer':metadata.version('presidio-analyzer'),
-                      'pyside6':metadata.version('PySide6-Essentials')}
-            self._saved_report=build_report(receipt,dict(counts),versions)
+            self._saved_report=build_report(receipt,dict(counts),self._report_versions())
         except Exception:
             self.status.setText('TXT verificado; informe no preparado. La copia TXT se ha conservado.')
         else:
             self.status.setText('TXT nuevo guardado y comprobado. Informe opcional pendiente de una acción separada. No se certifica anonimato.')
         self.update_controls();return receipt
+
+    def _report_versions(self):
+        return {'application':__version__.split('.dev')[0],'python':platform.python_version(),
+                'model':'3.8.0','spacy':metadata.version('spacy'),
+                'presidio_analyzer':metadata.version('presidio-analyzer'),
+                'pyside6':metadata.version('PySide6-Essentials')}
 
     @guarded
     def report_dialog(self):

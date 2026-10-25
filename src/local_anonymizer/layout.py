@@ -85,6 +85,8 @@ def build_visual_preview(source,review,preview,regions=()):
 
 
 def _pdf_bytes(pages):
+    from .native_process import background_thread,run_native
+    if background_thread():return run_native('pdf_bytes',(pages,))
     import pymupdf as fitz
     from PIL import Image
     with fitz.open() as doc:

@@ -77,9 +77,11 @@ class LoadedSource:
     pages: tuple[RasterPage,...]=()
     boxes: tuple[TextBox,...]=()
     notes: tuple[str,...]=()
+    input_bytes: int=0
 
     def __post_init__(self):
         if (not isinstance(self.document,Document) or not isinstance(self.kind,SourceKind)
+                or type(self.input_bytes) is not int or not 0<=self.input_bytes<=MAX_VISUAL_BYTES
                 or len(self.document.text)>MAX_TEXT_CHARACTERS
                 or not isinstance(self.pages,tuple) or len(self.pages)>MAX_PAGES
                 or not isinstance(self.boxes,tuple) or not isinstance(self.notes,tuple)

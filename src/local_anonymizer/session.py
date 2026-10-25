@@ -105,6 +105,12 @@ class Session:
         self.verification = None
         self.rejections = ()
 
+    def invalidate_context(self):
+        """A visual region edit changes the review even without text edits."""
+        if self.busy:
+            raise AnonymizerError('JOB_ACTIVE')
+        self._replace_review()
+
     def begin_job(self, *, verification=False):
         if self.busy:
             raise AnonymizerError('JOB_ACTIVE')
