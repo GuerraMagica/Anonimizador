@@ -89,3 +89,72 @@ class RealEnhancedTests(unittest.TestCase):
     def test_pre_cancel_does_not_infer(self):
         with patch.object(self.detector,'_predict',side_effect=AssertionError('INFERENCE')):
             with self.assertRaisesRegex(AnonymizerError,'CANCELLED'):self.detector.analyze_cancellable('Texto','cancel',lambda:True)
+
+class VerifiedSelectionTests(unittest.TestCase):
+    def fixture(self, root):
+        import json
+        from hashlib import sha256
+        model=root/'gliner-multi-v2.1';model.mkdir()
+        backbone=root/'mdeberta-v3-base';backbone.mkdir()
+        (model/'gliner_config.json').write_text(json.dumps({'model_name':'microsoft/mdeberta-v3-base'}))
+        (model/'model.safetensors').write_bytes(b'tiny fixture, not loaded')
+        (backbone/'config.json').write_text('{}')
+        (backbone/'tokenizer_config.json').write_text('{}')
+        (backbone/'spm.model').write_bytes(b'tiny fixture')
+        resources=[]
+        for directory in (model,backbone):
+            for file in directory.iterdir():
+                resources.append({'path':file.relative_to(root).as_posix(),'bytes':file.stat().st_size,'sha256':sha256(file.read_bytes()).hexdigest()})
+        raw=json.dumps({'resources':resources}).encode()
+        (model/'manifest.json').write_bytes(raw)
+        return model,backbone,sha256(raw).hexdigest()
+
+    def test_manifest_cannot_authorize_different_consumed_directory(self):
+        from tempfile import TemporaryDirectory
+        import shutil
+        with TemporaryDirectory() as directory:
+            root=Path(directory);model,backbone,digest=self.fixture(root)
+            other=root/'other';other.mkdir()
+            shutil.copyfile(model/'manifest.json',other/'manifest.json')
+            shutil.copyfile(model/'gliner_config.json',other/'gliner_config.json')
+            (other/'model.safetensors').write_bytes(b'alternative unverified weights')
+            with patch('local_anonymizer.ner.PINNED_MANIFEST_SHA256',digest),patch('transformers.AutoTokenizer.from_pretrained',side_effect=RuntimeError('loader reached')) as loader:
+                with self.assertRaisesRegex(AnonymizerError,'MODEL_UNAVAILABLE'):EnhancedDetector(other)
+                loader.assert_not_called()
+
+    def test_unpinned_tokenizer_selection_rejected_before_loading(self):
+        from tempfile import TemporaryDirectory
+        for name in ('tokenizer.json','added_tokens.json','special_tokens_map.json','tokenizer.model'):
+            with self.subTest(name=name),TemporaryDirectory() as directory:
+                root=Path(directory);model,backbone,digest=self.fixture(root)
+                (backbone/name).write_text('{"unpinned":true}')
+                with patch('local_anonymizer.ner.PINNED_MANIFEST_SHA256',digest),patch('transformers.AutoTokenizer.from_pretrained',side_effect=RuntimeError('loader reached')) as loader:
+                    with self.assertRaisesRegex(AnonymizerError,'MODEL_UNAVAILABLE'):EnhancedDetector(model)
+                    loader.assert_not_called()
+
+    def test_symlinked_verified_resource_rejected_before_loading(self):
+        from tempfile import TemporaryDirectory
+        with TemporaryDirectory() as directory:
+            root=Path(directory);model,backbone,digest=self.fixture(root)
+            original=backbone/'spm.model';alternative=root/'same-content.model'
+            original.rename(alternative);original.symlink_to(alternative)
+            with patch('local_anonymizer.ner.PINNED_MANIFEST_SHA256',digest),patch('transformers.AutoTokenizer.from_pretrained',side_effect=RuntimeError('loader reached')) as loader:
+                with self.assertRaisesRegex(AnonymizerError,'MODEL_UNAVAILABLE'):EnhancedDetector(model)
+                loader.assert_not_called()
+
+    def test_symlinked_consumed_directory_rejected_before_loading(self):
+        from tempfile import TemporaryDirectory
+        with TemporaryDirectory() as directory:
+            root=Path(directory);model,backbone,digest=self.fixture(root)
+            alternative=root/'other-backbone';backbone.rename(alternative);backbone.symlink_to(alternative,target_is_directory=True)
+            with patch('local_anonymizer.ner.PINNED_MANIFEST_SHA256',digest),patch('transformers.AutoTokenizer.from_pretrained',side_effect=RuntimeError('loader reached')) as loader:
+                with self.assertRaisesRegex(AnonymizerError,'MODEL_UNAVAILABLE'):EnhancedDetector(model)
+                loader.assert_not_called()
+
+    def test_verified_paths_are_the_consumed_paths(self):
+        from tempfile import TemporaryDirectory
+        with TemporaryDirectory() as directory:
+            root=Path(directory);model,backbone,digest=self.fixture(root)
+            with patch('local_anonymizer.ner.PINNED_MANIFEST_SHA256',digest),patch('transformers.AutoTokenizer.from_pretrained',side_effect=RuntimeError('stop before fixture weights')) as loader:
+                with self.assertRaisesRegex(AnonymizerError,'MODEL_UNAVAILABLE'):EnhancedDetector(model)
+                loader.assert_called_once_with(str(backbone.resolve()),local_files_only=True,trust_remote_code=False,fix_mistral_regex=False)

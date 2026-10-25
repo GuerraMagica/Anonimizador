@@ -106,3 +106,33 @@ class PdfTests(unittest.TestCase):
                 self.assertIn('Maria',load_source(p).document.text)
         self.assertIn('Maria',text)
         self.assertNotIn('onnxruntime',sys.modules)
+
+class SecondOcrCapacityTests(unittest.TestCase):
+    def test_output_capacity_independent_of_input_cap(self):
+        from local_anonymizer.formats import ocr_rasters,ocr_raster_details,_ocr_pages
+        from types import SimpleNamespace
+        class Pdf:
+            def __enter__(self):return self
+            def __exit__(self,*args):pass
+            def __getitem__(self,index):return self
+            rect=SimpleNamespace(width=10,height=10)
+            def get_text(self,*args,**kwargs):return ((1,1,2,2,'x'*100001,0,0),)
+        fake=SimpleNamespace(Pixmap=lambda payload:SimpleNamespace(pdfocr_tobytes=lambda **kwargs:b'pdf'),open=lambda **kwargs:Pdf())
+        with patch('local_anonymizer.formats._libraries',return_value=(fake,None)),patch('local_anonymizer.formats._tessdata',return_value='/synthetic'):
+            pages=(SimpleNamespace(png=b'png'),)
+            self.assertEqual(len(ocr_rasters(pages)),100001)
+            self.assertEqual(len(ocr_raster_details(pages)[0]),100001)
+            with self.assertRaisesRegex(AnonymizerError,'INPUT_CHARACTER_LIMIT'):_ocr_pages(pages,cancelled=lambda:False)
+            with patch('local_anonymizer.detectors.MAX_ANALYSIS_CHARACTERS',100000):
+                with self.assertRaisesRegex(AnonymizerError,'ANALYSIS_LIMIT'):ocr_rasters(pages)
+
+class DocxSourceContractTests(unittest.TestCase):
+    def test_docx_conversion_notes_fit_loaded_source_contract(self):
+        data=PdfTests().native()
+        with TemporaryDirectory() as d:
+            path=Path(d)/'synthetic.docx';path.write_bytes(b'conversion mocked; no original')
+            with patch('local_anonymizer.office.convert_docx',return_value=(data,('DOCX_LAYOUT_RENDERED','DOCX_HAS_METADATA'))):
+                loaded=load_source(path)
+        self.assertEqual(loaded.kind.value,'docx')
+        self.assertIn('DOCX_LAYOUT_RENDERED',loaded.notes)
+        self.assertIn('Maria',loaded.document.text)

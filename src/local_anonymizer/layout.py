@@ -3,10 +3,11 @@ from dataclasses import dataclass,field
 import hashlib
 from io import BytesIO
 import math
+import re
 from pathlib import Path
 
-from .domain import AnonymizerError
-from .source import RasterPage,VisualRegion
+from .domain import AnonymizerError,Finding,ResidualCandidate,ResidualDecision,ResidualKey
+from .source import RasterPage,VisualRegion,TextBox
 from .transform import build_preview
 from .export import _publish_bytes
 
@@ -16,6 +17,22 @@ class VisualPreview:
     text_sha256:str
     pages:tuple[RasterPage,...]=field(repr=False)
     sha256:str
+
+
+@dataclass(frozen=True,slots=True)
+class VisualVerification:
+    session_id:str
+    review_revision:int
+    text_sha256:str
+    visual_sha256:str
+    detector_fingerprint:str
+    ocr_sha256:str
+    ok:bool
+    human_confirmed:bool
+    issues:tuple[str,...]
+    residuals:tuple[ResidualCandidate,...]=()
+    ocr_text:str=field(default='',repr=False)
+    boxes:tuple[TextBox,...]=()
 
 
 def _digest(pages):
@@ -95,7 +112,75 @@ def _pdf_bytes(pages):
     return payload
 
 
-def publish_layout(source,review,preview,verification,visual,destination,regions=()):
+def verify_visual(source,review,preview,visual,detector,*,regions=(),human_confirmed=False,
+                  rejections=(),cancelled=lambda:False):
+    """Check exactly the reviewed pixels; OCR residual decisions never inherit by value.
+
+    Human confirmation must come from review of this visual preview. This check
+    complements text verification and cannot guarantee OCR found all visible data.
+    """
+    from .formats import ocr_raster_details
+    from .detectors import MAX_ANALYSIS_CHARACTERS
+    fingerprint='unavailable';text='';boxes=();ocr_sha256=hashlib.sha256(b'').hexdigest()
+    issues=[]
+    def check_cancelled():
+        if cancelled():raise AnonymizerError('CANCELLED')
+    def result(residuals=()):
+        return VisualVerification(review.document.session_id,review.revision,preview.sha256,
+                                  visual.sha256,fingerprint,ocr_sha256,not issues,
+                                  human_confirmed is True,tuple(issues),tuple(residuals),text,boxes)
+    check_cancelled()
+    if review.confirmed is not True:issues.append('HUMAN_REVIEW_REQUIRED')
+    if human_confirmed is not True:issues.append('VISUAL_HUMAN_REVIEW_REQUIRED')
+    try:
+        expected=build_visual_preview(source,review,preview,regions)
+        if expected!=visual:raise AnonymizerError('VISUAL_STATE_MISMATCH')
+    except AnonymizerError as error:
+        issues.append(error.code);return result()
+    if issues:return result()
+    try:
+        text,boxes=ocr_raster_details(visual.pages,cancelled=cancelled)
+        if (not isinstance(text,str) or len(text)>MAX_ANALYSIS_CHARACTERS or not isinstance(boxes,tuple)
+                or any(not isinstance(b,TextBox) or b.end>len(text) or b.page>=len(visual.pages) for b in boxes)):
+            raise AnonymizerError('OCR_FAILED')
+        ocr_sha256=hashlib.sha256(text.encode('utf-8')).hexdigest()
+        check_cancelled()
+    except AnonymizerError as error:
+        if error.code=='CANCELLED':raise
+        issues.append(error.code);return result()
+    except Exception:
+        issues.append('OCR_FAILED');return result()
+    if any(value in text for value in preview.selected_values):issues.append('SELECTED_VALUE_REMAINS')
+    try:
+        fingerprint=detector.fingerprint
+        if not isinstance(fingerprint,str) or not re.fullmatch(r'[A-Za-z0-9_.:-]{1,160}',fingerprint):
+            fingerprint='unavailable';raise AnonymizerError('ANALYSIS_FAILED')
+        analyze=getattr(detector,'analyze_cancellable',None)
+        candidates=analyze(text,review.document.session_id,cancelled) if analyze else detector.analyze(text,review.document.session_id)
+        check_cancelled()
+        if not isinstance(candidates,tuple) or any(not isinstance(c,Finding) or c.end>len(text)
+                or c.session_id!=review.document.session_id for c in candidates):
+            raise AnonymizerError('ANALYSIS_FAILED')
+        if detector.fingerprint!=fingerprint:raise AnonymizerError('DETECTOR_CHANGED')
+        if not isinstance(rejections,tuple) or any(not isinstance(d,ResidualDecision) for d in rejections):
+            raise AnonymizerError('INVALID_RESIDUAL_DECISION')
+    except AnonymizerError as error:
+        if error.code=='CANCELLED':raise
+        issues.append(error.code);return result()
+    except Exception:
+        issues.append('ANALYSIS_FAILED');return result()
+    # Domain-separated digest: a rejection expires on text, OCR, or pixel changes.
+    binding=hashlib.sha256(('visual-verification:v1:'+preview.sha256+':'+visual.sha256+':'+ocr_sha256).encode()).hexdigest()
+    rejected_keys={d.key for d in rejections};pending=[]
+    for candidate in candidates:
+        key=ResidualKey(review.document.session_id,review.revision,binding,fingerprint,
+                        candidate.start,candidate.end,candidate.category,candidate.provenance)
+        if key not in rejected_keys:pending.append(ResidualCandidate(candidate,key))
+    if pending:issues.append('RESIDUAL_REVIEW_REQUIRED')
+    return result(pending)
+
+
+def publish_layout(source,review,preview,verification,visual,destination,regions=(),*,visual_verification=None):
     if (review.confirmed is not True or not verification.ok or verification.issues or verification.residuals
             or verification.detector_fingerprint=='unavailable'
             or verification.session_id!=review.document.session_id
@@ -103,5 +188,13 @@ def publish_layout(source,review,preview,verification,visual,destination,regions
         raise AnonymizerError('EXPORT_NOT_VERIFIED')
     expected=build_visual_preview(source,review,preview,regions)
     if expected!=visual:raise AnonymizerError('VISUAL_STATE_MISMATCH')
+    v=visual_verification
+    if (not isinstance(v,VisualVerification) or v.ok is not True or v.human_confirmed is not True
+            or v.issues or v.residuals or v.session_id!=review.document.session_id
+            or v.review_revision!=review.revision or v.text_sha256!=preview.sha256
+            or v.visual_sha256!=expected.sha256 or v.detector_fingerprint!=verification.detector_fingerprint
+            or v.detector_fingerprint=='unavailable'
+            or v.ocr_sha256!=hashlib.sha256(v.ocr_text.encode('utf-8')).hexdigest()):
+        raise AnonymizerError('VISUAL_VERIFICATION_REQUIRED')
     if Path(destination).absolute()==source.document.source_path:raise AnonymizerError('EXPORT_ORIGINAL')
     return _publish_bytes(_pdf_bytes(expected.pages),destination)

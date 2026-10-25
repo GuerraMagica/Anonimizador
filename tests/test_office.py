@@ -6,6 +6,7 @@ from pathlib import Path
 import warnings
 import unittest
 import zipfile
+import struct
 from unittest.mock import patch
 from local_anonymizer.domain import AnonymizerError
 from local_anonymizer.office import convert_docx
@@ -31,6 +32,88 @@ class OfficeTests(unittest.TestCase):
 
     def test_invalid_zip(self):
         self.reject(b'private text', 'DOCX_INVALID')
+
+    def test_content_type_declared_xml_is_inspected_despite_extension(self):
+        out = io.BytesIO()
+        with zipfile.ZipFile(io.BytesIO(package())) as incoming, zipfile.ZipFile(out, 'w') as archive:
+            for info in incoming.infolist():
+                data = incoming.read(info)
+                if info.filename == '[Content_Types].xml':
+                    data = data.replace(b'</Types>', b'<Override PartName="/word/header1.dat" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.header+xml"/></Types>')
+                archive.writestr(info, data)
+            archive.writestr('word/header1.dat', '<w:hdr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:fldSimple w:instr="INCLUDETEXT &quot;/private/example&quot;"/></w:hdr>')
+            archive.writestr('word/_rels/document.xml.rels', '<Relationships><Relationship Id="rHeader" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/header" Target="header1.dat"/></Relationships>')
+        self.reject(out.getvalue(), 'DOCX_ACTIVE_CONTENT')
+
+    def test_corrupt_deflate_is_sanitized(self):
+        payload = bytearray(package())
+        with zipfile.ZipFile(io.BytesIO(payload)) as archive:
+            info = archive.getinfo('word/document.xml')
+            filename_len, extra_len = struct.unpack_from('<HH', payload, info.header_offset + 26)
+            offset = info.header_offset + 30 + filename_len + extra_len
+        payload[offset] = 0xff  # Reserved DEFLATE block type.
+        self.reject(bytes(payload), 'DOCX_INVALID')
+
+    def test_relationship_selected_xml_is_inspected_without_xml_extension(self):
+        self.reject(package([
+            ('word/header1.dat', '<x><fldSimple instr="INCLUDETEXT secret"/></x>'),
+            ('word/_rels/document.xml.rels', '<Relationships><Relationship Type="header" Target="header1.dat"/></Relationships>'),
+        ]), 'DOCX_ACTIVE_CONTENT')
+
+    def test_termination_cleans_group_even_when_leader_already_exited(self):
+        from local_anonymizer.office import _terminate
+        from unittest.mock import Mock
+        import signal
+        process = Mock(pid=123456)
+        process.poll.return_value = 0
+        with patch('local_anonymizer.office.os.killpg') as killpg:
+            _terminate(process)
+        self.assertTrue(any(call.args == (process.pid, signal.SIGKILL) for call in killpg.call_args_list))
+
+    @unittest.skipUnless(os.environ.get('RUN_OFFICE_INTEGRATION') == '1', 'Requires native process inspection outside nested sandbox')
+    def test_termination_kills_resistant_descendant_with_live_or_exited_leader(self):
+        import signal
+        import subprocess
+        import sys
+        from local_anonymizer.office import _terminate
+        for exit_leader in (False, True):
+            with self.subTest(exit_leader=exit_leader), tempfile.TemporaryDirectory() as directory:
+                ready = Path(directory) / 'ready'
+                child = ('import os,signal,time,pathlib; '
+                         'signal.signal(signal.SIGTERM, signal.SIG_IGN); '
+                         f'pathlib.Path({str(ready)!r}).write_text(str(os.getpid())); '
+                         'time.sleep(30)')
+                leader = ('import subprocess,sys,time,pathlib; '
+                          f'p=subprocess.Popen([sys.executable,"-c",{child!r}]); '
+                          f'ready=pathlib.Path({str(ready)!r}); '
+                          '\nwhile not ready.exists(): time.sleep(.01)\n'
+                          + ('sys.exit(0)' if exit_leader else 'p.wait()'))
+                process = subprocess.Popen([sys.executable, '-c', leader], start_new_session=True,
+                                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                try:
+                    deadline = time.monotonic() + 3
+                    while not ready.exists() and time.monotonic() < deadline:
+                        time.sleep(.01)
+                    self.assertTrue(ready.exists(), 'Child did not become ready')
+                    child_pid = int(ready.read_text())
+                    if exit_leader:
+                        process.wait(timeout=3)
+                    _terminate(process)
+                    deadline = time.monotonic() + 3
+                    while True:
+                        state = subprocess.run(['/bin/ps', '-p', str(child_pid), '-o', 'stat='],
+                                               capture_output=True, text=True).stdout.strip()
+                        if not state or state.startswith('Z'):
+                            break
+                        if time.monotonic() > deadline:
+                            self.fail('Resistant child survived group cleanup')
+                        time.sleep(.01)
+                finally:
+                    try:
+                        os.killpg(process.pid, signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
+                    process.wait(timeout=3)
 
     def test_path_escape_and_duplicate(self):
         for name in ('../secret', '/absolute', 'word/../../escape', 'word\\escape', 'word/document.xml'):
@@ -104,8 +187,8 @@ class OfficeTests(unittest.TestCase):
         digest = hashlib.sha256(original).digest()
         pdf, notes = convert_docx(original)
         self.assertEqual(hashlib.sha256(original).digest(), digest)
-        self.assertTrue(any('metadata' in note for note in notes))
-        self.assertTrue(any('sin inspección OCR' in note for note in notes))
+        self.assertTrue(any(note.startswith('DOCX_INVENTORY_METADATA_') for note in notes))
+        self.assertIn('DOCX_NONVISIBLE_CONTENT_EXCLUDED', notes)
         with pymupdf.open(stream=pdf, filetype='pdf') as reopened:
             self.assertEqual(len(reopened), 1)
             text = reopened[0].get_text()
@@ -172,5 +255,5 @@ pathlib.Path('input.pdf').write_bytes(b'%PDF-synthetic-containment-probe')
         joined = '\n'.join(notes)
         self.assertNotIn('Secret Person', joined)
         self.assertNotIn('private', joined)
-        self.assertIn('signatures: 1', joined)
-        self.assertIn('comments: 1', joined)
+        self.assertIn('DOCX_INVENTORY_SIGNATURES_1', joined)
+        self.assertIn('DOCX_INVENTORY_COMMENTS_1', joined)

@@ -17,6 +17,7 @@ import sys
 import tempfile
 import time
 import zipfile
+import zlib
 
 from defusedxml import ElementTree as XML
 from .domain import AnonymizerError
@@ -34,6 +35,64 @@ def _check_cancelled(cancelled):
         raise AnonymizerError('CANCELLED')
 
 
+def _xml_parts(archive, cancelled):
+    """Find XML by OPC declarations and relationships, not filename suffix alone."""
+    try:
+        content_types = XML.fromstring(archive.read('[Content_Types].xml'))
+    except KeyError:
+        raise AnonymizerError('DOCX_INVALID') from None
+    except (zlib.error, zipfile.BadZipFile):
+        raise
+    except Exception:
+        raise AnonymizerError('DOCX_UNSAFE_PACKAGE') from None
+    defaults, overrides = {}, {}
+    for node in content_types:
+        tag = node.tag.rsplit('}', 1)[-1]
+        if tag == 'Default':
+            key = node.get('Extension', '').lower()
+            if not key or key in defaults:
+                raise AnonymizerError('DOCX_UNSAFE_PACKAGE')
+            defaults[key] = node.get('ContentType', '').lower()
+        elif tag == 'Override':
+            key = unquote(node.get('PartName', '')).lstrip('/')
+            if not key or key in overrides:
+                raise AnonymizerError('DOCX_UNSAFE_PACKAGE')
+            overrides[key] = node.get('ContentType', '').lower()
+    names = set(archive.namelist())
+    xml_parts = {'[Content_Types].xml'}
+    relationship_parts = set()
+    for name in names:
+        _check_cancelled(cancelled)
+        content_type = overrides.get(name, defaults.get(name.rsplit('.', 1)[-1].lower(), ''))
+        if name.lower().endswith(('.xml', '.rels')) or content_type.endswith('+xml') or content_type in ('application/xml', 'text/xml'):
+            xml_parts.add(name)
+        if name.lower().endswith('.rels') or content_type == 'application/vnd.openxmlformats-package.relationships+xml':
+            # OPC relationship ownership is defined by its .rels location.
+            if not name.lower().endswith('.rels'):
+                raise AnonymizerError('DOCX_UNSAFE_PACKAGE')
+            relationship_parts.add(name)
+    binary_relations = {'image', 'font', 'audio', 'video', 'media', 'thumbnail', 'printersettings',
+                        'oleobject', 'attachedtemplate', 'afchunk', 'control', 'package'}
+    for name in relationship_parts:
+        _check_cancelled(cancelled)
+        try:
+            root = XML.fromstring(archive.read(name))
+        except (zlib.error, zipfile.BadZipFile):
+            raise
+        except Exception:
+            raise AnonymizerError('DOCX_UNSAFE_PACKAGE') from None
+        for node in root:
+            target = node.get('Target', '')
+            if node.get('TargetMode', '').lower() == 'external':
+                continue  # The main validation pass rejects external targets.
+            relation = node.get('Type', '').lower().rsplit('/', 1)[-1]
+            owner_dir = posixpath.dirname(posixpath.dirname(name)) if '/_rels/' in name else ''
+            resolved = posixpath.normpath(posixpath.join(owner_dir, unquote(target).replace('\\', '/')))
+            if resolved in names and relation not in binary_relations:
+                xml_parts.add(resolved)
+    return xml_parts
+
+
 def _validate(payload, cancelled):
     if not isinstance(payload, bytes) or len(payload) > MAX_INPUT_BYTES:
         raise AnonymizerError('DOCX_LIMIT')
@@ -44,6 +103,7 @@ def _validate(payload, cancelled):
             entries = archive.infolist()
             if len(entries) > MAX_ENTRIES or sum(i.file_size for i in entries) > MAX_EXPANDED_BYTES:
                 raise AnonymizerError('DOCX_LIMIT')
+            xml_parts = _xml_parts(archive, cancelled)
             seen = set()
             for info in entries:
                 _check_cancelled(cancelled)
@@ -60,7 +120,7 @@ def _validate(payload, cancelled):
                 if any(part in lower for part in ('vbaproject', 'activex', 'embeddings/', 'customui/', 'vbasignature')):
                     raise AnonymizerError('DOCX_UNSAFE_PACKAGE')
                 data = archive.read(info)
-                if lower.endswith(('.xml', '.rels')):
+                if name in xml_parts:
                     try:
                         root = XML.fromstring(data)
                     except Exception:
@@ -111,13 +171,11 @@ def _validate(payload, cancelled):
                 raise AnonymizerError('DOCX_INVALID')
     except AnonymizerError:
         raise
-    except (zipfile.BadZipFile, OSError, ValueError, RuntimeError, NotImplementedError):
+    except (zipfile.BadZipFile, zlib.error, OSError, ValueError, RuntimeError, NotImplementedError):
         raise AnonymizerError('DOCX_INVALID') from None
-    notes = ('DOCX: representación visual de LibreOffice; no garantiza equivalencia tipográfica con Word.',
-             'DOCX: solo las páginas visibles pasan a raster/OCR; las partes no visibles quedan excluidas de la salida raster, sin inspección OCR de esas partes.',
-             'DOCX: relaciones externas y contenido activo rechazados; enlaces no actualizados.',
-             'DOCX: la salida raster no conserva firmas digitales ni formularios interactivos.')
-    return notes + tuple(f'DOCX inventario {key}: {value}.' for key, value in inventory.items() if value)
+    notes = ('DOCX_LAYOUT_RENDERED', 'DOCX_NONVISIBLE_CONTENT_EXCLUDED',
+             'DOCX_EXTERNAL_CONTENT_REJECTED', 'DOCX_SIGNATURES_FORMS_NOT_PRESERVED')
+    return notes + tuple(f'DOCX_INVENTORY_{key.upper()}_{value}' for key, value in inventory.items() if value)
 
 
 def _find_engine():
@@ -138,15 +196,23 @@ def _find_engine():
 
 
 def _terminate(process):
-    if process.poll() is None:
-        try:
-            os.killpg(process.pid, signal.SIGTERM)
+    # The private process group may outlive its leader. Never use poll() as
+    # proof that the converter's descendants have stopped.
+    try:
+        os.killpg(process.pid, signal.SIGTERM)
+    except ProcessLookupError:
+        pass
+    try:
+        if process.poll() is None:
             process.wait(timeout=2)
-        except subprocess.TimeoutExpired:
+    except subprocess.TimeoutExpired:
+        pass
+    finally:
+        try:
             os.killpg(process.pid, signal.SIGKILL)
-            process.wait()
         except ProcessLookupError:
             pass
+        process.wait()
 
 
 def _convert_docx(payload: bytes, *, cancelled) -> tuple[bytes, tuple[str, ...]]:

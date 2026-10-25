@@ -54,7 +54,10 @@ def _read(path,cancelled):
         if fd is not None:os.close(fd)
 
 
-def _ocr_pages_impl(pages,*,cancelled):
+def _ocr_pages_impl(pages,*,cancelled,max_characters=None):
+    # Input canonical text and expanded sanitized output have different bounds.
+    limit=MAX_TEXT_CHARACTERS if max_characters is None else max_characters
+    limit_code='INPUT_CHARACTER_LIMIT' if max_characters is None else 'ANALYSIS_LIMIT'
     fitz,_=_libraries();tessdata=_tessdata()
     parts=[];boxes=[];offset=0
     for index,page in enumerate(pages):
@@ -69,16 +72,16 @@ def _ocr_pages_impl(pages,*,cancelled):
                 separator='' if previous is None and offset==0 else ('\n' if previous is None or previous!=(block,line) else ' ')
                 parts.append(separator);offset+=len(separator)
                 start=offset;parts.append(word);offset+=len(word)
-                if offset>MAX_TEXT_CHARACTERS:raise AnonymizerError('INPUT_CHARACTER_LIMIT')
+                if offset>limit:raise AnonymizerError(limit_code)
                 r=doc[0].rect
                 rect=(max(0,x0/r.width),max(0,y0/r.height),min(1,x1/r.width),min(1,y1/r.height))
                 boxes.append(TextBox(start,offset,index,rect));previous=(block,line)
     return ''.join(parts),tuple(boxes)
 
 
-def _ocr_pages(pages,*,cancelled):
+def _ocr_pages(pages,*,cancelled,max_characters=None):
     try:
-        return _ocr_pages_impl(pages,cancelled=cancelled)
+        return _ocr_pages_impl(pages,cancelled=cancelled,max_characters=max_characters)
     except AnonymizerError:
         raise
     except Exception:
@@ -118,7 +121,14 @@ def ocr_pdf(payload:bytes,*,cancelled=lambda:False):
 
 def ocr_rasters(pages,*,cancelled=lambda:False):
     """Second OCR of sanitized pixels; caller must bind verification to visual digest."""
-    return _ocr_pages(pages,cancelled=cancelled)[0]
+    return ocr_raster_details(pages,cancelled=cancelled)[0]
+
+
+def ocr_raster_details(pages,*,cancelled=lambda:False):
+    """Return full second-pass OCR and boxes within the detector output capacity."""
+    from .detectors import MAX_ANALYSIS_CHARACTERS
+    _check(cancelled)
+    return _ocr_pages(pages,cancelled=cancelled,max_characters=MAX_ANALYSIS_CHARACTERS)
 
 
 def load_source(path:Path,*,cancelled=lambda:False)->LoadedSource:
