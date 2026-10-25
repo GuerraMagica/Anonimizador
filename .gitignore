@@ -7,3 +7,7 @@ graphify-out/.needs_update
 graphify-out/cache/
 graphify-out/memory/
 graphify-out/reflections/
+
+# Generated previews, temporary documents and visual QA artifacts.
+tmp/
+output/

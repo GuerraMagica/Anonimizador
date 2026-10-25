@@ -2,3 +2,15 @@
 PySide6-Essentials==6.12.0
 presidio-analyzer==2.2.364
 spacy==3.8.16
+
+# Next-version document/NER stack, expressly preapproved 2026-10-25.
+PyMuPDF==1.27.2.3
+Pillow==13.0.0
+defusedxml==0.7.1
+python-docx==1.2.0
+gliner==0.2.29
+torch==2.9.1
+transformers==4.57.6
+
+# Required by local SentencePiece -> fast tokenizer conversion.
+protobuf==7.36.2

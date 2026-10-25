@@ -1,0 +1,22 @@
+{
+  "repository": "https://github.com/tesseract-ocr/tessdata_fast",
+  "revision": "87416418657359cb625c412a48b6e1d6d41c29bd",
+  "license": "Apache-2.0",
+  "resources": [
+    {
+      "filename": "spa.traineddata",
+      "bytes": 2294433,
+      "sha256": "6f2e04d02774a18f01bed44b1111f2cd7f3ba7ac9dc4373cd3f898a40ea6b464",
+      "git_blob_sha1": "72e901f13ca52cfe34cf239a368b9ed3c0ddaf26",
+      "url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/87416418657359cb625c412a48b6e1d6d41c29bd/spa.traineddata"
+    },
+    {
+      "filename": "eng.traineddata",
+      "bytes": 4113088,
+      "sha256": "7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2",
+      "git_blob_sha1": "bbef4675053b5b468cdb477053e28b1c698ba08e",
+      "url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/87416418657359cb625c412a48b6e1d6d41c29bd/eng.traineddata"
+    }
+  ],
+  "runtime": "local only; no automatic downloads during analysis"
+}
