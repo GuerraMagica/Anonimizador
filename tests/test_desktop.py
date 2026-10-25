@@ -1,5 +1,6 @@
 import unittest
 import os
+import time
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from dataclasses import replace
@@ -182,3 +183,17 @@ class DesktopTests(unittest.TestCase):
                     with pymupdf.open(out) as pdf:
                         self.assertEqual(pdf[0].get_text(),'');self.assertFalse(pdf.metadata.get('author'))
                     self.assertNotIn('Ana',ocr_pdf(out.read_bytes())[0])
+
+    @unittest.skipUnless(os.getenv('RUN_ENHANCED_NER')=='1','explicit real default desktop detector')
+    def test_default_desktop_uses_pinned_enhanced_detector_in_worker(self):
+        self.w._detector=None;self.w.set_document(document('María García vive en Madrid.'))
+        self.w.start_analysis()
+        for _ in range(6000):
+            self.app.processEvents()
+            if self.w._thread is None:break
+            time.sleep(.01)
+        self.assertIsNone(self.w._thread,'default detector initialization timed out')
+        self.assertTrue(self.w.session.review.coverage_complete,self.w.status.text())
+        self.assertTrue(self.w._detector.fingerprint.startswith('gliner-es:v1:'))
+        spans={(f.start,f.end,f.category.value) for f in self.w.session.review.findings}
+        self.assertIn((0,12,'PERSONA'),spans);self.assertIn((21,27,'UBICACION'),spans)

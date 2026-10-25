@@ -1,0 +1,11 @@
+{
+  "characters": 100000,
+  "fingerprint": "gliner-es:v1:978117309520f8b7016360e81e08a2220124b18ab5b89db0f6492f3531b64f0d",
+  "initialization_seconds": 10.222743374994025,
+  "analysis_seconds": 26.44555941701401,
+  "peak_rss_bytes": 3735781376,
+  "findings": 2,
+  "tail_person_detected": true,
+  "network_attempts": [],
+  "limits": "One synthetic repeated low-density text on the development machine. Not an accuracy corpus or a worst-case latency/memory guarantee. Python audit hook; OS network denial applied by launcher."
+}

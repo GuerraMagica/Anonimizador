@@ -1,0 +1,86 @@
+{
+  "corpus_sha256": "0a8db269991c4e7fa93f63eed17182ecc936ed0115c4a2ef55608443ba60e54f",
+  "structured_detector_fingerprint": "local-es:v2:c7bf3d368282ec1d84ddb2f6fc9356af75af4d2c8c0026eb93ff9e31eecd9e5b",
+  "metrics": {
+    "email": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "cases": 100,
+      "positives": 50,
+      "negatives": 50,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "phone": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "cases": 100,
+      "positives": 50,
+      "negatives": 50,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "nif": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "cases": 100,
+      "positives": 50,
+      "negatives": 50,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "nie": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "cases": 100,
+      "positives": 50,
+      "negatives": 50,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "iban": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "cases": 100,
+      "positives": 50,
+      "negatives": 50,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "passport": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "cases": 100,
+      "positives": 50,
+      "negatives": 50,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "date": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "cases": 100,
+      "positives": 50,
+      "negatives": 50,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  },
+  "gates": {
+    "email": true,
+    "phone": true,
+    "nif": true,
+    "nie": true,
+    "iban": true
+  },
+  "passed": true,
+  "errors": [],
+  "limits": "Synthetic exact-span named-recognizer scores; excludes cross-category collisions. Passport/date measured without acceptance gates. Enhanced NER scored separately."
+}
