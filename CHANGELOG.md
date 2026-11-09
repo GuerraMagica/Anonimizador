@@ -1,5 +1,11 @@
 # Cambios
 
+## 0.2.0.dev0 — 2026-10-25
+
+Render de Markdown con apertura explícita de enlaces, lectura de PDF y DOCX, OCR local, revisión de lotes y exportación visual a PDF rasterizado. GLiNER local supera las puertas NER del corpus independiente. La exportación visual requiere revisión de las páginas y verificación posterior de la copia.
+
+El [informe de validación](docs/informe-2026-10-25.md) registra las pruebas, métricas y la aceptación manual pendiente.
+
 ## 0.1.0.dev0 — 2026-10-24
 
 Versión experimental de TXT/Markdown UTF-8 a TXT nuevo, con entrada acotada, candidatos de Presidio/spaCy, vocabulario literal, selección y corrección manual, grupos/acciones, previsualización, confirmación humana, rondas residuales y publicación exclusiva. Informe JSON opcional independiente, sin texto ni rutas originales. Un worker Qt con cancelación cooperativa y resultados vinculados a sesión/revisión.

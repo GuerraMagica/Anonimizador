@@ -213,7 +213,7 @@ Se dejan al implementador nombres de clases/archivos, disposición concreta de w
 
 ## 12. Revisión de la fase 3 con graphify — 24/10/2026
 
-Se ha generado un [grafo documental](../../../graphify-out/graph.json) y un [informe de extracción](../../../graphify-out/GRAPH_REPORT.md) sobre los dos documentos existentes en el commit `74fe844efa5b982e8954d04a5972e42dd3c7bbdb`, anterior a esta revisión. Es una instantánea, no un índice actualizado automáticamente: esta sección y los cambios posteriores de autorización no están incorporados en sus nodos. El informe conserva los hashes de las fuentes para identificar exactamente su cobertura.
+El grafo documental y su informe de extracción se conservan en Git en el commit `191ff8ac5b4501b4ebc23e26443ffae398fad651`, bajo `graphify-out/`. Indexaron los dos documentos del commit `74fe844efa5b982e8954d04a5972e42dd3c7bbdb`, anterior a esta revisión. Los hashes de las fuentes constan en aquel informe. El [informe de Graphify de la rama actual](../../../graphify-out/GRAPH_REPORT.md) describe su propia cobertura.
 
 La extracción contiene 40 nodos, 54 relaciones explícitas y 6 comunidades; el diagnóstico no encuentra extremos ausentes, relaciones duplicadas, bucles ni colapsos entre pares. Estos resultados acreditan propiedades del grafo construido, no exhaustividad de la extracción ni corrección de la aplicación. El visor HTML de graphify usa una biblioteca JavaScript externa; esa dependencia del artefacto no forma parte del diseño offline del producto.
 

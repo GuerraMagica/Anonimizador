@@ -80,4 +80,8 @@ PyMuPDF declara AGPL-3.0 o licencia comercial; GLiNER y tessdata Apache-2.0, tok
 
 ## Desarrollo
 
-[Diseño aprobado](docs/superpowers/specs/2026-10-25-next-version-design.md) y [plan](docs/superpowers/plans/2026-10-25-next-version.md). Los cambios completos, comprobados y revisados se registran con commit descriptivo y push a GitHub, excluyendo datos privados. `graphify-out/` es una instantánea documental histórica y no representa el código actual.
+[Diseño aprobado](docs/superpowers/specs/2026-10-25-next-version-design.md) y [plan](docs/superpowers/plans/2026-10-25-next-version.md). Los cambios completos, comprobados y revisados se registran con commit descriptivo y push a GitHub, excluyendo datos privados.
+
+La aceptación manual de la 0.2 en macOS es el próximo hito. El piloto previsto cubre Markdown, PDF normal y escaneado, DOCX con tablas y cabeceras y un lote mixto. Se comprobarán las correcciones de detección, las zonas manuales, la cancelación y la legibilidad de las copias exportadas. El [informe de la versión](docs/informe-2026-10-25.md) conserva la evidencia automatizada y las comprobaciones pendientes.
+
+El [mapa del código](graphify-out/GRAPH_REPORT.md) y el [visor de Graphify](graphify-out/graph.html) cubren `src/`, `scripts/` y `tests/` a partir de los archivos versionados. El informe identifica la revisión indexada. Para preparar el entorno y ejecutar la aplicación, la referencia es este README.

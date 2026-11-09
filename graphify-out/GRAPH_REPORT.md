@@ -1,113 +1,159 @@
-# Graph Report - Anonimizador  (2026-10-24)
+# Graph Report - Anonimizador  (2026-11-09)
 
 ## Corpus Check
-- Corpus is ~6,410 words - fits in a single context window. You may not need a graph.
+- 64 archivos versionados: 58 archivos Python y 6 archivos JSON de casos y manifiestos sintéticos.
 
 ## Summary
-- 40 nodes · 54 edges · 6 communities (5 shown, 1 thin omitted)
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
-- Token cost: unavailable — the agent tool did not expose measured usage; zero counters in local sidecars are placeholders, not a zero-cost claim.
-
-## Graph Freshness
-- Built from commit: `74fe844e`
-- Run `git rev-parse HEAD` and compare to check if the graph is stale.
-- Run `graphify update .` after code changes (no API cost).
+- 769 nodes · 2528 edges · 24 communities (17 shown, 7 thin omitted)
+- Extraction: 88% EXTRACTED · 12% INFERRED · 0% AMBIGUOUS · INFERRED: 312 edges (avg confidence: 0.91)
+- Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
-- Alternativas y cobertura documental
-- Revisión, transformación y verificación
-- Alcance, decisiones y versionado
-- Interfaz y posiciones Unicode
-- Privacidad y aceptación
-- Detección local de entidades
+- Community 0
+- Community 1
+- Community 2
+- Community 3
+- Community 4
+- Community 5
+- Community 6
+- Community 7
+- Community 9
+- Community 10
+- Community 11
+- Community 12
+- Community 13
+- Community 14
+- Community 15
+- Community 16
+- Community 17
+- Community 18
+- Community 19
+- Community 20
+- Community 21
+- Community 22
+- Community 23
 
 ## God Nodes (most connected - your core abstractions)
-1. `Investigación documental de alternativas` - 10 edges
-2. `Exportación y verificación: responsabilidad lógica propuesta` - 7 edges
-3. `Detección: responsabilidad lógica propuesta` - 6 edges
-4. `Revisión y transformación: responsabilidad lógica propuesta` - 5 edges
-5. `Cobertura documental explícita` - 4 edges
-6. `Aplicación y GUI: responsabilidad lógica propuesta` - 4 edges
-7. `Criterios de aceptación propuestos` - 4 edges
-8. `PySide6 y Qt Widgets` - 3 edges
-9. `Especificación propuesta del primer MVP` - 3 edges
-10. `Local Document Anonymizer: MVP propuesto` - 3 edges
+1. `AnonymizerError` - 153 edges
+2. `MainWindow` - 58 edges
+3. `MainWindow` - 53 edges
+4. `finding()` - 51 edges
+5. `Session` - 45 edges
+6. `reviewed()` - 45 edges
+7. `Decision` - 43 edges
+8. `build_preview()` - 40 edges
+9. `guarded()` - 36 edges
+10. `Finding` - 32 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Especificación propuesta del primer MVP` --references--> `Investigación documental de alternativas`  [EXTRACTED]
-  docs/superpowers/specs/2026-10-23-local-document-anonymizer-design.md → docs/investigacion-2026-10-23.md
-- `Detección: responsabilidad lógica propuesta` --references--> `Presidio`  [EXTRACTED]
-  docs/superpowers/specs/2026-10-23-local-document-anonymizer-design.md → docs/investigacion-2026-10-23.md
-- `Detección: responsabilidad lógica propuesta` --references--> `spaCy y es_core_news_sm`  [EXTRACTED]
-  docs/superpowers/specs/2026-10-23-local-document-anonymizer-design.md → docs/investigacion-2026-10-23.md
-- `Opción A: GUI y motor modular en un proceso` --references--> `PySide6 y Qt Widgets`  [EXTRACTED]
-  docs/superpowers/specs/2026-10-23-local-document-anonymizer-design.md → docs/investigacion-2026-10-23.md
-- `Evolución posterior DOCX, PDF y OCR` --conceptually_related_to--> `Cobertura documental explícita`  [EXTRACTED]
-  docs/superpowers/specs/2026-10-23-local-document-anonymizer-design.md → docs/investigacion-2026-10-23.md
+- `DesktopTests` --uses--> `MainWindow`  [INFERRED]
+  tests/test_desktop.py → src/local_anonymizer/desktop.py
+- `DetectorTests` --uses--> `AnonymizerError`  [INFERRED]
+  tests/test_detectors.py → src/local_anonymizer/domain.py
+- `LiteralTests` --uses--> `AnonymizerError`  [INFERRED]
+  tests/test_detectors.py → src/local_anonymizer/domain.py
+- `DomainTests` --uses--> `AnonymizerError`  [INFERRED]
+  tests/test_domain.py → src/local_anonymizer/domain.py
+- `AnalysisTests` --uses--> `AnonymizerError`  [INFERRED]
+  tests/test_enhanced_ner.py → src/local_anonymizer/domain.py
 
-## Hyperedges (group relationships)
-- **Seis responsabilidades propuestas, sin imponer archivos ni clases** — docs_superpowers_specs_2026_10_23_local_document_anonymizer_design_dominio, docs_superpowers_specs_2026_10_23_local_document_anonymizer_design_entrada, docs_superpowers_specs_2026_10_23_local_document_anonymizer_design_deteccion, docs_superpowers_specs_2026_10_23_local_document_anonymizer_design_revision_transformacion, docs_superpowers_specs_2026_10_23_local_document_anonymizer_design_exportacion, docs_superpowers_specs_2026_10_23_local_document_anonymizer_design_gui [EXTRACTED 1.00]
-- **Flujo propuesto de revisión, reconstrucción y comprobación** — docs_superpowers_specs_2026_10_23_local_document_anonymizer_design_texto_inmutable, docs_superpowers_specs_2026_10_23_local_document_anonymizer_design_revision_humana, docs_superpowers_specs_2026_10_23_local_document_anonymizer_design_revision_transformacion, docs_superpowers_specs_2026_10_23_local_document_anonymizer_design_rondas_residuales, docs_superpowers_specs_2026_10_23_local_document_anonymizer_design_publicacion_exclusiva [EXTRACTED 1.00]
+## Import Cycles
+- None detected.
 
-## Communities (6 total, 1 thin omitted)
+## Communities (24 total, 7 thin omitted)
 
-### Community 0 - "Alternativas y cobertura documental"
-Cohesion: 0.32
-Nodes (7): Dangerzone, GLiNER multi-v2.1, Investigación documental de alternativas, PyMuPDF, pypdf, python-docx, Tkinter
+### Community 0 - "Community 0"
+Cohesion: 0.06
+Nodes (12): Batch, BatchEntry, MainWindow, AnonymizerError, Category, guarded(), invoke(), MainWindow (+4 more)
 
-### Community 1 - "Revisión, transformación y verificación"
-Cohesion: 0.36
-Nodes (3): Dominio: responsabilidad lógica propuesta, Exportación y verificación: responsabilidad lógica propuesta, Revisión y transformación: responsabilidad lógica propuesta
+### Community 1 - "Community 1"
+Cohesion: 0.07
+Nodes (28): Action, Decision, Disposition, Finding, Preview, ResidualCandidate, ResidualDecision, ResidualKey (+20 more)
 
-### Community 2 - "Alcance, decisiones y versionado"
-Cohesion: 0.29
-Nodes (3): Especificación propuesta del primer MVP, Evolución posterior DOCX, PDF y OCR, Local Document Anonymizer: MVP propuesto
+### Community 2 - "Community 2"
+Cohesion: 0.06
+Nodes (30): _check(), _libraries(), load_source(), _ocr_pages(), _ocr_pages_impl(), ocr_pdf(), ocr_raster_details(), ocr_rasters() (+22 more)
 
-### Community 3 - "Interfaz y posiciones Unicode"
-Cohesion: 0.33
-Nodes (3): PySide6 y Qt Widgets, Entrada: responsabilidad lógica propuesta, Aplicación y GUI: responsabilidad lógica propuesta
+### Community 3 - "Community 3"
+Cohesion: 0.05
+Nodes (14): default_model_path(), LocalDetector, _PrivateRecognizerLogs, Confidentiality, EnhancedDetector, text_windows(), DetectorTests, AnalysisTests (+6 more)
 
-### Community 5 - "Detección local de entidades"
-Cohesion: 0.50
-Nodes (4): Presidio, spaCy y es_core_news_sm, Categorías de detección y confidencialidad propuestas, Detección: responsabilidad lógica propuesta
+### Community 4 - "Community 4"
+Cohesion: 0.07
+Nodes (12): operation(), _TaskThread, literal_findings(), ConfiguredDetector, python_to_qt(), qt_to_python(), LiteralTests, BaseGuiCase (+4 more)
+
+### Community 5 - "Community 5"
+Cohesion: 0.11
+Nodes (9): _check_cancelled(), convert_docx(), _convert_docx(), _find_engine(), _terminate(), _validate(), _xml_parts(), OfficeTests (+1 more)
+
+### Community 6 - "Community 6"
+Cohesion: 0.14
+Nodes (5): JobToken, Session, document(), EmptyDetector, SessionTests
+
+### Community 7 - "Community 7"
+Cohesion: 0.10
+Nodes (9): Receipt, _publish_bytes(), publish_text(), build_report(), save_report(), _validate(), save_then_wait(), ExportTests (+1 more)
+
+### Community 9 - "Community 9"
+Cohesion: 0.12
+Nodes (6): EmptyDetector, measure(), compare(), read_frozen_ner_corpus(), score_ner(), ComparisonTests
+
+### Community 10 - "Community 10"
+Cohesion: 0.19
+Nodes (9): build_visual_preview(), _digest(), publish_layout(), verify_visual(), check_cancelled(), EmptyDetector, RasterTests, VisualGateTests (+1 more)
+
+### Community 11 - "Community 11"
+Cohesion: 0.13
+Nodes (3): load_document(), DomainTests, IngestTests
+
+### Community 12 - "Community 12"
+Cohesion: 0.16
+Nodes (4): Document, evaluate(), evaluate_sets(), AcceptanceMeasurementTests
+
+### Community 13 - "Community 13"
+Cohesion: 0.19
+Nodes (4): LoadedSource, RasterPage, DesktopTests, slow()
+
+### Community 14 - "Community 14"
+Cohesion: 0.17
+Nodes (4): LinkTarget, resolve_resource(), SafeMarkdownBrowser, MarkdownTests
+
+### Community 15 - "Community 15"
+Cohesion: 0.25
+Nodes (4): FileIdentity, _check_file(), _identity(), _matches()
+
+### Community 17 - "Community 17"
+Cohesion: 0.14
+Nodes (3): main(), _Page, VisualRegion
+
+### Community 20 - "Community 20"
+Cohesion: 0.43
+Nodes (4): result(), VisualVerification, TextBox, SourceContractTests
 
 ## Knowledge Gaps
-- **4 isolated node(s):** `GLiNER multi-v2.1`, `Tkinter`, `Dangerzone`, `Categorías de detección y confidencialidad propuestas`
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 9 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Investigación documental de alternativas` connect `Alternativas y cobertura documental` to `Alcance, decisiones y versionado`, `Interfaz y posiciones Unicode`, `Detección local de entidades`?**
-  _High betweenness centrality (0.473) - this node is a cross-community bridge._
-- **What connects `GLiNER multi-v2.1`, `Tkinter`, `Dangerzone` to the rest of the system?**
-  _4 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Why does `Detección: responsabilidad lógica propuesta` connect `Detección local de entidades` to `Revisión, transformación y verificación`, `Privacidad y aceptación`?**
-  _High betweenness centrality (0.311) - this node is a cross-community bridge._
-- **Why does `Exportación y verificación: responsabilidad lógica propuesta` connect `Revisión, transformación y verificación` to `Privacidad y aceptación`, `Detección local de entidades`?**
-  _High betweenness centrality (0.267) - this node is a cross-community bridge._
-## Scope and reproducibility
+- **Why does `AnonymizerError` connect `Community 0` to `Community 1`, `Community 2`, `Community 3`, `Community 4`, `Community 5`, `Community 6`, `Community 7`, `Community 8`, `Community 10`, `Community 11`, `Community 12`, `Community 13`, `Community 14`, `Community 15`, `Community 17`, `Community 20`?**
+  _High betweenness centrality (0.441) - this node is a cross-community bridge._
+- **Are the 41 inferred relationships involving `AnonymizerError` (e.g. with `Batch` and `BatchEntry`) actually correct?**
+  _`AnonymizerError` has 41 INFERRED edges - model-reasoned connections that need verification._
+- **Should `Community 0` be split into smaller, more focused modules?**
+  _Cohesion score 0.055385660890248045 - nodes in this community are weakly interconnected._
+- **Why does `MainWindow` connect `Community 0` to `Community 1`, `Community 2`, `Community 3`, `Community 4`, `Community 6`, `Community 13`, `Community 14`, `Community 17`, `Community 18`, `Community 23`?**
+  _High betweenness centrality (0.052) - this node is a cross-community bridge._
+- **Are the 12 inferred relationships involving `MainWindow` (e.g. with `Batch` and `BatchEntry`) actually correct?**
+  _`MainWindow` has 12 INFERRED edges - model-reasoned connections that need verification._
+- **Should `Community 1` be split into smaller, more focused modules?**
+  _Cohesion score 0.07199625993454885 - nodes in this community are weakly interconnected._
+- **Why does `MainWindow` connect `Community 0` to `Community 1`, `Community 3`, `Community 4`, `Community 6`, `Community 9`, `Community 17`?**
+  _High betweenness centrality (0.051) - this node is a cross-community bridge._
+## Cobertura y reproducción
 
-- Documentation-only graph of a proposed application, not evidence of implemented or tested product behavior.
-- Built from the two documentation files at commit `74fe844efa5b982e8954d04a5972e42dd3c7bbdb`. Later design changes must be compared with this snapshot.
-- The phase-3 review on 24/10/2026 was written after this extraction. Its added section and revised plan-approval wording are not included in these nodes; this graph is a historical snapshot, not a live index.
-- Semantic extraction used a Codex session agent; no Gemini API, model download or package installation was used for this build.
-- The default HTML viewer loads vis-network JavaScript from unpkg.com. It needs that network resource; graph.json and this report can be consulted locally without it.
-- `graphify-out/` is in the working tree. Only reviewed, portable outputs are versioned; machine paths and caches are ignored.
-- Source-file SHA-256 values:
-  - `docs/investigacion-2026-10-23.md`: `b1a833243002065e1c0bfc5439e817a2aad9a01e17caa100cb059788d54e523c`
-  - `docs/superpowers/specs/2026-10-23-local-document-anonymizer-design.md`: `f52610c10b75ac8d86854c86ab8ed815dd016373468d1d5e1b9f210f4812ce56`
-
-### Numeric cohesion by community
-
-- Alternativas y cobertura documental: 0.32142857142857145
-- Revisión, transformación y verificación: 0.35714285714285715
-- Alcance, decisiones y versionado: 0.2857142857142857
-- Interfaz y posiciones Unicode: 0.3333333333333333
-- Privacidad y aceptación: 0.3333333333333333
-- Detección local de entidades: 0.5
-
-## Benchmark limitations
-
-The default CLI used an estimated 2,000-word corpus. Recalculation with the detected 6,410 words gives about 8546 corpus tokens and 3322 query tokens. Only one of five generic English questions matched. These are text-size approximations, not measured model usage or evidence of workflow savings. See benchmark.json.
+- Revisión de entrada `acdfdb1c4a23948d95f3debd2ec5453c03e52114`, en la rama `codex/next-version`.
+- Extracción estructural de `src/`, `scripts/` y `tests/` con Graphify 0.9.92 y la red bloqueada. Se conservaron los nombres de comunidad generados por la herramienta.
+- El diagnóstico encontró 2 autorrelaciones y ningún extremo ausente ni relación exactamente duplicada. Las relaciones inferidas orientan la navegación y se contrastan con el código.
+- El visor HTML carga `vis-network` desde un CDN. El informe y las consultas de Graphify se pueden usar sin red.
+- Para reproducir la instantánea, exportar esos tres directorios desde la revisión indicada y ejecutar `graphify extract <directorio> --code-only` y `graphify cluster-only <directorio> --no-label`.
